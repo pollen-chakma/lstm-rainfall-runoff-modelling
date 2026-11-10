@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "basins": 1426,
+  "all_daily_metrics_recomputed": true,
+  "epochs": 20,
+  "seed": 42,
+  "best_epoch": 18,
+  "inputs": [
+    "prcp",
+    "tmax",
+    "tmin",
+    "srad",
+    "vp",
+    "dayl",
+    "pet",
+    "PC01_mean",
+    "PC02_mean",
+    "PC03_mean",
+    "PC04_mean",
+    "PC05_mean",
+    "PC06_mean",
+    "PC07_mean",
+    "PC08_mean",
+    "PC09_mean",
+    "PC10_mean"
+  ],
+  "parameters": 21313
+}

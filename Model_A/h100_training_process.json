@@ -1,0 +1,10 @@
+{
+  "pid": 959697,
+  "host": "g30.nibi.sharcnet",
+  "log": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model_A/h100_training_20261031_212249.log",
+  "device": "cuda:0",
+  "gpu": "H100 MIG 1g.10gb",
+  "epochs": 20,
+  "status": "complete",
+  "output_dir": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model_A/runs/20261031_212304"
+}

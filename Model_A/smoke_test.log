@@ -1,0 +1,4 @@
+/home/pollen26/Desktop/LSTM_RR_Modelling/Model_A/train_model_a.py:87: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  print('SMOKE PASS',device,'loss',float(loss),'windows',{s:len(d) for s,d in ds.items()},flush=True)
+SMOKE PASS cpu loss 0.31692370772361755 windows {'train': 63931, 'validation': 18270, 'test': 18260}

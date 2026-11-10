@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "basin_seed_predictions_verified": 14260,
+  "expected": 14260,
+  "all_seeds_same_ids_years_scored_days": true,
+  "all_daily_metrics_recomputed": true,
+  "ensemble_method": "arithmetic mean of five daily discharge predictions, then metrics recalculated",
+  "data_sha256": "5d6b7d2d8e3b1d6dc080f7572dd19cfc07121ca4e1a828e2b3d7e84c312b56db"
+}

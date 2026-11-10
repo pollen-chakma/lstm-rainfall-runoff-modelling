@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "rows": 1426,
+  "columns": 40,
+  "seen": 1326,
+  "unseen": 100,
+  "old_values_and_order_preserved": true,
+  "all_PCA20_values_match_source": true,
+  "backup": "/home/pollen26/Desktop/LSTM_RR_Modelling/LSTM_Performance_Comparison/backups/basin_comparison_before_PCA20_20261102T210930075044.csv",
+  "sha256": "54ba960da34606b0d90a8f6a065fafd1d6b378f0cceaea0523f7ecde73888c81"
+}

@@ -1,0 +1,6 @@
+basin_id,experiment,field,raw_value,action
+CAN_02YK005,Daymet_MetOnly,attr_open_water_fraction,1.163986037463636,masked invalid physical range; basin retained
+CAN_02YK005,Daymet_MetAttr,attr_open_water_fraction,1.163986037463636,masked invalid physical range; basin retained
+CAN_02YK005,Daymet_PCA10,attr_open_water_fraction,1.163986037463636,masked invalid physical range; basin retained
+CAN_02YK005,ERA5_MetAttr,attr_open_water_fraction,1.163986037463636,masked invalid physical range; basin retained
+CAN_02YK005,ERA5_Extended,attr_open_water_fraction,1.163986037463636,masked invalid physical range; basin retained

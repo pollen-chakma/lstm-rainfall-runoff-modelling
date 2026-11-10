@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "sources": [
+        "Daymet",
+        "ERA5"
+      ],
+      "basins": 2,
+      "parameters": [
+        "prcp",
+        "q_obs_mm_day",
+        "tmax"
+      ],
+      "start": "2005-01-01",
+      "end": "2009-12-31",
+      "rows": 12,
+      "seconds": 0.13
+    },
+    {
+      "sources": [
+        "ERA5"
+      ],
+      "basins": 1,
+      "parameters": [
+        "vp"
+      ],
+      "start": "1950-01-01",
+      "end": "1950-01-01",
+      "rows": 1,
+      "seconds": 0.01
+    },
+    {
+      "sources": [
+        "Daymet"
+      ],
+      "basins": 1,
+      "parameters": [
+        "prcp"
+      ],
+      "start": "1950-01-01",
+      "end": "1951-01-01",
+      "rows": 1,
+      "seconds": 0.0
+    },
+    {
+      "sources": [
+        "Daymet",
+        "ERA5"
+      ],
+      "basins": 1426,
+      "parameters": [
+        "prcp",
+        "q_obs_mm_day",
+        "tmax"
+      ],
+      "start": "2005-01-01",
+      "end": "2009-12-31",
+      "rows": 8556,
+      "seconds": 35.93
+    }
+  ],
+  "source_value_spotchecks": 6
+}

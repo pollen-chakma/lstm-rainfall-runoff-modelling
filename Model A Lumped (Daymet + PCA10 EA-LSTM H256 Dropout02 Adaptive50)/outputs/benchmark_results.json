@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checks": {
+    "status": "passed",
+    "cpu_forward_and_gradient_equivalence": true,
+    "cuda_forward_and_gradient_equivalence": true,
+    "static_dynamic_gate_separation": true,
+    "masked_weights_remain_zero_after_adam": true
+  },
+  "plain": {
+    "training_batch": 128,
+    "validation_batch": 256,
+    "train_seconds_per_batch": 0.020521335497808952,
+    "validation_seconds_per_batch": 0.010782049866975285,
+    "projected_compute_seconds_per_epoch": 61.3770039043884,
+    "peak_allocated_bytes": 689820160,
+    "stored_parameters": 292097
+  },
+  "ea": {
+    "training_batch": 128,
+    "validation_batch": 256,
+    "train_seconds_per_batch": 0.021194876249258716,
+    "validation_seconds_per_batch": 0.011050164874177426,
+    "projected_compute_seconds_per_epoch": 63.33616815687856,
+    "peak_allocated_bytes": 690979328,
+    "stored_parameters": 292097,
+    "effective_parameters": 209409
+  },
+  "relative_runtime": 1.0319201676175347,
+  "estimated_epoch_seconds_using_measured_baseline": 70.17057139799236,
+  "estimated_50_epoch_hours": 0.9745912694165606,
+  "gpu": "NVIDIA H100 80GB HBM3 MIG 1g.10gb"
+}

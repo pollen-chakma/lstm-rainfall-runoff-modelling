@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "cpu_forward_and_gradient_equivalence": true,
+  "cuda_forward_and_gradient_equivalence": true,
+  "static_dynamic_gate_separation": true,
+  "masked_weights_remain_zero_after_adam": true
+}

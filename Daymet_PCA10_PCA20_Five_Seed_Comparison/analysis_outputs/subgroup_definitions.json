@@ -1,0 +1,9 @@
+{
+  "low_flow_definition": "Observed test-period mean discharge at or below donor reference 25th percentile",
+  "low_flow_threshold_mm_day": 0.6884145024948268,
+  "low_flow_reference_n": 1084,
+  "intermittent_definition": "At least 1% of available test observations equal zero",
+  "dry_definition": "Test-period PET/precipitation > 1",
+  "coverage_requirement": "At least 80% scored test-day coverage for hydrological subgroups",
+  "interpretation": "Descriptive, overlapping test-period groups. Not model predictors or evidence of causality. Groups were specified before reading new seed metrics."
+}

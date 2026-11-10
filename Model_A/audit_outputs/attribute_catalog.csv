@@ -1,0 +1,1179 @@
+category,attribute,unit,source
+Climate,num_years_rdrs,years,RDRS
+Climate,PR0_mean,mm year-1,RDRS
+Climate,PR0_std,mm year-1,RDRS
+Climate,pet1_mean,mm year-1,RDRS
+Climate,pet1_std,mm year-1,RDRS
+Climate,TT_mean,C,RDRS
+Climate,TT_std,C,RDRS
+Climate,aridity1_mean,-,RDRS
+Climate,aridity1_std,-,RDRS
+Climate,fracsnow1_mean,-,RDRS
+Climate,fracsnow1_std,-,RDRS
+Climate,seasonality1_mean,-,RDRS
+Climate,seasonality1_std,-,RDRS
+Climate,pet1_mean_month_01,mm month-1,RDRS
+Climate,pet1_mean_month_02,mm month-1,RDRS
+Climate,pet1_mean_month_03,mm month-1,RDRS
+Climate,pet1_mean_month_04,mm month-1,RDRS
+Climate,pet1_mean_month_05,mm month-1,RDRS
+Climate,pet1_mean_month_06,mm month-1,RDRS
+Climate,pet1_mean_month_07,mm month-1,RDRS
+Climate,pet1_mean_month_08,mm month-1,RDRS
+Climate,pet1_mean_month_09,mm month-1,RDRS
+Climate,pet1_mean_month_10,mm month-1,RDRS
+Climate,pet1_mean_month_11,mm month-1,RDRS
+Climate,pet1_mean_month_12,mm month-1,RDRS
+Climate,pet1_std_month_01,mm month-1,RDRS
+Climate,pet1_std_month_02,mm month-1,RDRS
+Climate,pet1_std_month_03,mm month-1,RDRS
+Climate,pet1_std_month_04,mm month-1,RDRS
+Climate,pet1_std_month_05,mm month-1,RDRS
+Climate,pet1_std_month_06,mm month-1,RDRS
+Climate,pet1_std_month_07,mm month-1,RDRS
+Climate,pet1_std_month_08,mm month-1,RDRS
+Climate,pet1_std_month_09,mm month-1,RDRS
+Climate,pet1_std_month_10,mm month-1,RDRS
+Climate,pet1_std_month_11,mm month-1,RDRS
+Climate,pet1_std_month_12,mm month-1,RDRS
+Climate,PR0_mean_month_01,mm month-1,RDRS
+Climate,PR0_mean_month_02,mm month-1,RDRS
+Climate,PR0_mean_month_03,mm month-1,RDRS
+Climate,PR0_mean_month_04,mm month-1,RDRS
+Climate,PR0_mean_month_05,mm month-1,RDRS
+Climate,PR0_mean_month_06,mm month-1,RDRS
+Climate,PR0_mean_month_07,mm month-1,RDRS
+Climate,PR0_mean_month_08,mm month-1,RDRS
+Climate,PR0_mean_month_09,mm month-1,RDRS
+Climate,PR0_mean_month_10,mm month-1,RDRS
+Climate,PR0_mean_month_11,mm month-1,RDRS
+Climate,PR0_mean_month_12,mm month-1,RDRS
+Climate,PR0_std_month_01,mm month-1,RDRS
+Climate,PR0_std_month_02,mm month-1,RDRS
+Climate,PR0_std_month_03,mm month-1,RDRS
+Climate,PR0_std_month_04,mm month-1,RDRS
+Climate,PR0_std_month_05,mm month-1,RDRS
+Climate,PR0_std_month_06,mm month-1,RDRS
+Climate,PR0_std_month_07,mm month-1,RDRS
+Climate,PR0_std_month_08,mm month-1,RDRS
+Climate,PR0_std_month_09,mm month-1,RDRS
+Climate,PR0_std_month_10,mm month-1,RDRS
+Climate,PR0_std_month_11,mm month-1,RDRS
+Climate,PR0_std_month_12,mm month-1,RDRS
+Climate,tdavg_mean_month_01,C,RDRS
+Climate,tdavg_mean_month_02,C,RDRS
+Climate,tdavg_mean_month_03,C,RDRS
+Climate,tdavg_mean_month_04,C,RDRS
+Climate,tdavg_mean_month_05,C,RDRS
+Climate,tdavg_mean_month_06,C,RDRS
+Climate,tdavg_mean_month_07,C,RDRS
+Climate,tdavg_mean_month_08,C,RDRS
+Climate,tdavg_mean_month_09,C,RDRS
+Climate,tdavg_mean_month_10,C,RDRS
+Climate,tdavg_mean_month_11,C,RDRS
+Climate,tdavg_mean_month_12,C,RDRS
+Climate,tdavg_std_month_01,C,RDRS
+Climate,tdavg_std_month_02,C,RDRS
+Climate,tdavg_std_month_03,C,RDRS
+Climate,tdavg_std_month_04,C,RDRS
+Climate,tdavg_std_month_05,C,RDRS
+Climate,tdavg_std_month_06,C,RDRS
+Climate,tdavg_std_month_07,C,RDRS
+Climate,tdavg_std_month_08,C,RDRS
+Climate,tdavg_std_month_09,C,RDRS
+Climate,tdavg_std_month_10,C,RDRS
+Climate,tdavg_std_month_11,C,RDRS
+Climate,tdavg_std_month_12,C,RDRS
+Climate,tdmin_mean_month_01,C,RDRS
+Climate,tdmin_mean_month_02,C,RDRS
+Climate,tdmin_mean_month_03,C,RDRS
+Climate,tdmin_mean_month_04,C,RDRS
+Climate,tdmin_mean_month_05,C,RDRS
+Climate,tdmin_mean_month_06,C,RDRS
+Climate,tdmin_mean_month_07,C,RDRS
+Climate,tdmin_mean_month_08,C,RDRS
+Climate,tdmin_mean_month_09,C,RDRS
+Climate,tdmin_mean_month_10,C,RDRS
+Climate,tdmin_mean_month_11,C,RDRS
+Climate,tdmin_mean_month_12,C,RDRS
+Climate,tdmin_std_month_01,C,RDRS
+Climate,tdmin_std_month_02,C,RDRS
+Climate,tdmin_std_month_03,C,RDRS
+Climate,tdmin_std_month_04,C,RDRS
+Climate,tdmin_std_month_05,C,RDRS
+Climate,tdmin_std_month_06,C,RDRS
+Climate,tdmin_std_month_07,C,RDRS
+Climate,tdmin_std_month_08,C,RDRS
+Climate,tdmin_std_month_09,C,RDRS
+Climate,tdmin_std_month_10,C,RDRS
+Climate,tdmin_std_month_11,C,RDRS
+Climate,tdmin_std_month_12,C,RDRS
+Climate,tdmax_mean_month_01,C,RDRS
+Climate,tdmax_mean_month_02,C,RDRS
+Climate,tdmax_mean_month_03,C,RDRS
+Climate,tdmax_mean_month_04,C,RDRS
+Climate,tdmax_mean_month_05,C,RDRS
+Climate,tdmax_mean_month_06,C,RDRS
+Climate,tdmax_mean_month_07,C,RDRS
+Climate,tdmax_mean_month_08,C,RDRS
+Climate,tdmax_mean_month_09,C,RDRS
+Climate,tdmax_mean_month_10,C,RDRS
+Climate,tdmax_mean_month_11,C,RDRS
+Climate,tdmax_mean_month_12,C,RDRS
+Climate,tdmax_std_month_01,C,RDRS
+Climate,tdmax_std_month_02,C,RDRS
+Climate,tdmax_std_month_03,C,RDRS
+Climate,tdmax_std_month_04,C,RDRS
+Climate,tdmax_std_month_05,C,RDRS
+Climate,tdmax_std_month_06,C,RDRS
+Climate,tdmax_std_month_07,C,RDRS
+Climate,tdmax_std_month_08,C,RDRS
+Climate,tdmax_std_month_09,C,RDRS
+Climate,tdmax_std_month_10,C,RDRS
+Climate,tdmax_std_month_11,C,RDRS
+Climate,tdmax_std_month_12,C,RDRS
+Climate,FB_mean_month_01,W m^-2,RDRS
+Climate,FB_mean_month_02,W m^-2,RDRS
+Climate,FB_mean_month_03,W m^-2,RDRS
+Climate,FB_mean_month_04,W m^-2,RDRS
+Climate,FB_mean_month_05,W m^-2,RDRS
+Climate,FB_mean_month_06,W m^-2,RDRS
+Climate,FB_mean_month_07,W m^-2,RDRS
+Climate,FB_mean_month_08,W m^-2,RDRS
+Climate,FB_mean_month_09,W m^-2,RDRS
+Climate,FB_mean_month_10,W m^-2,RDRS
+Climate,FB_mean_month_11,W m^-2,RDRS
+Climate,FB_mean_month_12,W m^-2,RDRS
+Climate,FB_std_month_01,W m^-2,RDRS
+Climate,FB_std_month_02,W m^-2,RDRS
+Climate,FB_std_month_03,W m^-2,RDRS
+Climate,FB_std_month_04,W m^-2,RDRS
+Climate,FB_std_month_05,W m^-2,RDRS
+Climate,FB_std_month_06,W m^-2,RDRS
+Climate,FB_std_month_07,W m^-2,RDRS
+Climate,FB_std_month_08,W m^-2,RDRS
+Climate,FB_std_month_09,W m^-2,RDRS
+Climate,FB_std_month_10,W m^-2,RDRS
+Climate,FB_std_month_11,W m^-2,RDRS
+Climate,FB_std_month_12,W m^-2,RDRS
+Climate,FI_mean_month_01,W m^-2,RDRS
+Climate,FI_mean_month_02,W m^-2,RDRS
+Climate,FI_mean_month_03,W m^-2,RDRS
+Climate,FI_mean_month_04,W m^-2,RDRS
+Climate,FI_mean_month_05,W m^-2,RDRS
+Climate,FI_mean_month_06,W m^-2,RDRS
+Climate,FI_mean_month_07,W m^-2,RDRS
+Climate,FI_mean_month_08,W m^-2,RDRS
+Climate,FI_mean_month_09,W m^-2,RDRS
+Climate,FI_mean_month_10,W m^-2,RDRS
+Climate,FI_mean_month_11,W m^-2,RDRS
+Climate,FI_mean_month_12,W m^-2,RDRS
+Climate,FI_std_month_01,W m^-2,RDRS
+Climate,FI_std_month_02,W m^-2,RDRS
+Climate,FI_std_month_03,W m^-2,RDRS
+Climate,FI_std_month_04,W m^-2,RDRS
+Climate,FI_std_month_05,W m^-2,RDRS
+Climate,FI_std_month_06,W m^-2,RDRS
+Climate,FI_std_month_07,W m^-2,RDRS
+Climate,FI_std_month_08,W m^-2,RDRS
+Climate,FI_std_month_09,W m^-2,RDRS
+Climate,FI_std_month_10,W m^-2,RDRS
+Climate,FI_std_month_11,W m^-2,RDRS
+Climate,FI_std_month_12,W m^-2,RDRS
+Climate,P0_mean_month_01,kPa,RDRS
+Climate,P0_mean_month_02,kPa,RDRS
+Climate,P0_mean_month_03,kPa,RDRS
+Climate,P0_mean_month_04,kPa,RDRS
+Climate,P0_mean_month_05,kPa,RDRS
+Climate,P0_mean_month_06,kPa,RDRS
+Climate,P0_mean_month_07,kPa,RDRS
+Climate,P0_mean_month_08,kPa,RDRS
+Climate,P0_mean_month_09,kPa,RDRS
+Climate,P0_mean_month_10,kPa,RDRS
+Climate,P0_mean_month_11,kPa,RDRS
+Climate,P0_mean_month_12,kPa,RDRS
+Climate,P0_std_month_01,kPa,RDRS
+Climate,P0_std_month_02,kPa,RDRS
+Climate,P0_std_month_03,kPa,RDRS
+Climate,P0_std_month_04,kPa,RDRS
+Climate,P0_std_month_05,kPa,RDRS
+Climate,P0_std_month_06,kPa,RDRS
+Climate,P0_std_month_07,kPa,RDRS
+Climate,P0_std_month_08,kPa,RDRS
+Climate,P0_std_month_09,kPa,RDRS
+Climate,P0_std_month_10,kPa,RDRS
+Climate,P0_std_month_11,kPa,RDRS
+Climate,P0_std_month_12,kPa,RDRS
+Climate,HU_mean_month_01,kg kg^-1,RDRS
+Climate,HU_mean_month_02,kg kg^-1,RDRS
+Climate,HU_mean_month_03,kg kg^-1,RDRS
+Climate,HU_mean_month_04,kg kg^-1,RDRS
+Climate,HU_mean_month_05,kg kg^-1,RDRS
+Climate,HU_mean_month_06,kg kg^-1,RDRS
+Climate,HU_mean_month_07,kg kg^-1,RDRS
+Climate,HU_mean_month_08,kg kg^-1,RDRS
+Climate,HU_mean_month_09,kg kg^-1,RDRS
+Climate,HU_mean_month_10,kg kg^-1,RDRS
+Climate,HU_mean_month_11,kg kg^-1,RDRS
+Climate,HU_mean_month_12,kg kg^-1,RDRS
+Climate,HU_std_month_01,kg kg^-1,RDRS
+Climate,HU_std_month_02,kg kg^-1,RDRS
+Climate,HU_std_month_03,kg kg^-1,RDRS
+Climate,HU_std_month_04,kg kg^-1,RDRS
+Climate,HU_std_month_05,kg kg^-1,RDRS
+Climate,HU_std_month_06,kg kg^-1,RDRS
+Climate,HU_std_month_07,kg kg^-1,RDRS
+Climate,HU_std_month_08,kg kg^-1,RDRS
+Climate,HU_std_month_09,kg kg^-1,RDRS
+Climate,HU_std_month_10,kg kg^-1,RDRS
+Climate,HU_std_month_11,kg kg^-1,RDRS
+Climate,HU_std_month_12,kg kg^-1,RDRS
+Climate,HR_mean_month_01,kPa kPa^-1,RDRS
+Climate,HR_mean_month_02,kPa kPa^-1,RDRS
+Climate,HR_mean_month_03,kPa kPa^-1,RDRS
+Climate,HR_mean_month_04,kPa kPa^-1,RDRS
+Climate,HR_mean_month_05,kPa kPa^-1,RDRS
+Climate,HR_mean_month_06,kPa kPa^-1,RDRS
+Climate,HR_mean_month_07,kPa kPa^-1,RDRS
+Climate,HR_mean_month_08,kPa kPa^-1,RDRS
+Climate,HR_mean_month_09,kPa kPa^-1,RDRS
+Climate,HR_mean_month_10,kPa kPa^-1,RDRS
+Climate,HR_mean_month_11,kPa kPa^-1,RDRS
+Climate,HR_mean_month_12,kPa kPa^-1,RDRS
+Climate,HR_std_month_01,kPa kPa^-1,RDRS
+Climate,HR_std_month_02,kPa kPa^-1,RDRS
+Climate,HR_std_month_03,kPa kPa^-1,RDRS
+Climate,HR_std_month_04,kPa kPa^-1,RDRS
+Climate,HR_std_month_05,kPa kPa^-1,RDRS
+Climate,HR_std_month_06,kPa kPa^-1,RDRS
+Climate,HR_std_month_07,kPa kPa^-1,RDRS
+Climate,HR_std_month_08,kPa kPa^-1,RDRS
+Climate,HR_std_month_09,kPa kPa^-1,RDRS
+Climate,HR_std_month_10,kPa kPa^-1,RDRS
+Climate,HR_std_month_11,kPa kPa^-1,RDRS
+Climate,HR_std_month_12,kPa kPa^-1,RDRS
+Climate,UVC_mean_month_01,m s^-1,RDRS
+Climate,UVC_mean_month_02,m s^-1,RDRS
+Climate,UVC_mean_month_03,m s^-1,RDRS
+Climate,UVC_mean_month_04,m s^-1,RDRS
+Climate,UVC_mean_month_05,m s^-1,RDRS
+Climate,UVC_mean_month_06,m s^-1,RDRS
+Climate,UVC_mean_month_07,m s^-1,RDRS
+Climate,UVC_mean_month_08,m s^-1,RDRS
+Climate,UVC_mean_month_09,m s^-1,RDRS
+Climate,UVC_mean_month_10,m s^-1,RDRS
+Climate,UVC_mean_month_11,m s^-1,RDRS
+Climate,UVC_mean_month_12,m s^-1,RDRS
+Climate,UVC_std_month_01,m s^-1,RDRS
+Climate,UVC_std_month_02,m s^-1,RDRS
+Climate,UVC_std_month_03,m s^-1,RDRS
+Climate,UVC_std_month_04,m s^-1,RDRS
+Climate,UVC_std_month_05,m s^-1,RDRS
+Climate,UVC_std_month_06,m s^-1,RDRS
+Climate,UVC_std_month_07,m s^-1,RDRS
+Climate,UVC_std_month_08,m s^-1,RDRS
+Climate,UVC_std_month_09,m s^-1,RDRS
+Climate,UVC_std_month_10,m s^-1,RDRS
+Climate,UVC_std_month_11,m s^-1,RDRS
+Climate,UVC_std_month_12,m s^-1,RDRS
+Climate,phi_mean_month_01,degrees,RDRS
+Climate,phi_mean_month_02,degrees,RDRS
+Climate,phi_mean_month_03,degrees,RDRS
+Climate,phi_mean_month_04,degrees,RDRS
+Climate,phi_mean_month_05,degrees,RDRS
+Climate,phi_mean_month_06,degrees,RDRS
+Climate,phi_mean_month_07,degrees,RDRS
+Climate,phi_mean_month_08,degrees,RDRS
+Climate,phi_mean_month_09,degrees,RDRS
+Climate,phi_mean_month_10,degrees,RDRS
+Climate,phi_mean_month_11,degrees,RDRS
+Climate,phi_mean_month_12,degrees,RDRS
+Climate,phi_std_month_01,degrees,RDRS
+Climate,phi_std_month_02,degrees,RDRS
+Climate,phi_std_month_03,degrees,RDRS
+Climate,phi_std_month_04,degrees,RDRS
+Climate,phi_std_month_05,degrees,RDRS
+Climate,phi_std_month_06,degrees,RDRS
+Climate,phi_std_month_07,degrees,RDRS
+Climate,phi_std_month_08,degrees,RDRS
+Climate,phi_std_month_09,degrees,RDRS
+Climate,phi_std_month_10,degrees,RDRS
+Climate,phi_std_month_11,degrees,RDRS
+Climate,phi_std_month_12,degrees,RDRS
+Climate,aridity1_mean_month_01,-,RDRS
+Climate,aridity1_mean_month_02,-,RDRS
+Climate,aridity1_mean_month_03,-,RDRS
+Climate,aridity1_mean_month_04,-,RDRS
+Climate,aridity1_mean_month_05,-,RDRS
+Climate,aridity1_mean_month_06,-,RDRS
+Climate,aridity1_mean_month_07,-,RDRS
+Climate,aridity1_mean_month_08,-,RDRS
+Climate,aridity1_mean_month_09,-,RDRS
+Climate,aridity1_mean_month_10,-,RDRS
+Climate,aridity1_mean_month_11,-,RDRS
+Climate,aridity1_mean_month_12,-,RDRS
+Climate,aridity1_std_month_01,-,RDRS
+Climate,aridity1_std_month_02,-,RDRS
+Climate,aridity1_std_month_03,-,RDRS
+Climate,aridity1_std_month_04,-,RDRS
+Climate,aridity1_std_month_05,-,RDRS
+Climate,aridity1_std_month_06,-,RDRS
+Climate,aridity1_std_month_07,-,RDRS
+Climate,aridity1_std_month_08,-,RDRS
+Climate,aridity1_std_month_09,-,RDRS
+Climate,aridity1_std_month_10,-,RDRS
+Climate,aridity1_std_month_11,-,RDRS
+Climate,aridity1_std_month_12,-,RDRS
+Climate,fracsnow1_mean_month_01,-,RDRS
+Climate,fracsnow1_mean_month_02,-,RDRS
+Climate,fracsnow1_mean_month_03,-,RDRS
+Climate,fracsnow1_mean_month_04,-,RDRS
+Climate,fracsnow1_mean_month_05,-,RDRS
+Climate,fracsnow1_mean_month_06,-,RDRS
+Climate,fracsnow1_mean_month_07,-,RDRS
+Climate,fracsnow1_mean_month_08,-,RDRS
+Climate,fracsnow1_mean_month_09,-,RDRS
+Climate,fracsnow1_mean_month_10,-,RDRS
+Climate,fracsnow1_mean_month_11,-,RDRS
+Climate,fracsnow1_mean_month_12,-,RDRS
+Climate,fracsnow1_std_month_01,-,RDRS
+Climate,fracsnow1_std_month_02,-,RDRS
+Climate,fracsnow1_std_month_03,-,RDRS
+Climate,fracsnow1_std_month_04,-,RDRS
+Climate,fracsnow1_std_month_05,-,RDRS
+Climate,fracsnow1_std_month_06,-,RDRS
+Climate,fracsnow1_std_month_07,-,RDRS
+Climate,fracsnow1_std_month_08,-,RDRS
+Climate,fracsnow1_std_month_09,-,RDRS
+Climate,fracsnow1_std_month_10,-,RDRS
+Climate,fracsnow1_std_month_11,-,RDRS
+Climate,fracsnow1_std_month_12,-,RDRS
+Climate,low_temp_freq,days year^-1,RDRS
+Climate,low_temp_dur_mean,days,RDRS
+Climate,low_temp_dur_median,days,RDRS
+Climate,low_temp_dur_skew,-,RDRS
+Climate,low_temp_dur_kurtosis,-,RDRS
+Climate,low_temp_timing,season,RDRS
+Climate,high_temp_freq,days year^-1,RDRS
+Climate,high_temp_dur_mean,days,RDRS
+Climate,high_temp_dur_median,days,RDRS
+Climate,high_temp_dur_skew,-,RDRS
+Climate,high_temp_dur_kurtosis,-,RDRS
+Climate,high_temp_timing,season,RDRS
+Climate,low_prec_freq,days year^-1,RDRS
+Climate,low_prec_dur_mean,days,RDRS
+Climate,low_prec_dur_median,days,RDRS
+Climate,low_prec_dur_skew,-,RDRS
+Climate,low_prec_dur_kurtosis,-,RDRS
+Climate,low_prec_timing,season,RDRS
+Climate,high_prec_freq,days year^-1,RDRS
+Climate,high_prec_dur_mean,days,RDRS
+Climate,high_prec_dur_median,days,RDRS
+Climate,high_prec_dur_skew,-,RDRS
+Climate,high_prec_dur_kurtosis,-,RDRS
+Climate,high_prec_timing,season,RDRS
+Climate,prec_mean,mm year-1,WorldClim
+Climate,prec_std,mm year-1,WorldClim
+Climate,pet2_mean,mm year-1,WorldClim
+Climate,pet2_std,mm year-1,WorldClim
+Climate,tavg_mean,C,WorldClim
+Climate,tavg_std,C,WorldClim
+Climate,aridity2_mean,-,WorldClim
+Climate,aridity2_std,-,WorldClim
+Climate,seasonality2_mean,-,WorldClim
+Climate,seasonality2_std,-,WorldClim
+Climate,fracsnow2_mean,-,WorldClim
+Climate,fracsnow2_std,-,WorldClim
+Climate,prec_mean_month_01,mm month-1,WorldClim
+Climate,prec_std_month_01,mm month-1,WorldClim
+Climate,prec_mean_month_02,mm month-1,WorldClim
+Climate,prec_std_month_02,mm month-1,WorldClim
+Climate,prec_mean_month_03,mm month-1,WorldClim
+Climate,prec_std_month_03,mm month-1,WorldClim
+Climate,prec_mean_month_04,mm month-1,WorldClim
+Climate,prec_std_month_04,mm month-1,WorldClim
+Climate,prec_mean_month_05,mm month-1,WorldClim
+Climate,prec_std_month_05,mm month-1,WorldClim
+Climate,prec_mean_month_06,mm month-1,WorldClim
+Climate,prec_std_month_06,mm month-1,WorldClim
+Climate,prec_mean_month_07,mm month-1,WorldClim
+Climate,prec_std_month_07,mm month-1,WorldClim
+Climate,prec_mean_month_08,mm month-1,WorldClim
+Climate,prec_std_month_08,mm month-1,WorldClim
+Climate,prec_mean_month_09,mm month-1,WorldClim
+Climate,prec_std_month_09,mm month-1,WorldClim
+Climate,prec_mean_month_10,mm month-1,WorldClim
+Climate,prec_std_month_10,mm month-1,WorldClim
+Climate,prec_mean_month_11,mm month-1,WorldClim
+Climate,prec_std_month_11,mm month-1,WorldClim
+Climate,prec_mean_month_12,mm month-1,WorldClim
+Climate,prec_std_month_12,mm month-1,WorldClim
+Climate,srad_mean_month_01,W m^-2,WorldClim
+Climate,srad_std_month_01,W m^-2,WorldClim
+Climate,srad_mean_month_02,W m^-2,WorldClim
+Climate,srad_std_month_02,W m^-2,WorldClim
+Climate,srad_mean_month_03,W m^-2,WorldClim
+Climate,srad_std_month_03,W m^-2,WorldClim
+Climate,srad_mean_month_04,W m^-2,WorldClim
+Climate,srad_std_month_04,W m^-2,WorldClim
+Climate,srad_mean_month_05,W m^-2,WorldClim
+Climate,srad_std_month_05,W m^-2,WorldClim
+Climate,srad_mean_month_06,W m^-2,WorldClim
+Climate,srad_std_month_06,W m^-2,WorldClim
+Climate,srad_mean_month_07,W m^-2,WorldClim
+Climate,srad_std_month_07,W m^-2,WorldClim
+Climate,srad_mean_month_08,W m^-2,WorldClim
+Climate,srad_std_month_08,W m^-2,WorldClim
+Climate,srad_mean_month_09,W m^-2,WorldClim
+Climate,srad_std_month_09,W m^-2,WorldClim
+Climate,srad_mean_month_10,W m^-2,WorldClim
+Climate,srad_std_month_10,W m^-2,WorldClim
+Climate,srad_mean_month_11,W m^-2,WorldClim
+Climate,srad_std_month_11,W m^-2,WorldClim
+Climate,srad_mean_month_12,W m^-2,WorldClim
+Climate,srad_std_month_12,W m^-2,WorldClim
+Climate,tavg_mean_month_01,C,WorldClim
+Climate,tavg_std_month_01,C,WorldClim
+Climate,tavg_mean_month_02,C,WorldClim
+Climate,tavg_std_month_02,C,WorldClim
+Climate,tavg_mean_month_03,C,WorldClim
+Climate,tavg_std_month_03,C,WorldClim
+Climate,tavg_mean_month_04,C,WorldClim
+Climate,tavg_std_month_04,C,WorldClim
+Climate,tavg_mean_month_05,C,WorldClim
+Climate,tavg_std_month_05,C,WorldClim
+Climate,tavg_mean_month_06,C,WorldClim
+Climate,tavg_std_month_06,C,WorldClim
+Climate,tavg_mean_month_07,C,WorldClim
+Climate,tavg_std_month_07,C,WorldClim
+Climate,tavg_mean_month_08,C,WorldClim
+Climate,tavg_std_month_08,C,WorldClim
+Climate,tavg_mean_month_09,C,WorldClim
+Climate,tavg_std_month_09,C,WorldClim
+Climate,tavg_mean_month_10,C,WorldClim
+Climate,tavg_std_month_10,C,WorldClim
+Climate,tavg_mean_month_11,C,WorldClim
+Climate,tavg_std_month_11,C,WorldClim
+Climate,tavg_mean_month_12,C,WorldClim
+Climate,tavg_std_month_12,C,WorldClim
+Climate,tmax_mean_month_01,C,WorldClim
+Climate,tmax_std_month_01,C,WorldClim
+Climate,tmax_mean_month_02,C,WorldClim
+Climate,tmax_std_month_02,C,WorldClim
+Climate,tmax_mean_month_03,C,WorldClim
+Climate,tmax_std_month_03,C,WorldClim
+Climate,tmax_mean_month_04,C,WorldClim
+Climate,tmax_std_month_04,C,WorldClim
+Climate,tmax_mean_month_05,C,WorldClim
+Climate,tmax_std_month_05,C,WorldClim
+Climate,tmax_mean_month_06,C,WorldClim
+Climate,tmax_std_month_06,C,WorldClim
+Climate,tmax_mean_month_07,C,WorldClim
+Climate,tmax_std_month_07,C,WorldClim
+Climate,tmax_mean_month_08,C,WorldClim
+Climate,tmax_std_month_08,C,WorldClim
+Climate,tmax_mean_month_09,C,WorldClim
+Climate,tmax_std_month_09,C,WorldClim
+Climate,tmax_mean_month_10,C,WorldClim
+Climate,tmax_std_month_10,C,WorldClim
+Climate,tmax_mean_month_11,C,WorldClim
+Climate,tmax_std_month_11,C,WorldClim
+Climate,tmax_mean_month_12,C,WorldClim
+Climate,tmax_std_month_12,C,WorldClim
+Climate,tmin_mean_month_01,C,WorldClim
+Climate,tmin_std_month_01,C,WorldClim
+Climate,tmin_mean_month_02,C,WorldClim
+Climate,tmin_std_month_02,C,WorldClim
+Climate,tmin_mean_month_03,C,WorldClim
+Climate,tmin_std_month_03,C,WorldClim
+Climate,tmin_mean_month_04,C,WorldClim
+Climate,tmin_std_month_04,C,WorldClim
+Climate,tmin_mean_month_05,C,WorldClim
+Climate,tmin_std_month_05,C,WorldClim
+Climate,tmin_mean_month_06,C,WorldClim
+Climate,tmin_std_month_06,C,WorldClim
+Climate,tmin_mean_month_07,C,WorldClim
+Climate,tmin_std_month_07,C,WorldClim
+Climate,tmin_mean_month_08,C,WorldClim
+Climate,tmin_std_month_08,C,WorldClim
+Climate,tmin_mean_month_09,C,WorldClim
+Climate,tmin_std_month_09,C,WorldClim
+Climate,tmin_mean_month_10,C,WorldClim
+Climate,tmin_std_month_10,C,WorldClim
+Climate,tmin_mean_month_11,C,WorldClim
+Climate,tmin_std_month_11,C,WorldClim
+Climate,tmin_mean_month_12,C,WorldClim
+Climate,tmin_std_month_12,C,WorldClim
+Climate,vapr_mean_month_01,kPa,WorldClim
+Climate,vapr_std_month_01,kPa,WorldClim
+Climate,vapr_mean_month_02,kPa,WorldClim
+Climate,vapr_std_month_02,kPa,WorldClim
+Climate,vapr_mean_month_03,kPa,WorldClim
+Climate,vapr_std_month_03,kPa,WorldClim
+Climate,vapr_mean_month_04,kPa,WorldClim
+Climate,vapr_std_month_04,kPa,WorldClim
+Climate,vapr_mean_month_05,kPa,WorldClim
+Climate,vapr_std_month_05,kPa,WorldClim
+Climate,vapr_mean_month_06,kPa,WorldClim
+Climate,vapr_std_month_06,kPa,WorldClim
+Climate,vapr_mean_month_07,kPa,WorldClim
+Climate,vapr_std_month_07,kPa,WorldClim
+Climate,vapr_mean_month_08,kPa,WorldClim
+Climate,vapr_std_month_08,kPa,WorldClim
+Climate,vapr_mean_month_09,kPa,WorldClim
+Climate,vapr_std_month_09,kPa,WorldClim
+Climate,vapr_mean_month_10,kPa,WorldClim
+Climate,vapr_std_month_10,kPa,WorldClim
+Climate,vapr_mean_month_11,kPa,WorldClim
+Climate,vapr_std_month_11,kPa,WorldClim
+Climate,vapr_mean_month_12,kPa,WorldClim
+Climate,vapr_std_month_12,kPa,WorldClim
+Climate,wind_mean_month_01,m s^-1,WorldClim
+Climate,wind_std_month_01,m s^-1,WorldClim
+Climate,wind_mean_month_02,m s^-1,WorldClim
+Climate,wind_std_month_02,m s^-1,WorldClim
+Climate,wind_mean_month_03,m s^-1,WorldClim
+Climate,wind_std_month_03,m s^-1,WorldClim
+Climate,wind_mean_month_04,m s^-1,WorldClim
+Climate,wind_std_month_04,m s^-1,WorldClim
+Climate,wind_mean_month_05,m s^-1,WorldClim
+Climate,wind_std_month_05,m s^-1,WorldClim
+Climate,wind_mean_month_06,m s^-1,WorldClim
+Climate,wind_std_month_06,m s^-1,WorldClim
+Climate,wind_mean_month_07,m s^-1,WorldClim
+Climate,wind_std_month_07,m s^-1,WorldClim
+Climate,wind_mean_month_08,m s^-1,WorldClim
+Climate,wind_std_month_08,m s^-1,WorldClim
+Climate,wind_mean_month_09,m s^-1,WorldClim
+Climate,wind_std_month_09,m s^-1,WorldClim
+Climate,wind_mean_month_10,m s^-1,WorldClim
+Climate,wind_std_month_10,m s^-1,WorldClim
+Climate,wind_mean_month_11,m s^-1,WorldClim
+Climate,wind_std_month_11,m s^-1,WorldClim
+Climate,wind_mean_month_12,m s^-1,WorldClim
+Climate,wind_std_month_12,m s^-1,WorldClim
+Climate,pet2_mean_month_01,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_01,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_02,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_02,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_03,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_03,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_04,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_04,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_05,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_05,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_06,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_06,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_07,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_07,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_08,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_08,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_09,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_09,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_10,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_10,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_11,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_11,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_mean_month_12,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,pet2_std_month_12,mm month-1,"WorldClim (derived, Oudin et al., 2005)"
+Climate,aridity2_mean_month_01,-,WorldClim
+Climate,aridity2_std_month_01,-,WorldClim
+Climate,aridity2_mean_month_02,-,WorldClim
+Climate,aridity2_std_month_02,-,WorldClim
+Climate,aridity2_mean_month_03,-,WorldClim
+Climate,aridity2_std_month_03,-,WorldClim
+Climate,aridity2_mean_month_04,-,WorldClim
+Climate,aridity2_std_month_04,-,WorldClim
+Climate,aridity2_mean_month_05,-,WorldClim
+Climate,aridity2_std_month_05,-,WorldClim
+Climate,aridity2_mean_month_06,-,WorldClim
+Climate,aridity2_std_month_06,-,WorldClim
+Climate,aridity2_mean_month_07,-,WorldClim
+Climate,aridity2_std_month_07,-,WorldClim
+Climate,aridity2_mean_month_08,-,WorldClim
+Climate,aridity2_std_month_08,-,WorldClim
+Climate,aridity2_mean_month_09,-,WorldClim
+Climate,aridity2_std_month_09,-,WorldClim
+Climate,aridity2_mean_month_10,-,WorldClim
+Climate,aridity2_std_month_10,-,WorldClim
+Climate,aridity2_mean_month_11,-,WorldClim
+Climate,aridity2_std_month_11,-,WorldClim
+Climate,aridity2_mean_month_12,-,WorldClim
+Climate,aridity2_std_month_12,-,WorldClim
+Climate,fracsnow2_mean_month_01,-,WorldClim
+Climate,fracsnow2_std_month_01,-,WorldClim
+Climate,fracsnow2_mean_month_02,-,WorldClim
+Climate,fracsnow2_std_month_02,-,WorldClim
+Climate,fracsnow2_mean_month_03,-,WorldClim
+Climate,fracsnow2_std_month_03,-,WorldClim
+Climate,fracsnow2_mean_month_04,-,WorldClim
+Climate,fracsnow2_std_month_04,-,WorldClim
+Climate,fracsnow2_mean_month_05,-,WorldClim
+Climate,fracsnow2_std_month_05,-,WorldClim
+Climate,fracsnow2_mean_month_06,-,WorldClim
+Climate,fracsnow2_std_month_06,-,WorldClim
+Climate,fracsnow2_mean_month_07,-,WorldClim
+Climate,fracsnow2_std_month_07,-,WorldClim
+Climate,fracsnow2_mean_month_08,-,WorldClim
+Climate,fracsnow2_std_month_08,-,WorldClim
+Climate,fracsnow2_mean_month_09,-,WorldClim
+Climate,fracsnow2_std_month_09,-,WorldClim
+Climate,fracsnow2_mean_month_10,-,WorldClim
+Climate,fracsnow2_std_month_10,-,WorldClim
+Climate,fracsnow2_mean_month_11,-,WorldClim
+Climate,fracsnow2_std_month_11,-,WorldClim
+Climate,fracsnow2_mean_month_12,-,WorldClim
+Climate,fracsnow2_std_month_12,-,WorldClim
+Hydrology,num_years_hyd ,years,-
+Hydrology,daily_discharge_mean,mm d^-1,USGS/WSC
+Hydrology,daily_discharge_std,mm d^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_01,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_02,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_03,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_04,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_05,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_06,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_07,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_08,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_09,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_10,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_11,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_12,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_01,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_02,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_03,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_04,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_05,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_06,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_07,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_08,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_09,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_10,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_11,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_12,mm day^-1,USGS/WSC
+Hydrology,runoff_ratio_mean,-,"USGS/WSC, RDRS"
+Hydrology,runoff_ratio_std,-,"USGS/WSC, RDRS"
+Hydrology,streamflow_elasticity,-,"USGS/WSC, RDRS"
+Hydrology,fdc_slope_mean,-,USGS/WSC
+Hydrology,fdc_slope_std,-,USGS/WSC
+Hydrology,bfi_mean,-,USGS/WSC
+Hydrology,bfi_std,-,USGS/WSC
+Hydrology,hfd_mean,day of year,USGS/WSC
+Hydrology,hfd_std,days,USGS/WSC
+Hydrology,q1_mean,mm day^-1,USGS/WSC
+Hydrology,q1_std,mm day^-1,USGS/WSC
+Hydrology,q5_mean,mm day^-1,USGS/WSC
+Hydrology,q5_std,mm day^-1,USGS/WSC
+Hydrology,q10_mean,mm day^-1,USGS/WSC
+Hydrology,q10_std,mm day^-1,USGS/WSC
+Hydrology,q25_mean,mm day^-1,USGS/WSC
+Hydrology,q25_std,mm day^-1,USGS/WSC
+Hydrology,q50_mean,mm day^-1,USGS/WSC
+Hydrology,q50_std,mm day^-1,USGS/WSC
+Hydrology,q75_mean,mm day^-1,USGS/WSC
+Hydrology,q75_std,mm day^-1,USGS/WSC
+Hydrology,q90_mean,mm day^-1,USGS/WSC
+Hydrology,q90_std,mm day^-1,USGS/WSC
+Hydrology,q95_mean,mm day^-1,USGS/WSC
+Hydrology,q95_std,mm day^-1,USGS/WSC
+Hydrology,q99_mean,mm day^-1,USGS/WSC
+Hydrology,q99_std,mm day^-1,USGS/WSC
+Hydrology,no_flow_freq,days year^-1,USGS/WSC
+Hydrology,no_flow_dur_mean,days,USGS/WSC
+Hydrology,no_flow_dur_median,days,USGS/WSC
+Hydrology,no_flow_dur_skew,-,USGS/WSC
+Hydrology,no_flow_dur_kurtosis,-,USGS/WSC
+Hydrology,no_flow_timing,season,USGS/WSC
+Hydrology,low_flow_freq,days year^-1,USGS/WSC
+Hydrology,low_flow_dur_mean,days,USGS/WSC
+Hydrology,low_flow_dur_median,days,USGS/WSC
+Hydrology,low_flow_dur_skew,-,USGS/WSC
+Hydrology,low_flow_dur_kurtosis,-,USGS/WSC
+Hydrology,low_flow_timing,season,USGS/WSC
+Hydrology,high_flow_freq,days year^-1,USGS/WSC
+Hydrology,high_flow_dur_mean,days,USGS/WSC
+Hydrology,high_flow_dur_median,days,USGS/WSC
+Hydrology,high_flow_dur_skew,-,USGS/WSC
+Hydrology,high_flow_dur_kurtosis,-,USGS/WSC
+Hydrology,high_flow_timing,season,USGS/WSC
+Land cover,lai_mean_month_01,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_01,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_02,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_02,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_03,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_03,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_04,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_04,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_05,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_05,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_06,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_06,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_07,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_07,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_08,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_08,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_09,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_09,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_10,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_10,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_11,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_11,m^2 m^-2,MCD15A2H.061
+Land cover,lai_mean_month_12,m^2 m^-2,MCD15A2H.061
+Land cover,lai_std_month_12,m^2 m^-2,MCD15A2H.061
+Land cover,forest_height_2000_min,m,GLCLUC 2000-2020
+Land cover,forest_height_2000_mean,m,GLCLUC 2000-2020
+Land cover,forest_height_2000_max,m,GLCLUC 2000-2020
+Land cover,forest_height_2000_std,m,GLCLUC 2000-2020
+Land cover,forest_height_2020_min,m,GLCLUC 2000-2020
+Land cover,forest_height_2020_mean,m,GLCLUC 2000-2020
+Land cover,forest_height_2020_max,m,GLCLUC 2000-2020
+Land cover,forest_height_2020_std,m,GLCLUC 2000-2020
+Land cover,lc1_true_desert_fraction,-,GLCLU 2019
+Land cover,lc1_semi_arid_fraction,-,GLCLU 2019
+Land cover,lc1_dense_short_vegetation_fraction,-,GLCLU 2019
+Land cover,lc1_open_tree_cover_fraction,-,GLCLU 2019
+Land cover,lc1_dense_tree_cover_fraction,-,GLCLU 2019
+Land cover,lc1_tree_cover_gain_fraction,-,GLCLU 2019
+Land cover,lc1_tree_cover_loss_fraction,-,GLCLU 2019
+Land cover,lc1_salt_pan_fraction,-,GLCLU 2019
+Land cover,lc1_wetland_sparse_vegetation_fraction,-,GLCLU 2019
+Land cover,lc1_wetland_dense_short_vegetation_fraction,-,GLCLU 2019
+Land cover,lc1_wetland_open_tree_cover_fraction,-,GLCLU 2019
+Land cover,lc1_wetland_dense_tree_cover_fraction,-,GLCLU 2019
+Land cover,lc1_wetland_tree_cover_gain_fraction,-,GLCLU 2019
+Land cover,lc1_wetland_tree_cover_loss_fraction,-,GLCLU 2019
+Land cover,lc1_ice_fraction,-,GLCLU 2019
+Land cover,lc1_water_fraction,-,GLCLU 2019
+Land cover,lc1_cropland_fraction,-,GLCLU 2019
+Land cover,lc1_built_up_fraction,-,GLCLU 2019
+Land cover,lc1_ocean_fraction,-,GLCLU 2019
+Land cover,lc1_no_data_fraction,-,GLCLU 2019
+Land cover,lc2_evergreen_needleleaf_forest_fraction,-,MCD12Q1.061
+Land cover,lc2_evergreen_broadleaf_forest_fraction,-,MCD12Q1.061
+Land cover,lc2_deciduous_needleleaf_forest_fraction,-,MCD12Q1.061
+Land cover,lc2_deciduous_broadleaf_forest_fraction,-,MCD12Q1.061
+Land cover,lc2_mixed_forest_fraction,-,MCD12Q1.061
+Land cover,lc2_closed_shrubland_fraction,-,MCD12Q1.061
+Land cover,lc2_open_shrubland_fraction,-,MCD12Q1.061
+Land cover,lc2_woody_savanna_fraction,-,MCD12Q1.061
+Land cover,lc2_savanna_fraction,-,MCD12Q1.061
+Land cover,lc2_grassland_fraction,-,MCD12Q1.061
+Land cover,lc2_permanent_wetland_fraction,-,MCD12Q1.061
+Land cover,lc2_cropland_fraction,-,MCD12Q1.061
+Land cover,lc2_urban_and_built_up_fraction,-,MCD12Q1.061
+Land cover,lc2_cropland_natural_mosaic_fraction,-,MCD12Q1.061
+Land cover,lc2_permanent_snow_ice_fraction,-,MCD12Q1.061
+Land cover,lc2_barren_fraction,-,MCD12Q1.061
+Land cover,lc2_water_fraction,-,MCD12Q1.061
+Land cover,lc2_unclassified_fraction,-,MCD12Q1.061
+Land cover,lc3_water_fraction,-,LGRIP30
+Land cover,lc3_non_cropland_fraction,-,LGRIP30
+Land cover,lc3_irrigated_cropland_fraction,-,LGRIP30
+Land cover,lc3_rainfed_cropland_fraction,-,LGRIP30
+Topography,centroid_lat,degrees,MERIT Hydro
+Topography,centroid_lon,degrees,MERIT Hydro
+Topography,basin_area,km^2,MERIT Hydro
+Topography,gauge_lat,degrees,USGS/WSC
+Topography,gauge_lon,degrees,USGS/WSC
+Topography,elev_min,m.a.s.l.,MERIT Hydro
+Topography,elev_mean,m.a.s.l.,MERIT Hydro
+Topography,elev_max,m.a.s.l.,MERIT Hydro
+Topography,elev_std,m.a.s.l.,MERIT Hydro
+Topography,slope_min,degrees,MERIT Hydro
+Topography,slope_mean,degrees,MERIT Hydro
+Topography,slope_max,degrees,MERIT Hydro
+Topography,slope_std,degrees,MERIT Hydro
+Topography,aspect_min,degrees,MERIT Hydro
+Topography,aspect_mean,degrees,MERIT Hydro
+Topography,aspect_max,degrees,MERIT Hydro
+Topography,aspect_std,degrees,MERIT Hydro
+Topography,stream_length_min,km,MERIT Hydro Basins
+Topography,stream_length_mean,km,MERIT Hydro Basins
+Topography,stream_length_max,km,MERIT Hydro Basins
+Topography,stream_length_std,km,MERIT Hydro Basins
+Topography,segment_length_total,km,MERIT Hydro Basins
+Topography,stream_order_max,-,MERIT Hydro Basins
+Topography,stream_density,km^-1,"MERIT Hydro, MERIT Hydro Basins"
+Topography,elongation_ratio,-,"MERIT Hydro, MERIT Hydro Basins"
+Open water,open_water_number,-,HydroLAKES
+Open water,known_reservoirs,-,HydroLAKES
+Open water,open_water_area_min,km^2,HydroLAKES
+Open water,open_water_area_mean,km^2,HydroLAKES
+Open water,open_water_area_max,km^2,HydroLAKES
+Open water,open_water_area_std,km^2,HydroLAKES
+Open water,open_water_area_total,km^2,HydroLAKES
+Open water,open_water_volume_min,million~m^3,HydroLAKES
+Open water,open_water_volume_mean,million~m^3,HydroLAKES
+Open water,open_water_volume_max,million~m^3,HydroLAKES
+Open water,open_water_volume_std,million~m^3,HydroLAKES
+Open water,open_water_volume_total,million~m^3,HydroLAKES
+Open water,reservoir_area_min,km^2,HydroLAKES
+Open water,reservoir_area_mean,km^2,HydroLAKES
+Open water,reservoir_area_max,km^2,HydroLAKES
+Open water,reservoir_area_std,km^2,HydroLAKES
+Open water,reservoir_area_total,km^2,HydroLAKES
+Open water,reservoir_volume_min,million~m^3,HydroLAKES
+Open water,reservoir_volume_mean,million~m^3,HydroLAKES
+Open water,reservoir_volume_max,million~m^3,HydroLAKES
+Open water,reservoir_volume_std,million~m^3,HydroLAKES
+Open water,reservoir_volume_total,million~m^3,HydroLAKES
+Soil,regolith_thickness_min,m,Pelletier
+Soil,regolith_thickness_mean,m,Pelletier
+Soil,regolith_thickness_max,m,Pelletier
+Soil,regolith_thickness_std,m,Pelletier
+Soil,soil_thickness_min,m,Pelletier
+Soil,soil_thickness_mean,m,Pelletier
+Soil,soil_thickness_max,m,Pelletier
+Soil,soil_thickness_std,m,Pelletier
+Soil,sedimentary_thickness_min,m,Pelletier
+Soil,sedimentary_thickness_mean,m,Pelletier
+Soil,sedimentary_thickness_max,m,Pelletier
+Soil,sedimentary_thickness_std,m,Pelletier
+Soil,average_thickness_min,m,Pelletier
+Soil,average_thickness_mean,m,Pelletier
+Soil,average_thickness_max,m,Pelletier
+Soil,average_thickness_std,m,Pelletier
+Soil,bdod_0-5cm_mean_min,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_mean_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_mean_max,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_mean_std,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_uncertainty_min,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_uncertainty_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_uncertainty_max,cg cm^-3,SOILGRIDS
+Soil,bdod_0-5cm_uncertainty_std,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_mean_min,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_mean_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_mean_max,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_mean_std,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_uncertainty_min,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_uncertainty_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_uncertainty_max,cg cm^-3,SOILGRIDS
+Soil,bdod_5-15cm_uncertainty_std,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_mean_min,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_mean_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_mean_max,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_mean_std,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_uncertainty_min,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_uncertainty_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_uncertainty_max,cg cm^-3,SOILGRIDS
+Soil,bdod_15-30cm_uncertainty_std,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_mean_min,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_mean_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_mean_max,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_mean_std,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_uncertainty_min,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_uncertainty_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_uncertainty_max,cg cm^-3,SOILGRIDS
+Soil,bdod_30-60cm_uncertainty_std,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_mean_min,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_mean_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_mean_max,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_mean_std,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_uncertainty_min,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_uncertainty_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_uncertainty_max,cg cm^-3,SOILGRIDS
+Soil,bdod_60-100cm_uncertainty_std,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_mean_min,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_mean_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_mean_max,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_mean_std,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_uncertainty_min,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_uncertainty_mean,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_uncertainty_max,cg cm^-3,SOILGRIDS
+Soil,bdod_100-200cm_uncertainty_std,cg cm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_mean_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_mean_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_mean_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_mean_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_uncertainty_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_uncertainty_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_uncertainty_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_0-5cm_uncertainty_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_mean_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_mean_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_mean_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_mean_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_uncertainty_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_uncertainty_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_uncertainty_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_5-15cm_uncertainty_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_mean_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_mean_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_mean_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_mean_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_uncertainty_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_uncertainty_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_uncertainty_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_15-30cm_uncertainty_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_mean_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_mean_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_mean_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_mean_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_uncertainty_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_uncertainty_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_uncertainty_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_30-60cm_uncertainty_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_mean_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_mean_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_mean_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_mean_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_uncertainty_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_uncertainty_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_uncertainty_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_60-100cm_uncertainty_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_mean_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_mean_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_mean_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_mean_std,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_uncertainty_min,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_uncertainty_mean,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_uncertainty_max,cm^3 dm^-3,SOILGRIDS
+Soil,cfvo_100-200cm_uncertainty_std,cm^3 dm^-3,SOILGRIDS
+Soil,clay_0-5cm_mean_min,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_mean_max,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_mean_std,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,clay_0-5cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_mean_min,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_mean_max,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_mean_std,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,clay_5-15cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_mean_min,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_mean_max,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_mean_std,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,clay_15-30cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_mean_min,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_mean_max,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_mean_std,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,clay_30-60cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_mean_min,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_mean_max,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_mean_std,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,clay_60-100cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_mean_min,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_mean_max,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_mean_std,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,clay_100-200cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_mean_min,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_mean_max,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_mean_std,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,sand_0-5cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_mean_min,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_mean_max,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_mean_std,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,sand_5-15cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_mean_min,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_mean_max,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_mean_std,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,sand_15-30cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_mean_min,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_mean_max,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_mean_std,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,sand_30-60cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_mean_min,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_mean_max,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_mean_std,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,sand_60-100cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_mean_min,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_mean_max,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_mean_std,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,sand_100-200cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_mean_min,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_mean_max,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_mean_std,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,silt_0-5cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_mean_min,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_mean_max,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_mean_std,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,silt_5-15cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_mean_min,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_mean_max,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_mean_std,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,silt_15-30cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_mean_min,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_mean_max,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_mean_std,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,silt_30-60cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_mean_min,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_mean_max,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_mean_std,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,silt_60-100cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_mean_min,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_mean_mean,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_mean_max,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_mean_std,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_uncertainty_min,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_uncertainty_mean,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_uncertainty_max,g kg^-1,SOILGRIDS
+Soil,silt_100-200cm_uncertainty_std,g kg^-1,SOILGRIDS
+Soil,soc_0-5cm_mean_min,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_mean_mean,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_mean_max,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_mean_std,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_uncertainty_min,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_uncertainty_mean,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_uncertainty_max,dg kg^-1,SOILGRIDS
+Soil,soc_0-5cm_uncertainty_std,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_mean_min,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_mean_mean,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_mean_max,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_mean_std,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_uncertainty_min,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_uncertainty_mean,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_uncertainty_max,dg kg^-1,SOILGRIDS
+Soil,soc_5-15cm_uncertainty_std,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_mean_min,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_mean_mean,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_mean_max,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_mean_std,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_uncertainty_min,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_uncertainty_mean,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_uncertainty_max,dg kg^-1,SOILGRIDS
+Soil,soc_15-30cm_uncertainty_std,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_mean_min,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_mean_mean,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_mean_max,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_mean_std,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_uncertainty_min,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_uncertainty_mean,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_uncertainty_max,dg kg^-1,SOILGRIDS
+Soil,soc_30-60cm_uncertainty_std,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_mean_min,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_mean_mean,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_mean_max,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_mean_std,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_uncertainty_min,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_uncertainty_mean,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_uncertainty_max,dg kg^-1,SOILGRIDS
+Soil,soc_60-100cm_uncertainty_std,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_mean_min,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_mean_mean,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_mean_max,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_mean_std,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_uncertainty_min,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_uncertainty_mean,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_uncertainty_max,dg kg^-1,SOILGRIDS
+Soil,soc_100-200cm_uncertainty_std,dg kg^-1,SOILGRIDS
+Soil,porosity_0-5cm_mean_min,-,SOILGRIDS
+Soil,porosity_0-5cm_mean_mean,-,SOILGRIDS
+Soil,porosity_0-5cm_mean_max,-,SOILGRIDS
+Soil,porosity_0-5cm_mean_std,-,SOILGRIDS
+Soil,porosity_5-15cm_mean_min,-,SOILGRIDS
+Soil,porosity_5-15cm_mean_mean,-,SOILGRIDS
+Soil,porosity_5-15cm_mean_max,-,SOILGRIDS
+Soil,porosity_5-15cm_mean_std,-,SOILGRIDS
+Soil,porosity_15-30cm_mean_min,-,SOILGRIDS
+Soil,porosity_15-30cm_mean_mean,-,SOILGRIDS
+Soil,porosity_15-30cm_mean_max,-,SOILGRIDS
+Soil,porosity_15-30cm_mean_std,-,SOILGRIDS
+Soil,porosity_30-60cm_mean_min,-,SOILGRIDS
+Soil,porosity_30-60cm_mean_mean,-,SOILGRIDS
+Soil,porosity_30-60cm_mean_max,-,SOILGRIDS
+Soil,porosity_30-60cm_mean_std,-,SOILGRIDS
+Soil,porosity_60-100cm_mean_min,-,SOILGRIDS
+Soil,porosity_60-100cm_mean_mean,-,SOILGRIDS
+Soil,porosity_60-100cm_mean_max,-,SOILGRIDS
+Soil,porosity_60-100cm_mean_std,-,SOILGRIDS
+Soil,porosity_100-200cm_mean_min,-,SOILGRIDS
+Soil,porosity_100-200cm_mean_mean,-,SOILGRIDS
+Soil,porosity_100-200cm_mean_max,-,SOILGRIDS
+Soil,porosity_100-200cm_mean_std,-,SOILGRIDS
+Soil,conductivity_0-5cm_mean_min,cm hr^-1,SOILGRIDS
+Soil,conductivity_0-5cm_mean_harmonic_mean,cm hr^-1,SOILGRIDS
+Soil,conductivity_0-5cm_mean_max,cm hr^-1,SOILGRIDS
+Soil,conductivity_0-5cm_mean_std,cm hr^-1,SOILGRIDS
+Soil,conductivity_5-15cm_mean_min,cm hr^-1,SOILGRIDS
+Soil,conductivity_5-15cm_mean_harmonic_mean,cm hr^-1,SOILGRIDS
+Soil,conductivity_5-15cm_mean_max,cm hr^-1,SOILGRIDS
+Soil,conductivity_5-15cm_mean_std,cm hr^-1,SOILGRIDS
+Soil,conductivity_15-30cm_mean_min,cm hr^-1,SOILGRIDS
+Soil,conductivity_15-30cm_mean_harmonic_mean,cm hr^-1,SOILGRIDS
+Soil,conductivity_15-30cm_mean_max,cm hr^-1,SOILGRIDS
+Soil,conductivity_15-30cm_mean_std,cm hr^-1,SOILGRIDS
+Soil,conductivity_30-60cm_mean_min,cm hr^-1,SOILGRIDS
+Soil,conductivity_30-60cm_mean_harmonic_mean,cm hr^-1,SOILGRIDS
+Soil,conductivity_30-60cm_mean_max,cm hr^-1,SOILGRIDS
+Soil,conductivity_30-60cm_mean_std,cm hr^-1,SOILGRIDS
+Soil,conductivity_60-100cm_mean_min,cm hr^-1,SOILGRIDS
+Soil,conductivity_60-100cm_mean_harmonic_mean,cm hr^-1,SOILGRIDS
+Soil,conductivity_60-100cm_mean_max,cm hr^-1,SOILGRIDS
+Soil,conductivity_60-100cm_mean_std,cm hr^-1,SOILGRIDS
+Soil,conductivity_100-200cm_mean_min,cm hr^-1,SOILGRIDS
+Soil,conductivity_100-200cm_mean_harmonic_mean,cm hr^-1,SOILGRIDS
+Soil,conductivity_100-200cm_mean_max,cm hr^-1,SOILGRIDS
+Soil,conductivity_100-200cm_mean_std,cm hr^-1,SOILGRIDS
+Geology,porosity_min,-,GLHYMPS
+Geology,porosity_mean,-,GLHYMPS
+Geology,porosity_max,-,GLHYMPS
+Geology,porosity_std,-,GLHYMPS
+Geology,log_permeability_min,m^2,GLHYMPS
+Geology,log_permeability_mean,m^2,GLHYMPS
+Geology,log_permeability_max,m^2,GLHYMPS
+Geology,log_permeability_std,m^2,GLHYMPS

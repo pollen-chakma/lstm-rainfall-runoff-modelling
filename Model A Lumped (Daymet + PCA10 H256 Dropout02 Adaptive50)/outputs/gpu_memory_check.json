@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "gpu": "NVIDIA H100 80GB HBM3 MIG 1g.10gb",
+  "training_batch": 128,
+  "validation_batch": 256,
+  "train_peak_allocated_bytes": 679776768,
+  "total_peak_allocated_bytes": 679776768,
+  "device_total_bytes": 10468982784,
+  "precision": "float32",
+  "parameters": 292097
+}

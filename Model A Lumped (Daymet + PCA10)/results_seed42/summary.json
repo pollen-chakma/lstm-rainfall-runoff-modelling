@@ -1,0 +1,24 @@
+{
+  "model": "Daymet + PCA10",
+  "best_epoch": 20,
+  "test_start": "2005-01-01",
+  "test_end": "2009-12-31",
+  "groups": [
+    {
+      "seen_unseen": "Seen",
+      "total_basins": 1326,
+      "scored_basins": 1317,
+      "median_NSE": 0.6648497378333028,
+      "median_KGE": 0.6406171558542686,
+      "median_bias_percent": -2.6098476520102616
+    },
+    {
+      "seen_unseen": "Unseen",
+      "total_basins": 100,
+      "scored_basins": 100,
+      "median_NSE": 0.583862853038516,
+      "median_KGE": 0.5515887697547843,
+      "median_bias_percent": -0.16576704660668595
+    }
+  ]
+}

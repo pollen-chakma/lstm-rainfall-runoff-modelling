@@ -1,0 +1,107 @@
+import html
+baseline_reference=json.loads(zlib.decompress(base64.b64decode(BASELINE_REFERENCE_DATA)))
+baseline_index={r['basin_id']:r for r in baseline_reference}
+assert set(baseline_index)=={r['basin_id'] for r in all_metrics}
+def flow_errors(y,q):
+    good=np.isfinite(y)&np.isfinite(q);y=np.asarray(y[good],dtype='float64');q=np.asarray(q[good],dtype='float64');out={}
+    out['mean_bias_mm_day']=float((q-y).mean()) if len(y) else np.nan
+    out['negative_predictions']=int(np.sum(q<0));out['negative_prediction_percent']=float(np.mean(q<0)*100) if len(q) else np.nan
+    for label,quant in [('low',.1),('high',.9)]:
+        threshold=float(np.quantile(y,quant)) if len(y) else np.nan
+        keep=y<=threshold if label=='low' else y>=threshold
+        a,c=y[keep],q[keep];e=c-a
+        out.update({label+'_threshold_mm_day':threshold,label+'_n':len(a),label+'_RMSE':float(np.sqrt(np.mean(e*e))) if len(a) else np.nan,label+'_MAE':float(np.mean(np.abs(e))) if len(a) else np.nan,label+'_bias_mm_day':float(e.mean()) if len(a) else np.nan,label+'_bias_percent':float(100*e.sum()/a.sum()) if len(a) and a.sum()!=0 else np.nan})
+    return out
+
+verified=0
+for row in all_metrics:
+    tag='donor_temporal' if row['seen_unseen']=='Seen' else 'unseen100'
+    daily=list(csv.DictReader((OUT/tag/(row['basin_id']+'_predictions.csv')).open()))
+    dates=[x['date'] for x in daily];assert len(dates)==len(set(dates)) and all('2005-01-01'<=d<='2009-12-31' for d in dates)
+    date_hash=hashlib.sha256('\n'.join(dates).encode()).hexdigest();assert date_hash==baseline_index[row['basin_id']]['test_dates_sha256']
+    y=np.array([float(x['observed_mm_day']) for x in daily],dtype='float32');q=np.array([float(x['predicted_mm_day']) for x in daily],dtype='float64')
+    assert np.isfinite(q).all();good=np.isfinite(y);a,c=y[good],q[good];e=c-a
+    values=dict(NSE=np.nan,KGE=np.nan,bias_percent=np.nan,RMSE=float(np.sqrt(np.mean(e*e))) if len(a) else np.nan,MAE=float(np.mean(np.abs(e))) if len(a) else np.nan)
+    if len(a)>=2 and a.std()>0:
+        values['NSE']=float(1-np.sum(e*e)/np.sum((a-a.mean())**2))
+        correlation=np.corrcoef(a,c)[0,1] if c.std()>0 else np.nan
+        values['KGE']=float(1-np.sqrt((correlation-1)**2+(c.std()/a.std()-1)**2+(c.mean()/a.mean()-1)**2)) if a.mean()!=0 else np.nan
+        values['bias_percent']=float(100*(c.sum()-a.sum())/a.sum()) if a.sum()!=0 else np.nan
+    assert len(a)==row['n']==int(baseline_index[row['basin_id']]['n'])
+    for k,v in values.items():assert np.allclose(v,row[k],rtol=2e-5,atol=2e-5,equal_nan=True),(row['basin_id'],k)
+    row.update(flow_errors(y,q));row['test_dates_sha256']=date_hash
+    for k in ['low_threshold_mm_day','high_threshold_mm_day','low_n','high_n']:
+        assert np.allclose(float(row[k]),float(baseline_index[row['basin_id']][k]),rtol=1e-8,atol=1e-8,equal_nan=True),(row['basin_id'],k)
+    verified+=1
+    if verified%200==0:print('INDEPENDENT METRICS VERIFIED',verified,flush=True)
+save_csv(OUTPUT_BASE/'basin_model_performance.csv',all_metrics)
+save_csv(OUTPUT_BASE/'baseline_seed42_basin_performance.csv',baseline_reference)
+metrics=['NSE','KGE','RMSE','MAE','bias_percent','mean_bias_mm_day','low_RMSE','low_MAE','low_bias_mm_day','low_bias_percent','high_RMSE','high_MAE','high_bias_mm_day','high_bias_percent']
+summaries=[];paired=[];basin_comparison=[]
+def number(r,k):
+    try:return float(r[k])
+    except (ValueError,TypeError):return np.nan
+for group in ['Seen','Unseen']:
+    for model_name,rows in [('Baseline H64 / no dropout / 20 epochs',baseline_reference),('H256 / dropout 0.2 / adaptive max50',all_metrics)]:
+        rs=[r for r in rows if r['seen_unseen']==group]
+        for metric in metrics:
+            a=np.array([number(r,metric) for r in rs]);a=a[np.isfinite(a)]
+            summaries.append(dict(model=model_name,group=group,metric=metric,total_basins=len(rs),n=len(a),mean=float(a.mean()) if len(a) else np.nan,median=float(np.median(a)) if len(a) else np.nan,q1=float(np.quantile(a,.25)) if len(a) else np.nan,q3=float(np.quantile(a,.75)) if len(a) else np.nan,std=float(a.std(ddof=1)) if len(a)>1 else np.nan,minimum=float(a.min()) if len(a) else np.nan,maximum=float(a.max()) if len(a) else np.nan,negative=int(np.sum(a<0)) if metric in ['NSE','KGE'] else ''))
+    for metric in ['NSE','KGE','RMSE','MAE','low_RMSE','low_MAE','high_RMSE','high_MAE']:
+        pairs=[(number(baseline_index[r['basin_id']],metric),number(r,metric)) for r in all_metrics if r['seen_unseen']==group]
+        pairs=np.array(pairs);pairs=pairs[np.isfinite(pairs).all(1)];d=pairs[:,1]-pairs[:,0]
+        higher=metric in ['NSE','KGE'];win=d>0 if higher else d<0;lose=d<0 if higher else d>0
+        paired.append(dict(group=group,metric=metric,n=len(d),baseline_median=float(np.median(pairs[:,0])),new_median=float(np.median(pairs[:,1])),median_paired_change=float(np.median(d)),mean_paired_change=float(d.mean()),improved=int(win.sum()),worsened=int(lose.sum()),tied=int((d==0).sum()),better_direction='higher' if higher else 'lower'))
+for r in all_metrics:
+    old=baseline_index[r['basin_id']];row=dict(basin_id=r['basin_id'],seen_unseen=r['seen_unseen'],n=r['n'])
+    for metric in metrics:
+        a,b=number(old,metric),number(r,metric);row['baseline_'+metric]=a;row['new_'+metric]=b;row['change_'+metric]=b-a
+    basin_comparison.append(row)
+save_csv(OUTPUT_BASE/'model_performance_summary.csv',summaries)
+save_csv(OUTPUT_BASE/'paired_comparison_summary.csv',paired)
+save_csv(OUTPUT_BASE/'basin_baseline_comparison.csv',basin_comparison)
+history=json.loads((OUT/'history.json').read_text());selection=json.loads((OUT/'selection.json').read_text())
+assert history and len(history)<=50 and [r['epoch'] for r in history]==list(range(1,len(history)+1))
+assert selection['best_epoch']==min(history,key=lambda r:r['validation_loss'])['epoch']
+best0=float('inf');bad=0;lr_bad=0;rate=.001
+for row in history:
+    assert row['learning_rate_used']==rate
+    if row['validation_loss']<best0:best0=row['validation_loss'];bad=0;lr_bad=0
+    else:bad+=1;lr_bad+=1
+    if lr_bad>=3:rate=max(.00001,rate*.5);lr_bad=0
+    assert row['learning_rate_next']==rate and row['early_bad_epochs']==bad and row['lr_bad_epochs']==lr_bad
+assert (len(history)==50 and selection['stop_reason']=='max_epochs') or (bad==10 and selection['stop_reason']=='early_stopping')
+audit=json.loads((OUTPUT_BASE/'protocol_verification.json').read_text())
+for path,expected in audit['preserved_baseline_sha256'].items():
+    pth=Path(path)
+    if pth.exists():
+        hh=hashlib.sha256()
+        with pth.open('rb') as f:
+            for part in iter(lambda:f.read(16*1024*1024),b''):hh.update(part)
+        assert hh.hexdigest()==expected,'Prior experiment changed: '+path
+def table(rows):
+    if not rows:return '<p>No rows.</p>'
+    keys=list(rows[0])
+    def fmt(v):
+        if isinstance(v,(float,np.floating)):return f'{v:.4f}' if np.isfinite(v) else '—'
+        return str(v)
+    return '<div style="overflow:auto"><table><tr>'+''.join('<th>'+html.escape(k.replace('_',' '))+'</th>' for k in keys)+'</tr>'+''.join('<tr>'+''.join('<td>'+html.escape(fmt(r[k]))+'</td>' for k in keys)+'</tr>' for r in rows)+'</table></div>'
+def loss_chart(rows):
+    width=850;height=280;left=65;top=20;pw=750;ph=210
+    vals=[r[k] for r in rows for k in ['training_loss','validation_loss']];low=min(vals);high=max(vals);span=max(high-low,1e-8)
+    parts=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-label="Training and validation loss by epoch"><rect width="100%" height="100%" fill="white"/>']
+    for k,col in [('training_loss','#087f83'),('validation_loss','#d58536')]:
+        pts=' '.join(f'{left+pw*i/max(1,len(rows)-1):.2f},{top+ph*(1-(r[k]-low)/span):.2f}' for i,r in enumerate(rows));parts.append(f'<polyline points="{pts}" fill="none" stroke="{col}" stroke-width="2"/>')
+    parts.append(f'<text x="{left}" y="265" font-size="13">Epoch 1</text><text x="740" y="265" font-size="13">Epoch {len(rows)}</text><text x="5" y="30" font-size="12">{high:.3g}</text><text x="5" y="230" font-size="12">{low:.3g}</text></svg>')
+    return ''.join(parts)
+chart=loss_chart(history);(OUTPUT_BASE/'training_validation_loss.svg').write_text(chart)
+headline=[r for r in paired if r['metric'] in ['NSE','KGE','low_RMSE','high_RMSE']]
+report='<html><head><meta charset="utf-8"><style>body{font:15px sans-serif;max-width:1400px;margin:28px;color:#173c42}td,th{padding:8px;border:1px solid #dbe5e4;text-align:right}table{border-collapse:collapse}th{background:#eaf3f1}h1,h2{color:#126b70}svg{max-width:950px}</style></head><body><h1>Daymet + PCA10 mean/std · H256 / dropout 0.2 / adaptive50</h1><p>Seed 42. Train 1980–1999; validation 2000–2004; test 2005–2009. Completed '+str(len(history))+' epochs; selected epoch '+str(selection['best_epoch'])+' by validation loss only. Stop reason: '+selection['stop_reason']+'.</p><h2>Paired comparison with the original seed-42 baseline</h2>'+table(headline)+'<p>Changes are new minus baseline. Higher NSE/KGE is better; lower RMSE/MAE is better. Paired comparisons use only basins with finite scores in both experiments.</p><h2>Score distributions and negative-score counts</h2>'+table([r for r in summaries if r['metric'] in ['NSE','KGE','RMSE','bias_percent']])+'<h2>Training and validation</h2><p>Teal: training loss; orange: validation loss. Loss uses the unchanged basin-scaled squared-error definition.</p>'+chart+'<h2>Low-flow and high-flow evaluation</h2><p>Within each basin, low flow means observed test discharge ≤ Q10; high flow means ≥ Q90, including ties. Quantiles use finite observed/predicted test pairs only after checkpoint selection, and match the baseline exactly. Thresholds, sample counts, absolute and percentage errors are in the per-basin CSV. Percent bias is undefined when observed subset sum is zero.</p>'+table([r for r in paired if r['metric'] in ['low_RMSE','low_MAE','high_RMSE','high_MAE']])+'<h2>Saved results</h2><p>basin_model_performance.csv: all 1,426 basins, Seen/Unseen labels and extended flow errors. basin_baseline_comparison.csv: paired basin-level metrics. model_performance_summary.csv: distribution statistics. paired_comparison_summary.csv: improvement counts. results_seed42/: daily predictions, checkpoints, preprocessing, history and selection.</p><p>All daily metrics were independently recalculated. Original files were preserved. This is one seed and a combined architecture/training change; it does not isolate causal contributions or establish repeatable superiority.</p></body></html>'
+(OUTPUT_BASE/'model_report.html').write_text(report)
+atomic(OUTPUT_BASE/'results_verification.json',dict(status='passed',basins=verified,all_daily_metrics_recomputed=True,test_dates_and_thresholds_match_baseline=True,scheduler_and_stop_rules_verified=True,prior_experiment_hashes_preserved=True))
+completion=dict(status='complete',model='Daymet + PCA10 mean/std H256 dropout0.2 adaptive50',seed=42,epochs=len(history),best_epoch=selection['best_epoch'],stop_reason=selection['stop_reason'],basins=1426,seen=1326,unseen=100,parameters=292097)
+atomic(OUTPUT_BASE/'completion.json',completion);progress(phase='complete',**completion)
+display(HTML('<h2>Paired baseline comparison</h2>'+table(headline)))
+display(HTML('<h2>Performance distributions</h2>'+table([r for r in summaries if r['metric'] in ['NSE','KGE']])))
+display(HTML('<h2>Training history</h2>'+chart))
+print('COMPLETE',json.dumps(completion),flush=True)

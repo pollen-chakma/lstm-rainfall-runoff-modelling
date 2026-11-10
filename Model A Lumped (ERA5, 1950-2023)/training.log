@@ -1,0 +1,293 @@
+GPU NVIDIA H100 80GB HBM3 MIG 1g.10gb MEMORY_GiB 9.75
+LOADED 200 training donors
+LOADED 400 training donors
+LOADED 600 training donors
+LOADED 800 training donors
+LOADED 1000 training donors
+LOADED 1200 training donors
+SMOKE PASS CUDA; donors 1326 train windows 19521850 fixed validation windows 168960 unseen excluded from fitting 100
+PROGRESS epoch 1 batch 200 / 2652
+PROGRESS epoch 1 batch 400 / 2652
+PROGRESS epoch 1 batch 600 / 2652
+PROGRESS epoch 1 batch 800 / 2652
+PROGRESS epoch 1 batch 1000 / 2652
+PROGRESS epoch 1 batch 1200 / 2652
+PROGRESS epoch 1 batch 1400 / 2652
+PROGRESS epoch 1 batch 1600 / 2652
+PROGRESS epoch 1 batch 1800 / 2652
+PROGRESS epoch 1 batch 2000 / 2652
+PROGRESS epoch 1 batch 2200 / 2652
+PROGRESS epoch 1 batch 2400 / 2652
+PROGRESS epoch 1 batch 2600 / 2652
+EPOCH {'epoch': 1, 'training_loss': 0.6630107282041424, 'validation_loss': 0.7374723601479561, 'validation_donors': 1320, 'elapsed_seconds': 18}
+PROGRESS epoch 2 batch 200 / 2652
+PROGRESS epoch 2 batch 400 / 2652
+PROGRESS epoch 2 batch 600 / 2652
+PROGRESS epoch 2 batch 800 / 2652
+PROGRESS epoch 2 batch 1000 / 2652
+PROGRESS epoch 2 batch 1200 / 2652
+PROGRESS epoch 2 batch 1400 / 2652
+PROGRESS epoch 2 batch 1600 / 2652
+PROGRESS epoch 2 batch 1800 / 2652
+PROGRESS epoch 2 batch 2000 / 2652
+PROGRESS epoch 2 batch 2200 / 2652
+PROGRESS epoch 2 batch 2400 / 2652
+PROGRESS epoch 2 batch 2600 / 2652
+EPOCH {'epoch': 2, 'training_loss': 0.600997195906409, 'validation_loss': 0.6865679523124971, 'validation_donors': 1320, 'elapsed_seconds': 37}
+PROGRESS epoch 3 batch 200 / 2652
+PROGRESS epoch 3 batch 400 / 2652
+PROGRESS epoch 3 batch 600 / 2652
+PROGRESS epoch 3 batch 800 / 2652
+PROGRESS epoch 3 batch 1000 / 2652
+PROGRESS epoch 3 batch 1200 / 2652
+PROGRESS epoch 3 batch 1400 / 2652
+PROGRESS epoch 3 batch 1600 / 2652
+PROGRESS epoch 3 batch 1800 / 2652
+PROGRESS epoch 3 batch 2000 / 2652
+PROGRESS epoch 3 batch 2200 / 2652
+PROGRESS epoch 3 batch 2400 / 2652
+PROGRESS epoch 3 batch 2600 / 2652
+EPOCH {'epoch': 3, 'training_loss': 0.5595216061835645, 'validation_loss': 0.6649772289233121, 'validation_donors': 1320, 'elapsed_seconds': 55}
+PROGRESS epoch 4 batch 200 / 2652
+PROGRESS epoch 4 batch 400 / 2652
+PROGRESS epoch 4 batch 600 / 2652
+PROGRESS epoch 4 batch 800 / 2652
+PROGRESS epoch 4 batch 1000 / 2652
+PROGRESS epoch 4 batch 1200 / 2652
+PROGRESS epoch 4 batch 1400 / 2652
+PROGRESS epoch 4 batch 1600 / 2652
+PROGRESS epoch 4 batch 1800 / 2652
+PROGRESS epoch 4 batch 2000 / 2652
+PROGRESS epoch 4 batch 2200 / 2652
+PROGRESS epoch 4 batch 2400 / 2652
+PROGRESS epoch 4 batch 2600 / 2652
+EPOCH {'epoch': 4, 'training_loss': 0.5460127887581538, 'validation_loss': 0.6203460991228769, 'validation_donors': 1320, 'elapsed_seconds': 74}
+PROGRESS epoch 5 batch 200 / 2652
+PROGRESS epoch 5 batch 400 / 2652
+PROGRESS epoch 5 batch 600 / 2652
+PROGRESS epoch 5 batch 800 / 2652
+PROGRESS epoch 5 batch 1000 / 2652
+PROGRESS epoch 5 batch 1200 / 2652
+PROGRESS epoch 5 batch 1400 / 2652
+PROGRESS epoch 5 batch 1600 / 2652
+PROGRESS epoch 5 batch 1800 / 2652
+PROGRESS epoch 5 batch 2000 / 2652
+PROGRESS epoch 5 batch 2200 / 2652
+PROGRESS epoch 5 batch 2400 / 2652
+PROGRESS epoch 5 batch 2600 / 2652
+EPOCH {'epoch': 5, 'training_loss': 0.5255628793920372, 'validation_loss': 0.611150323918145, 'validation_donors': 1320, 'elapsed_seconds': 92}
+PROGRESS epoch 6 batch 200 / 2652
+PROGRESS epoch 6 batch 400 / 2652
+PROGRESS epoch 6 batch 600 / 2652
+PROGRESS epoch 6 batch 800 / 2652
+PROGRESS epoch 6 batch 1000 / 2652
+PROGRESS epoch 6 batch 1200 / 2652
+PROGRESS epoch 6 batch 1400 / 2652
+PROGRESS epoch 6 batch 1600 / 2652
+PROGRESS epoch 6 batch 1800 / 2652
+PROGRESS epoch 6 batch 2000 / 2652
+PROGRESS epoch 6 batch 2200 / 2652
+PROGRESS epoch 6 batch 2400 / 2652
+PROGRESS epoch 6 batch 2600 / 2652
+EPOCH {'epoch': 6, 'training_loss': 0.4967321164759935, 'validation_loss': 0.5963046191072943, 'validation_donors': 1320, 'elapsed_seconds': 111}
+PROGRESS epoch 7 batch 200 / 2652
+PROGRESS epoch 7 batch 400 / 2652
+PROGRESS epoch 7 batch 600 / 2652
+PROGRESS epoch 7 batch 800 / 2652
+PROGRESS epoch 7 batch 1000 / 2652
+PROGRESS epoch 7 batch 1200 / 2652
+PROGRESS epoch 7 batch 1400 / 2652
+PROGRESS epoch 7 batch 1600 / 2652
+PROGRESS epoch 7 batch 1800 / 2652
+PROGRESS epoch 7 batch 2000 / 2652
+PROGRESS epoch 7 batch 2200 / 2652
+PROGRESS epoch 7 batch 2400 / 2652
+PROGRESS epoch 7 batch 2600 / 2652
+EPOCH {'epoch': 7, 'training_loss': 0.4904552965395456, 'validation_loss': 0.5659460761376518, 'validation_donors': 1320, 'elapsed_seconds': 132}
+PROGRESS epoch 8 batch 200 / 2652
+PROGRESS epoch 8 batch 400 / 2652
+PROGRESS epoch 8 batch 600 / 2652
+PROGRESS epoch 8 batch 800 / 2652
+PROGRESS epoch 8 batch 1000 / 2652
+PROGRESS epoch 8 batch 1200 / 2652
+PROGRESS epoch 8 batch 1400 / 2652
+PROGRESS epoch 8 batch 1600 / 2652
+PROGRESS epoch 8 batch 1800 / 2652
+PROGRESS epoch 8 batch 2000 / 2652
+PROGRESS epoch 8 batch 2200 / 2652
+PROGRESS epoch 8 batch 2400 / 2652
+PROGRESS epoch 8 batch 2600 / 2652
+EPOCH {'epoch': 8, 'training_loss': 0.4522558848905977, 'validation_loss': 0.5551301680296845, 'validation_donors': 1320, 'elapsed_seconds': 150}
+PROGRESS epoch 9 batch 200 / 2652
+PROGRESS epoch 9 batch 400 / 2652
+PROGRESS epoch 9 batch 600 / 2652
+PROGRESS epoch 9 batch 800 / 2652
+PROGRESS epoch 9 batch 1000 / 2652
+PROGRESS epoch 9 batch 1200 / 2652
+PROGRESS epoch 9 batch 1400 / 2652
+PROGRESS epoch 9 batch 1600 / 2652
+PROGRESS epoch 9 batch 1800 / 2652
+PROGRESS epoch 9 batch 2000 / 2652
+PROGRESS epoch 9 batch 2200 / 2652
+PROGRESS epoch 9 batch 2400 / 2652
+PROGRESS epoch 9 batch 2600 / 2652
+EPOCH {'epoch': 9, 'training_loss': 0.48348630364804474, 'validation_loss': 0.5724756336607657, 'validation_donors': 1320, 'elapsed_seconds': 168}
+PROGRESS epoch 10 batch 200 / 2652
+PROGRESS epoch 10 batch 400 / 2652
+PROGRESS epoch 10 batch 600 / 2652
+PROGRESS epoch 10 batch 800 / 2652
+PROGRESS epoch 10 batch 1000 / 2652
+PROGRESS epoch 10 batch 1200 / 2652
+PROGRESS epoch 10 batch 1400 / 2652
+PROGRESS epoch 10 batch 1600 / 2652
+PROGRESS epoch 10 batch 1800 / 2652
+PROGRESS epoch 10 batch 2000 / 2652
+PROGRESS epoch 10 batch 2200 / 2652
+PROGRESS epoch 10 batch 2400 / 2652
+PROGRESS epoch 10 batch 2600 / 2652
+EPOCH {'epoch': 10, 'training_loss': 0.43686739176646616, 'validation_loss': 0.5484907262387725, 'validation_donors': 1320, 'elapsed_seconds': 186}
+PROGRESS epoch 11 batch 200 / 2652
+PROGRESS epoch 11 batch 400 / 2652
+PROGRESS epoch 11 batch 600 / 2652
+PROGRESS epoch 11 batch 800 / 2652
+PROGRESS epoch 11 batch 1000 / 2652
+PROGRESS epoch 11 batch 1200 / 2652
+PROGRESS epoch 11 batch 1400 / 2652
+PROGRESS epoch 11 batch 1600 / 2652
+PROGRESS epoch 11 batch 1800 / 2652
+PROGRESS epoch 11 batch 2000 / 2652
+PROGRESS epoch 11 batch 2200 / 2652
+PROGRESS epoch 11 batch 2400 / 2652
+PROGRESS epoch 11 batch 2600 / 2652
+EPOCH {'epoch': 11, 'training_loss': 0.44923823070887975, 'validation_loss': 0.5486551405078439, 'validation_donors': 1320, 'elapsed_seconds': 206}
+PROGRESS epoch 12 batch 200 / 2652
+PROGRESS epoch 12 batch 400 / 2652
+PROGRESS epoch 12 batch 600 / 2652
+PROGRESS epoch 12 batch 800 / 2652
+PROGRESS epoch 12 batch 1000 / 2652
+PROGRESS epoch 12 batch 1200 / 2652
+PROGRESS epoch 12 batch 1400 / 2652
+PROGRESS epoch 12 batch 1600 / 2652
+PROGRESS epoch 12 batch 1800 / 2652
+PROGRESS epoch 12 batch 2000 / 2652
+PROGRESS epoch 12 batch 2200 / 2652
+PROGRESS epoch 12 batch 2400 / 2652
+PROGRESS epoch 12 batch 2600 / 2652
+EPOCH {'epoch': 12, 'training_loss': 0.44392151104322836, 'validation_loss': 0.5295831985400293, 'validation_donors': 1320, 'elapsed_seconds': 225}
+PROGRESS epoch 13 batch 200 / 2652
+PROGRESS epoch 13 batch 400 / 2652
+PROGRESS epoch 13 batch 600 / 2652
+PROGRESS epoch 13 batch 800 / 2652
+PROGRESS epoch 13 batch 1000 / 2652
+PROGRESS epoch 13 batch 1200 / 2652
+PROGRESS epoch 13 batch 1400 / 2652
+PROGRESS epoch 13 batch 1600 / 2652
+PROGRESS epoch 13 batch 1800 / 2652
+PROGRESS epoch 13 batch 2000 / 2652
+PROGRESS epoch 13 batch 2200 / 2652
+PROGRESS epoch 13 batch 2400 / 2652
+PROGRESS epoch 13 batch 2600 / 2652
+EPOCH {'epoch': 13, 'training_loss': 0.4325167784891562, 'validation_loss': 0.5356057558413299, 'validation_donors': 1320, 'elapsed_seconds': 246}
+PROGRESS epoch 14 batch 200 / 2652
+PROGRESS epoch 14 batch 400 / 2652
+PROGRESS epoch 14 batch 600 / 2652
+PROGRESS epoch 14 batch 800 / 2652
+PROGRESS epoch 14 batch 1000 / 2652
+PROGRESS epoch 14 batch 1200 / 2652
+PROGRESS epoch 14 batch 1400 / 2652
+PROGRESS epoch 14 batch 1600 / 2652
+PROGRESS epoch 14 batch 1800 / 2652
+PROGRESS epoch 14 batch 2000 / 2652
+PROGRESS epoch 14 batch 2200 / 2652
+PROGRESS epoch 14 batch 2400 / 2652
+PROGRESS epoch 14 batch 2600 / 2652
+EPOCH {'epoch': 14, 'training_loss': 0.44919288625623216, 'validation_loss': 0.5352675906712691, 'validation_donors': 1320, 'elapsed_seconds': 264}
+PROGRESS epoch 15 batch 200 / 2652
+PROGRESS epoch 15 batch 400 / 2652
+PROGRESS epoch 15 batch 600 / 2652
+PROGRESS epoch 15 batch 800 / 2652
+PROGRESS epoch 15 batch 1000 / 2652
+PROGRESS epoch 15 batch 1200 / 2652
+PROGRESS epoch 15 batch 1400 / 2652
+PROGRESS epoch 15 batch 1600 / 2652
+PROGRESS epoch 15 batch 1800 / 2652
+PROGRESS epoch 15 batch 2000 / 2652
+PROGRESS epoch 15 batch 2200 / 2652
+PROGRESS epoch 15 batch 2400 / 2652
+PROGRESS epoch 15 batch 2600 / 2652
+EPOCH {'epoch': 15, 'training_loss': 0.4248542777862439, 'validation_loss': 0.537367706426494, 'validation_donors': 1320, 'elapsed_seconds': 283}
+PROGRESS epoch 16 batch 200 / 2652
+PROGRESS epoch 16 batch 400 / 2652
+PROGRESS epoch 16 batch 600 / 2652
+PROGRESS epoch 16 batch 800 / 2652
+PROGRESS epoch 16 batch 1000 / 2652
+PROGRESS epoch 16 batch 1200 / 2652
+PROGRESS epoch 16 batch 1400 / 2652
+PROGRESS epoch 16 batch 1600 / 2652
+PROGRESS epoch 16 batch 1800 / 2652
+PROGRESS epoch 16 batch 2000 / 2652
+PROGRESS epoch 16 batch 2200 / 2652
+PROGRESS epoch 16 batch 2400 / 2652
+PROGRESS epoch 16 batch 2600 / 2652
+EPOCH {'epoch': 16, 'training_loss': 0.4277587179263118, 'validation_loss': 0.5087167505014479, 'validation_donors': 1320, 'elapsed_seconds': 301}
+PROGRESS epoch 17 batch 200 / 2652
+PROGRESS epoch 17 batch 400 / 2652
+PROGRESS epoch 17 batch 600 / 2652
+PROGRESS epoch 17 batch 800 / 2652
+PROGRESS epoch 17 batch 1000 / 2652
+PROGRESS epoch 17 batch 1200 / 2652
+PROGRESS epoch 17 batch 1400 / 2652
+PROGRESS epoch 17 batch 1600 / 2652
+PROGRESS epoch 17 batch 1800 / 2652
+PROGRESS epoch 17 batch 2000 / 2652
+PROGRESS epoch 17 batch 2200 / 2652
+PROGRESS epoch 17 batch 2400 / 2652
+PROGRESS epoch 17 batch 2600 / 2652
+EPOCH {'epoch': 17, 'training_loss': 0.44164850803999567, 'validation_loss': 0.5162117024944862, 'validation_donors': 1320, 'elapsed_seconds': 321}
+PROGRESS epoch 18 batch 200 / 2652
+PROGRESS epoch 18 batch 400 / 2652
+PROGRESS epoch 18 batch 600 / 2652
+PROGRESS epoch 18 batch 800 / 2652
+PROGRESS epoch 18 batch 1000 / 2652
+PROGRESS epoch 18 batch 1200 / 2652
+PROGRESS epoch 18 batch 1400 / 2652
+PROGRESS epoch 18 batch 1600 / 2652
+PROGRESS epoch 18 batch 1800 / 2652
+PROGRESS epoch 18 batch 2000 / 2652
+PROGRESS epoch 18 batch 2200 / 2652
+PROGRESS epoch 18 batch 2400 / 2652
+PROGRESS epoch 18 batch 2600 / 2652
+EPOCH {'epoch': 18, 'training_loss': 0.4361242432720386, 'validation_loss': 0.5199442008468954, 'validation_donors': 1320, 'elapsed_seconds': 340}
+PROGRESS epoch 19 batch 200 / 2652
+PROGRESS epoch 19 batch 400 / 2652
+PROGRESS epoch 19 batch 600 / 2652
+PROGRESS epoch 19 batch 800 / 2652
+PROGRESS epoch 19 batch 1000 / 2652
+PROGRESS epoch 19 batch 1200 / 2652
+PROGRESS epoch 19 batch 1400 / 2652
+PROGRESS epoch 19 batch 1600 / 2652
+PROGRESS epoch 19 batch 1800 / 2652
+PROGRESS epoch 19 batch 2000 / 2652
+PROGRESS epoch 19 batch 2200 / 2652
+PROGRESS epoch 19 batch 2400 / 2652
+PROGRESS epoch 19 batch 2600 / 2652
+EPOCH {'epoch': 19, 'training_loss': 0.415036533169763, 'validation_loss': 0.5180453087057847, 'validation_donors': 1320, 'elapsed_seconds': 357}
+PROGRESS epoch 20 batch 200 / 2652
+PROGRESS epoch 20 batch 400 / 2652
+PROGRESS epoch 20 batch 600 / 2652
+PROGRESS epoch 20 batch 800 / 2652
+PROGRESS epoch 20 batch 1000 / 2652
+PROGRESS epoch 20 batch 1200 / 2652
+PROGRESS epoch 20 batch 1400 / 2652
+PROGRESS epoch 20 batch 1600 / 2652
+PROGRESS epoch 20 batch 1800 / 2652
+PROGRESS epoch 20 batch 2000 / 2652
+PROGRESS epoch 20 batch 2200 / 2652
+PROGRESS epoch 20 batch 2400 / 2652
+PROGRESS epoch 20 batch 2600 / 2652
+EPOCH {'epoch': 20, 'training_loss': 0.42250029390697474, 'validation_loss': 0.49846836820327806, 'validation_donors': 1320, 'elapsed_seconds': 376}
+EVALUATED unseen 25 / 100
+EVALUATED unseen 50 / 100
+EVALUATED unseen 75 / 100
+EVALUATED unseen 100 / 100
+COMPLETE /home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5, 1950-2023)/run_seed42 {'unseen_basins': 100, 'unseen_scored_basins': 99, 'median_NSE': 0.5321503927756013, 'median_KGE': 0.514862213219804}

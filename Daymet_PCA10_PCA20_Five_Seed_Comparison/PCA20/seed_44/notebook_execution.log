@@ -1,0 +1,187 @@
+CELL START 2
+GPU: NVIDIA H100 80GB HBM3 MIG 1g.10gb
+CSV: /home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_44/daymet_pca20_discharge_1980_2009.csv
+Only model inputs: ['prcp', 'tmax', 'tmin', 'srad', 'vp', 'dayl', 'pet']
+Static inputs: ['PC01_mean', 'PC01_std', 'PC02_mean', 'PC02_std', 'PC03_mean', 'PC03_std', 'PC04_mean', 'PC04_std', 'PC05_mean', 'PC05_std', 'PC06_mean', 'PC06_std', 'PC07_mean', 'PC07_std', 'PC08_mean', 'PC08_std', 'PC09_mean', 'PC09_std', 'PC10_mean', 'PC10_std', 'PC11_mean', 'PC11_std', 'PC12_mean', 'PC12_std', 'PC13_mean', 'PC13_std', 'PC14_mean', 'PC14_std', 'PC15_mean', 'PC15_std', 'PC16_mean', 'PC16_std', 'PC17_mean', 'PC17_std', 'PC18_mean', 'PC18_std', 'PC19_mean', 'PC19_std', 'PC20_mean', 'PC20_std']
+CELL FINISHED 2
+CELL START 3
+CELL FINISHED 3
+CELL START 4
+CSV catchments loaded: 200
+CSV catchments loaded: 400
+CSV catchments loaded: 600
+CSV catchments loaded: 800
+CSV catchments loaded: 1000
+CSV catchments loaded: 1200
+CSV catchments loaded: 1400
+CSV is the sole data source. Exact original split verified.
+CELL FINISHED 4
+CELL START 6
+Training windows: 8129370 fixed validation windows: 165015 validation donors: 1290
+Static scaler fitted once per donor basin; 47 LSTM input channels.
+CELL FINISHED 6
+CELL START 8
+PROGRESS 1 400
+PROGRESS 1 800
+PROGRESS 1 1200
+PROGRESS 1 1600
+PROGRESS 1 2000
+PROGRESS 1 2400
+EPOCH {'epoch': 1, 'training_loss': 0.5560589498288222, 'validation_loss': 0.38180333689091933, 'validation_donors': 1290, 'elapsed_seconds': 29}
+PROGRESS 2 400
+PROGRESS 2 800
+PROGRESS 2 1200
+PROGRESS 2 1600
+PROGRESS 2 2000
+PROGRESS 2 2400
+EPOCH {'epoch': 2, 'training_loss': 0.43419656189801914, 'validation_loss': 0.3505898712020857, 'validation_donors': 1290, 'elapsed_seconds': 57}
+PROGRESS 3 400
+PROGRESS 3 800
+PROGRESS 3 1200
+PROGRESS 3 1600
+PROGRESS 3 2000
+PROGRESS 3 2400
+EPOCH {'epoch': 3, 'training_loss': 0.3774121789862914, 'validation_loss': 0.3153557960790742, 'validation_donors': 1290, 'elapsed_seconds': 85}
+PROGRESS 4 400
+PROGRESS 4 800
+PROGRESS 4 1200
+PROGRESS 4 1600
+PROGRESS 4 2000
+PROGRESS 4 2400
+EPOCH {'epoch': 4, 'training_loss': 0.369674786116203, 'validation_loss': 0.30988877096259987, 'validation_donors': 1290, 'elapsed_seconds': 113}
+PROGRESS 5 400
+PROGRESS 5 800
+PROGRESS 5 1200
+PROGRESS 5 1600
+PROGRESS 5 2000
+PROGRESS 5 2400
+EPOCH {'epoch': 5, 'training_loss': 0.32212197114917174, 'validation_loss': 0.2830818333447819, 'validation_donors': 1290, 'elapsed_seconds': 141}
+PROGRESS 6 400
+PROGRESS 6 800
+PROGRESS 6 1200
+PROGRESS 6 1600
+PROGRESS 6 2000
+PROGRESS 6 2400
+EPOCH {'epoch': 6, 'training_loss': 0.3207632692468944, 'validation_loss': 0.2765228767279923, 'validation_donors': 1290, 'elapsed_seconds': 169}
+PROGRESS 7 400
+PROGRESS 7 800
+PROGRESS 7 1200
+PROGRESS 7 1600
+PROGRESS 7 2000
+PROGRESS 7 2400
+EPOCH {'epoch': 7, 'training_loss': 0.30980468605859923, 'validation_loss': 0.272537183152468, 'validation_donors': 1290, 'elapsed_seconds': 198}
+PROGRESS 8 400
+PROGRESS 8 800
+PROGRESS 8 1200
+PROGRESS 8 1600
+PROGRESS 8 2000
+PROGRESS 8 2400
+EPOCH {'epoch': 8, 'training_loss': 0.29871434389106466, 'validation_loss': 0.26343045408160953, 'validation_donors': 1290, 'elapsed_seconds': 227}
+PROGRESS 9 400
+PROGRESS 9 800
+PROGRESS 9 1200
+PROGRESS 9 1600
+PROGRESS 9 2000
+PROGRESS 9 2400
+EPOCH {'epoch': 9, 'training_loss': 0.3058160308630488, 'validation_loss': 0.2638188392377731, 'validation_donors': 1290, 'elapsed_seconds': 255}
+PROGRESS 10 400
+PROGRESS 10 800
+PROGRESS 10 1200
+PROGRESS 10 1600
+PROGRESS 10 2000
+PROGRESS 10 2400
+EPOCH {'epoch': 10, 'training_loss': 0.2927671386642581, 'validation_loss': 0.2647880720961498, 'validation_donors': 1290, 'elapsed_seconds': 283}
+PROGRESS 11 400
+PROGRESS 11 800
+PROGRESS 11 1200
+PROGRESS 11 1600
+PROGRESS 11 2000
+PROGRESS 11 2400
+EPOCH {'epoch': 11, 'training_loss': 0.288009837497346, 'validation_loss': 0.2566748310884132, 'validation_donors': 1290, 'elapsed_seconds': 312}
+PROGRESS 12 400
+PROGRESS 12 800
+PROGRESS 12 1200
+PROGRESS 12 1600
+PROGRESS 12 2000
+PROGRESS 12 2400
+EPOCH {'epoch': 12, 'training_loss': 0.2666571465311052, 'validation_loss': 0.24668362893072146, 'validation_donors': 1290, 'elapsed_seconds': 341}
+PROGRESS 13 400
+PROGRESS 13 800
+PROGRESS 13 1200
+PROGRESS 13 1600
+PROGRESS 13 2000
+PROGRESS 13 2400
+EPOCH {'epoch': 13, 'training_loss': 0.27540085989094115, 'validation_loss': 0.24982646372138032, 'validation_donors': 1290, 'elapsed_seconds': 370}
+PROGRESS 14 400
+PROGRESS 14 800
+PROGRESS 14 1200
+PROGRESS 14 1600
+PROGRESS 14 2000
+PROGRESS 14 2400
+EPOCH {'epoch': 14, 'training_loss': 0.26541558597068304, 'validation_loss': 0.24741756521078, 'validation_donors': 1290, 'elapsed_seconds': 399}
+PROGRESS 15 400
+PROGRESS 15 800
+PROGRESS 15 1200
+PROGRESS 15 1600
+PROGRESS 15 2000
+PROGRESS 15 2400
+EPOCH {'epoch': 15, 'training_loss': 0.2714479640645971, 'validation_loss': 0.24556856639518276, 'validation_donors': 1290, 'elapsed_seconds': 428}
+PROGRESS 16 400
+PROGRESS 16 800
+PROGRESS 16 1200
+PROGRESS 16 1600
+PROGRESS 16 2000
+PROGRESS 16 2400
+EPOCH {'epoch': 16, 'training_loss': 0.2498448801832344, 'validation_loss': 0.2533556085874053, 'validation_donors': 1290, 'elapsed_seconds': 457}
+PROGRESS 17 400
+PROGRESS 17 800
+PROGRESS 17 1200
+PROGRESS 17 1600
+PROGRESS 17 2000
+PROGRESS 17 2400
+EPOCH {'epoch': 17, 'training_loss': 0.2743048765984551, 'validation_loss': 0.2486100526875632, 'validation_donors': 1290, 'elapsed_seconds': 485}
+PROGRESS 18 400
+PROGRESS 18 800
+PROGRESS 18 1200
+PROGRESS 18 1600
+PROGRESS 18 2000
+PROGRESS 18 2400
+EPOCH {'epoch': 18, 'training_loss': 0.27820741751007905, 'validation_loss': 0.23979095376172677, 'validation_donors': 1290, 'elapsed_seconds': 513}
+PROGRESS 19 400
+PROGRESS 19 800
+PROGRESS 19 1200
+PROGRESS 19 1600
+PROGRESS 19 2000
+PROGRESS 19 2400
+EPOCH {'epoch': 19, 'training_loss': 0.2641747512645334, 'validation_loss': 0.2485515145534906, 'validation_donors': 1290, 'elapsed_seconds': 541}
+PROGRESS 20 400
+PROGRESS 20 800
+PROGRESS 20 1200
+PROGRESS 20 1600
+PROGRESS 20 2000
+PROGRESS 20 2400
+EPOCH {'epoch': 20, 'training_loss': 0.2510735099744698, 'validation_loss': 0.2432035321355359, 'validation_donors': 1290, 'elapsed_seconds': 569}
+Best epoch: 18
+CELL FINISHED 8
+CELL START 10
+TEST unseen100 100 / 100
+TEST donor_temporal 100 / 1326
+TEST donor_temporal 200 / 1326
+TEST donor_temporal 300 / 1326
+TEST donor_temporal 400 / 1326
+TEST donor_temporal 500 / 1326
+TEST donor_temporal 600 / 1326
+TEST donor_temporal 700 / 1326
+TEST donor_temporal 800 / 1326
+TEST donor_temporal 900 / 1326
+TEST donor_temporal 1000 / 1326
+TEST donor_temporal 1100 / 1326
+TEST donor_temporal 1200 / 1326
+TEST donor_temporal 1300 / 1326
+TEST donor_temporal 1326 / 1326
+Both test groups complete. Basin-level metrics exported beside this notebook.
+CELL FINISHED 10
+CELL START 12
+Completed all 20 epochs and both test groups. All 1426 basin rows exported; See basin_model_performance.csv.
+CELL FINISHED 12
+NOTEBOOK EXECUTION COMPLETE

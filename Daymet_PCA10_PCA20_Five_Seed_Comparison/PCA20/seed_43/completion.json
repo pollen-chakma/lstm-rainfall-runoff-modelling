@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "epochs": 20,
+  "best_epoch": 15,
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100
+}

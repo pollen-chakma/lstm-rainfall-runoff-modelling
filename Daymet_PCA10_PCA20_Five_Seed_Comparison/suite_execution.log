@@ -1,0 +1,38 @@
+RUN START PCA10/seed_43
+RUN COMPLETE PCA10/seed_43
+RUN START PCA20/seed_43
+RUN COMPLETE PCA20/seed_43
+RUN START PCA10/seed_44
+RUN COMPLETE PCA10/seed_44
+RUN START PCA20/seed_44
+RUN COMPLETE PCA20/seed_44
+RUN START PCA10/seed_45
+RUN COMPLETE PCA10/seed_45
+RUN START PCA20/seed_45
+RUN COMPLETE PCA20/seed_45
+RUN START PCA10/seed_46
+RUN START PCA10/seed_46
+RUN COMPLETE PCA10/seed_46
+RUN START PCA20/seed_46
+RUN COMPLETE PCA20/seed_46
+VERIFIED AND ENSEMBLED 10 200
+VERIFIED AND ENSEMBLED 10 400
+VERIFIED AND ENSEMBLED 10 600
+VERIFIED AND ENSEMBLED 10 800
+VERIFIED AND ENSEMBLED 10 1000
+VERIFIED AND ENSEMBLED 10 1200
+VERIFIED AND ENSEMBLED 10 1400
+VERIFIED AND ENSEMBLED 20 200
+VERIFIED AND ENSEMBLED 20 400
+VERIFIED AND ENSEMBLED 20 600
+VERIFIED AND ENSEMBLED 20 800
+VERIFIED AND ENSEMBLED 20 1000
+VERIFIED AND ENSEMBLED 20 1200
+VERIFIED AND ENSEMBLED 20 1400
+REPEATABILITY [{"group": "Seen", "metric": "NSE", "model": "PCA10", "seeds": 5, "mean_of_seed_medians": 0.6716389781961165, "std_of_seed_medians": 0.0047599212216752704, "minimum_seed_median": 0.6648497378333028, "maximum_seed_median": 0.6777497934884149, "mean_of_seed_means": 0.4315664189693167, "mean_negative_basin_count": 71.4, "minimum_negative_count": 59, "maximum_negative_count": 84}, {"group": "Seen", "metric": "NSE", "model": "PCA20", "seeds": 5, "mean_of_seed_medians": 0.6861393761690905, "std_of_seed_medians": 0.006703229310042497, "minimum_seed_median": 0.6791478350644944, "maximum_seed_median": 0.6947471473534876, "mean_of_seed_means": 0.5017113720935076, "mean_negative_basin_count": 58.6, "minimum_negative_count": 56, "maximum_negative_count": 61}, {"group": "Seen", "metric": "KGE", "model": "PCA10", "seeds": 5, "mean_of_seed_medians": 0.6520561268049541, "std_of_seed_medians": 0.01710551371089617, "minimum_seed_median": 0.632981081030326, "maximum_seed_median": 0.6737691480126118, "mean_of_seed_means": 0.44607110104573067, "mean_negative_basin_count": 98.0, "minimum_negative_count": 91, "maximum_negative_count": 111}, {"group": "Seen", "metric": "KGE", "model": "PCA20", "seeds": 5, "mean_of_seed_medians": 0.6572146636505982, "std_of_seed_medians": 0.015587176775348153, "minimum_seed_median": 0.6433483438669356, "maximum_seed_median": 0.6808566620901002, "mean_of_seed_means": 0.5008909671068114, "mean_negative_basin_count": 83.0, "minimum_negative_count": 77, "maximum_negative_count": 91}, {"group": "Unseen", "metric": "NSE", "model": "PCA10", "seeds": 5, "mean_of_seed_medians": 0.6106153639190649, "std_of_seed_medians": 0.016460999864715057, "minimum_seed_median": 0.583862853038516, "maximum_seed_median": 0.6259192507648969, "mean_of_seed_means": 0.48008405758612627, "mean_negative_basin_count": 7.4, "minimum_negative_count": 5, "maximum_negative_count": 9}, {"group": "Unseen", "metric": "NSE", "model": "PCA20", "seeds": 5, "mean_of_seed_medians": 0.5909372962873217, "std_of_seed_medians": 0.00597329423424038, "minimum_seed_median": 0.5819785660154173, "maximum_seed_median": 0.5975163229611928, "mean_of_seed_means": 0.468227625172989, "mean_negative_basin_count": 7.0, "minimum_negative_count": 4, "maximum_negative_count": 10}, {"group": "Unseen", "metric": "KGE", "model": "PCA10", "seeds": 5, "mean_of_seed_medians": 0.5414548852266039, "std_of_seed_medians": 0.020512958197859695, "minimum_seed_median": 0.5117208999450654, "maximum_seed_median": 0.5595861208774218, "mean_of_seed_means": 0.4342071473195041, "mean_negative_basin_count": 11.6, "minimum_negative_count": 8, "maximum_negative_count": 14}, {"group": "Unseen", "metric": "KGE", "model": "PCA20", "seeds": 5, "mean_of_seed_medians": 0.5436195093986338, "std_of_seed_medians": 0.03106109500568395, "minimum_seed_median": 0.5136463474233484, "maximum_seed_median": 0.5956422353066348, "mean_of_seed_means": 0.4547084798730944, "mean_negative_basin_count": 9.4, "minimum_negative_count": 7, "maximum_negative_count": 11}]
+PAIRED [{"group": "Seen", "metric": "NSE", "paired_seeds": 5, "PCA20_seed_median_wins": 5, "PCA10_seed_median_wins": 0, "mean_change_in_seed_median": 0.014500397972974022, "minimum_change": 0.007421372082294653, "maximum_change": 0.018215994918347356, "wilcoxon_two_sided_p": 0.0625, "holm_adjusted_p": 0.25}, {"group": "Seen", "metric": "KGE", "paired_seeds": 5, "PCA20_seed_median_wins": 3, "PCA10_seed_median_wins": 2, "mean_change_in_seed_median": 0.00515853684564418, "minimum_change": -0.013693887554053763, "maximum_change": 0.03156724715389292, "wilcoxon_two_sided_p": 0.625, "holm_adjusted_p": 1.0}, {"group": "Unseen", "metric": "NSE", "paired_seeds": 5, "PCA20_seed_median_wins": 1, "PCA10_seed_median_wins": 4, "mean_change_in_seed_median": -0.01967806763174309, "minimum_change": -0.04394068474947954, "maximum_change": 0.010927400595022174, "wilcoxon_two_sided_p": 0.1875, "holm_adjusted_p": 0.5625}, {"group": "Unseen", "metric": "KGE", "paired_seeds": 5, "PCA20_seed_median_wins": 2, "PCA10_seed_median_wins": 3, "mean_change_in_seed_median": 0.002164624172029894, "minimum_change": -0.021847418409518427, "maximum_change": 0.03605611442921308, "wilcoxon_two_sided_p": 0.8125, "holm_adjusted_p": 1.0}]
+ENSEMBLES [{"group": "Seen", "metric": "NSE", "model": "PCA10", "n": 1317, "mean": 0.5713363791272731, "median": 0.7043924423309909, "q1": 0.5533901135823482, "q3": 0.8027031949046337, "negative": 50}, {"group": "Seen", "metric": "NSE", "model": "PCA20", "n": 1317, "mean": 0.5867875911221434, "median": 0.7192426063581946, "q1": 0.5690989538682738, "q3": 0.8071430574866137, "negative": 43}, {"group": "Seen", "metric": "KGE", "model": "PCA10", "n": 1317, "mean": 0.55784587771962, "median": 0.6699655810943919, "q1": 0.4840266918522733, "q3": 0.7891494488541603, "negative": 74}, {"group": "Seen", "metric": "KGE", "model": "PCA20", "n": 1317, "mean": 0.5548210156576673, "median": 0.6862975867928851, "q1": 0.4986039377074112, "q3": 0.7950788855072254, "negative": 57}, {"group": "Unseen", "metric": "NSE", "model": "PCA10", "n": 100, "mean": 0.5658452035632852, "median": 0.662422903632547, "q1": 0.5187633862889521, "q3": 0.7528105088010585, "negative": 6}, {"group": "Unseen", "metric": "NSE", "model": "PCA20", "n": 100, "mean": 0.5505691418587054, "median": 0.6326784179570362, "q1": 0.48497804492371743, "q3": 0.7638190752657091, "negative": 5}, {"group": "Unseen", "metric": "KGE", "model": "PCA10", "n": 100, "mean": 0.4852171836824054, "median": 0.56367240400234, "q1": 0.3921769439480679, "q3": 0.7203350770530994, "negative": 9}, {"group": "Unseen", "metric": "KGE", "model": "PCA20", "n": 100, "mean": 0.5079376666818924, "median": 0.585264886719612, "q1": 0.4035326792892138, "q3": 0.7062007411708002, "negative": 8}]
+<IPython.core.display.HTML object>
+All comparison tables and figures reproduced from the single basin CSV.
+ANALYSIS COMPLETE
+FIVE SEED EXPERIMENT COMPLETE

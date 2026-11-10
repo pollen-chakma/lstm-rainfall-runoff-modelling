@@ -1,0 +1,79 @@
+SCANNED 100 BASINS 1431 SUBBASINS
+SCANNED 200 BASINS 2405 SUBBASINS
+SCANNED 300 BASINS 5566 SUBBASINS
+SCANNED 400 BASINS 7606 SUBBASINS
+SCANNED 500 BASINS 13287 SUBBASINS
+SCANNED 600 BASINS 17014 SUBBASINS
+SCANNED 700 BASINS 19372 SUBBASINS
+SCANNED 800 BASINS 23350 SUBBASINS
+SCANNED 900 BASINS 24089 SUBBASINS
+SCANNED 1000 BASINS 25439 SUBBASINS
+SCANNED 1100 BASINS 27629 SUBBASINS
+SCANNED 1200 BASINS 30453 SUBBASINS
+SCANNED 1300 BASINS 31439 SUBBASINS
+SCANNED 1400 BASINS 32595 SUBBASINS
+{
+  "phase": "exploration_complete",
+  "basins": 1426,
+  "training_basins": 1326,
+  "unseen_basins": 100,
+  "subbasin_records": 32802,
+  "training_subbasin_records": 30604,
+  "unseen_subbasin_records": 2198,
+  "subbasin_attributes": 1101,
+  "whole_basin_attributes": 1178,
+  "whole_basin_only_attributes": 80,
+  "subbasin_count_min": 1,
+  "subbasin_count_max": 227,
+  "single_subbasin_basins": 304,
+  "area_sum_relative_error_max": 2.6771150564519666e-07,
+  "categories": {
+    "Climate": 625,
+    "Land cover": 74,
+    "Topography": 20,
+    "Soil": 352,
+    "Open water": 22,
+    "Geology": 8
+  },
+  "sources": {
+    "RDRS": 373,
+    "WorldClim": 228,
+    "WorldClim (derived, Oudin et al., 2005)": 24,
+    "MCD15A2H.061": 24,
+    "GLCLUC 2000-2020": 8,
+    "GLCLU 2019": 20,
+    "MCD12Q1.061": 18,
+    "LGRIP30": 4,
+    "MERIT Hydro": 15,
+    "MERIT Hydro Basins": 3,
+    "MERIT Hydro, MERIT Hydro Basins": 2,
+    "Pelletier": 16,
+    "SOILGRIDS": 336,
+    "HydroLAKES": 22,
+    "GLHYMPS": 8
+  },
+  "quality_actions": {
+    "review": 1070,
+    "review_exact_duplicate": 16,
+    "review_categorical_encoding": 10,
+    "exclude_constant_training": 5
+  },
+  "domain_roles": {
+    "exclude_record_length": 1,
+    "climate_variant_review": 620,
+    "categorical_season_review": 10,
+    "physical_candidate": 317,
+    "data_quality_review": 146,
+    "location_context_only": 2,
+    "area_weight_only": 1,
+    "circular_variable_review": 4
+  },
+  "exact_duplicate_candidates": 16,
+  "categorical_attributes": 10,
+  "categorical_value_records": 131919,
+  "correlation_review_pairs": 557,
+  "correlation_absolute_threshold": 0.98,
+  "correlation_training_sample_size": 10608,
+  "pca_fit": false,
+  "seconds": 52
+}

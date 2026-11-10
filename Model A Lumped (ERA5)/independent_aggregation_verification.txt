@@ -1,0 +1,1 @@
+PASS: independent date2index check for 1985-06-15: flux hours ending 01:00 through next midnight; instantaneous hours 00:00–23:00. Daily precipitation, temperature extrema, daylight radiation, vapour pressure and PET match cached ERA5 inputs.

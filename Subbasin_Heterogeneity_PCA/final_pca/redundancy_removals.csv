@@ -1,0 +1,5 @@
+attribute,retained_attribute,weighted_spearman,reason
+bdod_15-30cm_mean_min,bdod_15-30cm_mean_mean,0.9828628365419716,"Redundant min/mean/max within the same property, depth and source, or verified drainage-density alias."
+bdod_5-15cm_mean_min,bdod_5-15cm_mean_mean,0.9826213722848135,"Redundant min/mean/max within the same property, depth and source, or verified drainage-density alias."
+open_water_area_max,open_water_area_mean,0.9962039111450278,"Redundant min/mean/max within the same property, depth and source, or verified drainage-density alias."
+open_water_volume_max,open_water_volume_mean,0.9969105660435171,"Redundant min/mean/max within the same property, depth and source, or verified drainage-density alias."

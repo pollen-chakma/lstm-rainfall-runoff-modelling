@@ -1,0 +1,2 @@
+import sys,os,importlib.util
+print(sys.executable,sys.prefix);print('PATHS',sys.path);print('ENV', {k:v for k,v in os.environ.items() if k in ('PYTHONPATH','PYTHONNOUSERSITE','VIRTUAL_ENV')});print('SPECS',[(k,str(importlib.util.find_spec(k))) for k in ['numpy','pandas','nbformat','ipykernel']])

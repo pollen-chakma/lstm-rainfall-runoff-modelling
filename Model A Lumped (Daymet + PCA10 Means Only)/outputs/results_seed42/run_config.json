@@ -1,0 +1,64 @@
+{
+  "config": {
+    "seed": 42,
+    "epochs": 20,
+    "batch": 128,
+    "windows_per_basin": 256,
+    "validation_cap": 128,
+    "lookback": 365,
+    "hidden": 64,
+    "learning_rate": 0.001,
+    "gradient_clip": 1.0,
+    "train_start": "1980-01-01",
+    "validation_start": "2000-01-01",
+    "test_start": "2005-01-01",
+    "end_exclusive": "2010-01-01",
+    "features": [
+      "prcp",
+      "tmax",
+      "tmin",
+      "srad",
+      "vp",
+      "dayl",
+      "pet"
+    ],
+    "static_features": [
+      "PC01_mean",
+      "PC02_mean",
+      "PC03_mean",
+      "PC04_mean",
+      "PC05_mean",
+      "PC06_mean",
+      "PC07_mean",
+      "PC08_mean",
+      "PC09_mean",
+      "PC10_mean"
+    ]
+  },
+  "csv_sha256": "da98cbee22cd1c795b470c47615a45e17de8e47c1f3be29e976877abb6104cff",
+  "model_inputs": [
+    "prcp",
+    "tmax",
+    "tmin",
+    "srad",
+    "vp",
+    "dayl",
+    "pet"
+  ],
+  "static_features": [
+    "PC01_mean",
+    "PC02_mean",
+    "PC03_mean",
+    "PC04_mean",
+    "PC05_mean",
+    "PC06_mean",
+    "PC07_mean",
+    "PC08_mean",
+    "PC09_mean",
+    "PC10_mean"
+  ],
+  "parameters": 21313,
+  "torch_version": "2.14.1",
+  "numpy_version": "2.4.2",
+  "gpu": "NVIDIA H100 80GB HBM3 MIG 1g.10gb"
+}

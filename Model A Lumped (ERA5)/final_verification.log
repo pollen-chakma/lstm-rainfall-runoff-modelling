@@ -1,0 +1,4 @@
+COMPLETE: 1326 trained, 100 unseen scored
+SUMMARY {'best_epoch': 20, 'unseen_basins': 100, 'median_NSE': 0.46477508425752734, 'median_KGE': 0.44445957199406705}
+OVERLAP SCREEN [{'screen_group': 'all_unseen', 'catchments': 100, 'median_NSE': 0.46477508425752734, 'median_KGE': 0.44445957199406705}, {'screen_group': 'no_shared_polygon_ids', 'catchments': 74, 'median_NSE': 0.4355286450201828, 'median_KGE': 0.4306264790871185}, {'screen_group': 'shared_polygon_ids', 'catchments': 26, 'median_NSE': 0.5619725249917972, 'median_KGE': 0.5174546381785281}]
+PREDICTIONS 100 EPOCHS 20

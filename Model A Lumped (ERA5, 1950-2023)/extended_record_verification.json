@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "checked_basins": 12,
+  "overlap_1980_2009": "ERA5 forcings, observed discharge and static attributes agree with prior experiment",
+  "valid_observations_before_1980": 58622,
+  "valid_observations_2010_onward": 46386
+}

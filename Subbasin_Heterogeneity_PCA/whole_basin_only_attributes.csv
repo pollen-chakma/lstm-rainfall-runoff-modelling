@@ -1,0 +1,81 @@
+category,attribute,unit,source
+Hydrology,num_years_hyd ,years,-
+Hydrology,daily_discharge_mean,mm d^-1,USGS/WSC
+Hydrology,daily_discharge_std,mm d^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_01,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_02,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_03,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_04,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_05,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_06,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_07,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_08,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_09,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_10,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_11,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_mean_month_12,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_01,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_02,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_03,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_04,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_05,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_06,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_07,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_08,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_09,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_10,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_11,mm day^-1,USGS/WSC
+Hydrology,daily_streamflow_std_month_12,mm day^-1,USGS/WSC
+Hydrology,runoff_ratio_mean,-,"USGS/WSC, RDRS"
+Hydrology,runoff_ratio_std,-,"USGS/WSC, RDRS"
+Hydrology,streamflow_elasticity,-,"USGS/WSC, RDRS"
+Hydrology,fdc_slope_mean,-,USGS/WSC
+Hydrology,fdc_slope_std,-,USGS/WSC
+Hydrology,bfi_mean,-,USGS/WSC
+Hydrology,bfi_std,-,USGS/WSC
+Hydrology,hfd_mean,day of year,USGS/WSC
+Hydrology,hfd_std,days,USGS/WSC
+Hydrology,q1_mean,mm day^-1,USGS/WSC
+Hydrology,q1_std,mm day^-1,USGS/WSC
+Hydrology,q5_mean,mm day^-1,USGS/WSC
+Hydrology,q5_std,mm day^-1,USGS/WSC
+Hydrology,q10_mean,mm day^-1,USGS/WSC
+Hydrology,q10_std,mm day^-1,USGS/WSC
+Hydrology,q25_mean,mm day^-1,USGS/WSC
+Hydrology,q25_std,mm day^-1,USGS/WSC
+Hydrology,q50_mean,mm day^-1,USGS/WSC
+Hydrology,q50_std,mm day^-1,USGS/WSC
+Hydrology,q75_mean,mm day^-1,USGS/WSC
+Hydrology,q75_std,mm day^-1,USGS/WSC
+Hydrology,q90_mean,mm day^-1,USGS/WSC
+Hydrology,q90_std,mm day^-1,USGS/WSC
+Hydrology,q95_mean,mm day^-1,USGS/WSC
+Hydrology,q95_std,mm day^-1,USGS/WSC
+Hydrology,q99_mean,mm day^-1,USGS/WSC
+Hydrology,q99_std,mm day^-1,USGS/WSC
+Hydrology,no_flow_freq,days year^-1,USGS/WSC
+Hydrology,no_flow_dur_mean,days,USGS/WSC
+Hydrology,no_flow_dur_median,days,USGS/WSC
+Hydrology,no_flow_dur_skew,-,USGS/WSC
+Hydrology,no_flow_dur_kurtosis,-,USGS/WSC
+Hydrology,no_flow_timing,season,USGS/WSC
+Hydrology,low_flow_freq,days year^-1,USGS/WSC
+Hydrology,low_flow_dur_mean,days,USGS/WSC
+Hydrology,low_flow_dur_median,days,USGS/WSC
+Hydrology,low_flow_dur_skew,-,USGS/WSC
+Hydrology,low_flow_dur_kurtosis,-,USGS/WSC
+Hydrology,low_flow_timing,season,USGS/WSC
+Hydrology,high_flow_freq,days year^-1,USGS/WSC
+Hydrology,high_flow_dur_mean,days,USGS/WSC
+Hydrology,high_flow_dur_median,days,USGS/WSC
+Hydrology,high_flow_dur_skew,-,USGS/WSC
+Hydrology,high_flow_dur_kurtosis,-,USGS/WSC
+Hydrology,high_flow_timing,season,USGS/WSC
+Topography,gauge_lat,degrees,USGS/WSC
+Topography,gauge_lon,degrees,USGS/WSC
+Topography,stream_length_min,km,MERIT Hydro Basins
+Topography,stream_length_mean,km,MERIT Hydro Basins
+Topography,stream_length_max,km,MERIT Hydro Basins
+Topography,stream_length_std,km,MERIT Hydro Basins
+Topography,segment_length_total,km,MERIT Hydro Basins
+Topography,stream_order_max,-,MERIT Hydro Basins

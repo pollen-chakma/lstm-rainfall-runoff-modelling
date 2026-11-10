@@ -1,0 +1,4 @@
+attribute,category,unit,source
+stream_length,Topography,km,MERIT Hydro Basins
+stream_slope,Topography,m m^-1,MERIT Hydro Basins
+upstream_area,Topography,km^2,MERIT Hydro Basins

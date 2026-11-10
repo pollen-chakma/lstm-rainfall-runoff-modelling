@@ -1,0 +1,84 @@
+[
+  {
+    "pcs": 10,
+    "seed": 42,
+    "reused": true,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_42",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/Daymet_PCA10_LSTM.ipynb",
+    "source_notebook_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a",
+    "performance_sha256": "3811f5296e7b7aa363476bac0f583d21e8e8a235c412319b2e23c3fb52ebe8ec"
+  },
+  {
+    "pcs": 10,
+    "seed": 43,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_43",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_43/Daymet_PCA10_seed43.ipynb",
+    "source_notebook_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a"
+  },
+  {
+    "pcs": 10,
+    "seed": 44,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_44",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_44/Daymet_PCA10_seed44.ipynb",
+    "source_notebook_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a"
+  },
+  {
+    "pcs": 10,
+    "seed": 45,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_45",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_45/Daymet_PCA10_seed45.ipynb",
+    "source_notebook_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a"
+  },
+  {
+    "pcs": 10,
+    "seed": 46,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_46",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA10/seed_46/Daymet_PCA10_seed46.ipynb",
+    "source_notebook_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a"
+  },
+  {
+    "pcs": 20,
+    "seed": 42,
+    "reused": true,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_42",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA20)/Daymet_PCA20_LSTM.ipynb",
+    "source_notebook_sha256": "fec5a07a7c99ca4472754f164be76b920fcbb03929647374fc0f9962c628d02a",
+    "performance_sha256": "c13b18cdaa7f5546dc4c01c1b3d27605bc0198585ccfc2e6f0de23c0dc0d63a6"
+  },
+  {
+    "pcs": 20,
+    "seed": 43,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_43",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_43/Daymet_PCA20_seed43.ipynb",
+    "source_notebook_sha256": "fec5a07a7c99ca4472754f164be76b920fcbb03929647374fc0f9962c628d02a"
+  },
+  {
+    "pcs": 20,
+    "seed": 44,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_44",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_44/Daymet_PCA20_seed44.ipynb",
+    "source_notebook_sha256": "fec5a07a7c99ca4472754f164be76b920fcbb03929647374fc0f9962c628d02a"
+  },
+  {
+    "pcs": 20,
+    "seed": 45,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_45",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_45/Daymet_PCA20_seed45.ipynb",
+    "source_notebook_sha256": "fec5a07a7c99ca4472754f164be76b920fcbb03929647374fc0f9962c628d02a"
+  },
+  {
+    "pcs": 20,
+    "seed": 46,
+    "reused": false,
+    "directory": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_46",
+    "notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Daymet_PCA10_PCA20_Five_Seed_Comparison/PCA20/seed_46/Daymet_PCA20_seed46.ipynb",
+    "source_notebook_sha256": "fec5a07a7c99ca4472754f164be76b920fcbb03929647374fc0f9962c628d02a"
+  }
+]

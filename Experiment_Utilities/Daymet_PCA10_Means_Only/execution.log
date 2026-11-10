@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Experiment_Utilities/Daymet_PCA10_Means_Only/run_experiment.py", line 13, in <module>
+    with (U/'preparation.log').open('a') as f:subprocess.run([sys.executable,str(U/'prepare_experiment.py')],stdout=f,stderr=subprocess.STDOUT,check=True)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/pollen26/Desktop/LSTM_RR_Modelling/Model_A/.venv/bin/python', '/home/pollen26/Desktop/LSTM_RR_Modelling/Experiment_Utilities/Daymet_PCA10_Means_Only/prepare_experiment.py']' returned non-zero exit status 1.
+EXPERIMENT AND TWO-FILE INPUT CHECK COMPLETE

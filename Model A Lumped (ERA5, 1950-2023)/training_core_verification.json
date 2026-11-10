@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "training_preprocessing_validation_sampling_and_checkpoint_logic": "unchanged from prior ERA5 experiment",
+  "only_code_change": "Final-test evaluator handles missing recent observations without dropping catchment IDs"
+}

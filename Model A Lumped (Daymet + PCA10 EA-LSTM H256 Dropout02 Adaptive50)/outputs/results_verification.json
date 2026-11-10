@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "basins": 1426,
+  "all_daily_metrics_recomputed": true,
+  "test_dates_and_thresholds_match_baseline": true,
+  "scheduler_and_stop_rules_verified": true,
+  "prior_experiment_hashes_preserved": true
+}

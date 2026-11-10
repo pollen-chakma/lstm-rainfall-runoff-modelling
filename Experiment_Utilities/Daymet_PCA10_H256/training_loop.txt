@@ -1,0 +1,57 @@
+model=MeteorologyLSTM().to(DEVICE);opt=torch.optim.Adam(model.parameters(),lr=CFG['learning_rate'])
+assert model.lstm.input_size==27 and model.lstm.hidden_size==256 and model.lstm.num_layers==1
+assert model.output_dropout.p==0.2 and sum(v.numel() for v in model.parameters())==292097
+# Preserve RNG state around the batch-memory check; the check never updates parameters.
+saved_rng=(random.getstate(),np.random.get_state(),torch.get_rng_state(),torch.cuda.get_rng_state_all())
+torch.cuda.reset_peak_memory_stats();model.train();x,y,bi,t=next(iter(loader))
+assert len(x)==128
+q=model(x.to(DEVICE));scale=torch.tensor(p['loss_scales'][bi.numpy()],dtype=torch.float32,device=DEVICE)
+loss=(((q-y.to(DEVICE))/scale)**2).mean();loss.backward();assert torch.isfinite(loss);opt.zero_grad(set_to_none=True)
+train_memory=torch.cuda.max_memory_allocated();model.eval()
+with torch.no_grad():
+    vx,vy,vbi,vt=next(iter(val_loader));assert len(vx)==256
+    vq=model(vx.to(DEVICE));assert torch.isfinite(vq).all()
+torch.cuda.synchronize()
+atomic(OUTPUT_BASE/'gpu_memory_check.json',dict(status='passed',gpu=torch.cuda.get_device_name(0),training_batch=128,validation_batch=256,train_peak_allocated_bytes=train_memory,total_peak_allocated_bytes=torch.cuda.max_memory_allocated(),device_total_bytes=torch.cuda.get_device_properties(0).total_memory,precision='float32',parameters=292097))
+del x,y,bi,t,q,scale,loss,vx,vy,vbi,vt,vq
+random.setstate(saved_rng[0]);np.random.set_state(saved_rng[1]);torch.set_rng_state(saved_rng[2]);torch.cuda.set_rng_state_all(saved_rng[3])
+first=0;best=float('inf');best_epoch=0;history=[];lr_bad_epochs=0;early_bad_epochs=0;training_complete=False;stop_reason=''
+if (OUT/'last.pt').exists():
+    state=torch.load(OUT/'last.pt',map_location='cpu',weights_only=False);assert state['experiment_hash']==DIGEST,'Config or dataset changed; use a new output folder.'
+    model.load_state_dict(state['model']);opt.load_state_dict(state['optimizer']);first=state['epoch'];best=state['best_validation'];best_epoch=state['best_epoch'];history=state['history'];lr_bad_epochs=state['lr_bad_epochs'];early_bad_epochs=state['early_bad_epochs'];training_complete=state['training_complete'];stop_reason=state['stop_reason']
+    random.setstate(state['python_rng']);np.random.set_state(state['numpy_rng']);torch.set_rng_state(state['torch_rng'].cpu());torch.cuda.set_rng_state_all(state['cuda_rng'])
+    print('RESUMED completed epoch',first,'best',best_epoch,'LR',opt.param_groups[0]['lr'],flush=True)
+atomic(OUT/'run_config.json',dict(config=CFG,csv_sha256=CSV_HASH,model_inputs=FEATURES,static_features=STATIC_FEATURES,parameters=sum(v.numel() for v in model.parameters()),torch_version=torch.__version__,numpy_version=np.__version__,gpu=torch.cuda.get_device_name(0)))
+started=time.time();prior_seconds=history[-1]['elapsed_seconds'] if history else 0
+if not training_complete:
+    for epoch in range(first,CFG['epochs']):
+        epoch_start=time.time();lr_used=opt.param_groups[0]['lr'];model.train();sampler.epoch=epoch;total=0.;count=0
+        for step,(x,y,bi,t) in enumerate(loader,1):
+            opt.zero_grad(set_to_none=True);q=model(x.to(DEVICE,non_blocking=True));target=y.to(DEVICE,non_blocking=True)
+            scale=torch.tensor(p['loss_scales'][bi.numpy()],dtype=torch.float32,device=DEVICE);loss=(((q-target)/scale)**2).mean();assert torch.isfinite(loss)
+            loss.backward();nn.utils.clip_grad_norm_(model.parameters(),1.);opt.step();total+=float(loss.detach())*len(y);count+=len(y)
+            if step%200==0:
+                progress(phase='training',epoch=epoch+1,batch=step,batches=len(loader),last_completed_epoch=epoch,best_epoch=best_epoch,learning_rate=lr_used)
+                print('PROGRESS',epoch+1,step,'/',len(loader),'seconds',round(time.time()-epoch_start),flush=True)
+        v,nval=validate(model);assert math.isfinite(v)
+        improved=v<best
+        if improved:best=v;best_epoch=epoch+1;lr_bad_epochs=0;early_bad_epochs=0
+        else:lr_bad_epochs+=1;early_bad_epochs+=1
+        reduced=False
+        if lr_bad_epochs>=CFG['lr_patience']:
+            for pg in opt.param_groups:pg['lr']=max(CFG['min_lr'],pg['lr']*CFG['lr_factor'])
+            reduced=opt.param_groups[0]['lr']<lr_used;lr_bad_epochs=0
+        training_complete=early_bad_epochs>=CFG['early_stopping_patience'] or epoch+1>=CFG['epochs']
+        stop_reason='early_stopping' if early_bad_epochs>=CFG['early_stopping_patience'] else ('max_epochs' if epoch+1>=CFG['epochs'] else '')
+        history.append(dict(epoch=epoch+1,training_loss=total/count,validation_loss=v,validation_donors=nval,learning_rate_used=lr_used,learning_rate_next=opt.param_groups[0]['lr'],learning_rate_reduced=reduced,improved=improved,best_epoch=best_epoch,early_bad_epochs=early_bad_epochs,lr_bad_epochs=lr_bad_epochs,epoch_seconds=round(time.time()-epoch_start,2),elapsed_seconds=round(prior_seconds+time.time()-started,2)))
+        checkpoint(OUT/'last.pt',model,opt,epoch+1,best,history)
+        if improved:checkpoint(OUT/'best.pt',model,opt,epoch+1,best,history)
+        atomic(OUT/'history.json',history);progress(phase='training_complete' if training_complete else 'epoch_complete',epoch=epoch+1,best_epoch=best_epoch,best_validation_loss=best,learning_rate=opt.param_groups[0]['lr'],stop_reason=stop_reason)
+        print('EPOCH',history[-1],flush=True)
+        if training_complete:break
+        if (OUTPUT_BASE/'STOP_AFTER_EPOCH').exists():raise RuntimeError('Operational stop requested after a saved epoch. Remove STOP_AFTER_EPOCH and rerun to resume; no test evaluation has run.')
+ck=torch.load(OUT/'best.pt',map_location='cpu',weights_only=False);model.load_state_dict(ck['model']);model.eval()
+assert ck['epoch']==min(history,key=lambda r:r['validation_loss'])['epoch']
+atomic(OUT/'selection.json',dict(best_epoch=ck['epoch'],best_validation_loss=ck['best_validation'],completed_epochs=len(history),stop_reason=stop_reason,selection_uses='validation loss only',test_evaluation_started=False))
+progress(phase='selected_checkpoint',epoch=len(history),best_epoch=ck['epoch'],stop_reason=stop_reason)
+print('SELECTED VALIDATION-BEST EPOCH',ck['epoch'],'of',len(history),flush=True)

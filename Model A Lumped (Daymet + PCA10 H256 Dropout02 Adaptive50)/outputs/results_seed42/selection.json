@@ -1,0 +1,8 @@
+{
+  "best_epoch": 48,
+  "best_validation_loss": 0.19965699188045527,
+  "completed_epochs": 50,
+  "stop_reason": "max_epochs",
+  "selection_uses": "validation loss only",
+  "test_evaluation_started": false
+}

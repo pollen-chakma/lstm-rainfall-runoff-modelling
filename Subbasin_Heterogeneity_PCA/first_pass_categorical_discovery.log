@@ -1,0 +1,18 @@
+SCANNED 100 BASINS 1431 SUBBASINS
+SCANNED 200 BASINS 2405 SUBBASINS
+SCANNED 300 BASINS 5566 SUBBASINS
+SCANNED 400 BASINS 7606 SUBBASINS
+SCANNED 500 BASINS 13287 SUBBASINS
+SCANNED 600 BASINS 17014 SUBBASINS
+SCANNED 700 BASINS 19372 SUBBASINS
+SCANNED 800 BASINS 23350 SUBBASINS
+SCANNED 900 BASINS 24089 SUBBASINS
+SCANNED 1000 BASINS 25439 SUBBASINS
+SCANNED 1100 BASINS 27629 SUBBASINS
+SCANNED 1200 BASINS 30453 SUBBASINS
+SCANNED 1300 BASINS 31439 SUBBASINS
+SCANNED 1400 BASINS 32595 SUBBASINS
+Traceback (most recent call last):
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Subbasin_Heterogeneity_PCA/explore_subbasin_attributes.py", line 41, in <module>
+    assert not bad,('Non-numeric attribute entries',bad[:5])
+AssertionError: ('Non-numeric attribute entries', [{'basin_id': 'CAN_01AD003', 'attribute': 'low_temp_timing', 'value': 'djf'}, {'basin_id': 'CAN_01AD003', 'attribute': 'low_temp_timing', 'value': 'djf'}, {'basin_id': 'CAN_01AD003', 'attribute': 'low_temp_timing', 'value': 'djf'}, {'basin_id': 'CAN_01AD003', 'attribute': 'low_temp_timing', 'value': 'djf'}, {'basin_id': 'CAN_01AD003', 'attribute': 'low_temp_timing', 'value': 'djf'}])

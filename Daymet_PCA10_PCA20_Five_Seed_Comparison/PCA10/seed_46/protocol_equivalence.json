@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "source": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/Daymet_PCA10_LSTM.ipynb",
+  "source_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a",
+  "seed": 46,
+  "cells": [
+    {
+      "cell": 2,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "202aa445c906eb22acaab9b078fc0e965476babd419346d4932d2f38ac3c4193"
+    },
+    {
+      "cell": 3,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "f3064a9a1617f8c43a087d5ce86f167cadcd7d97fc23c37641660ddd5a02076e"
+    },
+    {
+      "cell": 4,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "12fd23082cbacb31cb7d6f5e3a025e9ceea9d8f9f30353c3e0328577170276cb"
+    },
+    {
+      "cell": 6,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "b74610bc89931d80c1ece19c2c83545ddb40839631092e9d2ed1c2be4f01ccaf"
+    },
+    {
+      "cell": 8,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "e07f2eff14cf4ebd12f9e94497fb2a3dde729e6fff0ce7611a4408ad2c7ddc99"
+    },
+    {
+      "cell": 10,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "957d82920ab36807d7ccc682e9b7b72c19285ab6c64ce6206bafdb12aff3b6e2"
+    },
+    {
+      "cell": 12,
+      "only_seed_and_run_name_changed": true,
+      "source_sha256": "20fc4ff038ab696220b5c4a79d9606a928ab9551a60973491778d06ddddf758c"
+    }
+  ]
+}

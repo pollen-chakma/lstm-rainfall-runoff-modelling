@@ -1,0 +1,94 @@
+Dashboard ready at http://127.0.0.1:8765
+127.0.0.1 - - [03/Nov/2026 15:49:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:49:53] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:49:53] "GET /app.js HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54106)
+Traceback (most recent call last):
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Lumped_Data_Explorer/dashboard.py", line 44, in __init__
+    def __init__(self,*a,**kw):super().__init__(*a,directory=str(BASE),**kw)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/http/server.py", line 671, in __init__
+    super().__init__(*args, **kwargs)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Lumped_Data_Explorer/dashboard.py", line 47, in do_GET
+    m=json.loads((BASE/'manifest.json').read_text())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.11.5/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pollen26/Desktop/LSTM_RR_Modelling/Lumped_Data_Explorer/manifest.json'
+----------------------------------------
+Dashboard ready at http://127.0.0.1:8765
+127.0.0.1 - - [03/Nov/2026 15:54:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:54:29] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:54:29] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:54:29] "GET /api/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:54:29] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:28] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:28] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:29] "GET /api/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:29] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:43] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:49] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:55:54] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:56:04] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:56:12] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:56:21] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:56:47] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:00] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:00] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:00] "GET /api/manifest HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:00] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:15] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:15] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:19] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 15:58:19] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:08] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:13] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:18] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:21] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:23] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:25] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:25] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:26] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:30] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:50] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:00:54] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:00] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:22] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:25] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:32] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:35] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:37] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:39] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:47] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:01:54] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:07] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:10] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:16] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:19] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:29] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:32] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:36] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:36] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:41] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:44] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:46] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:02:51] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:03:00] "POST /api/query HTTP/1.1" 200 -
+127.0.0.1 - - [03/Nov/2026 16:03:02] "POST /api/query HTTP/1.1" 200 -

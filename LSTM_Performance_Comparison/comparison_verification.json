@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "rows": 1426,
+  "columns": 26,
+  "unique_basins": 1426,
+  "training_donors": 1326,
+  "unseen_basins": 100,
+  "source_files_unchanged": true,
+  "source_sha256": {
+    "Model A Lumped (Daymet)/split_manifest.csv": "602bc1a3ab9b8a33f76ce32898d8a4bc6ea16f4326e079bf381dbf16e9a2b847",
+    "Model A Lumped (Daymet)/run_seed42/temporal_test_2005_2009/metrics.csv": "7cf339b44f8a9b0f862d80265c97c991a97a48d8330c956f8b7af9ad5289caf0",
+    "Model A Lumped (Daymet)/run_seed42/temporal_test_2005_2009/coverage_audit.csv": "d7425c80d4c5852223a82db33d6bd242a387007ab56e408d4ad8ac1504d0e827",
+    "Model A Lumped (Daymet)/run_seed42/unseen_metrics.csv": "e064646dc0720642e3965404bcb63f0456d1522c06578bea93ae31438c99f3c7",
+    "Model A Meteorology Only (Daymet)/results_seed42/donor_temporal/metrics.csv": "618a6af135a417716c636f813bc420381735a200e7e2b8389b38950a567737d5",
+    "Model A Meteorology Only (Daymet)/results_seed42/unseen100/metrics.csv": "ef85ab78dda5075429876987e9f0690bff29f87ad82396a8b9d13d9d87d54639",
+    "Model A Lumped (ERA5)/run_seed42/temporal_test_2005_2009/metrics.csv": "9297b859e4fbc550a81bb30bb12b6fee977853ca718ca9965ee3d3021be06027",
+    "Model A Lumped (ERA5)/run_seed42/temporal_test_2005_2009/coverage_audit.csv": "6c1858b1a6e4d3ec5b684e7adbeb8e3114d0c20b09a4e7812a3d892d4388958a",
+    "Model A Lumped (ERA5)/run_seed42/unseen_metrics.csv": "6c4600b1eccc9503acb6df12452a48f63ea543c3315b6ed189c30b9643b01502",
+    "Model A Lumped (ERA5, 1950-2023)/run_seed42/temporal_test_2015_latest/metrics.csv": "b0873384e84fbe74f8fa21bc1b1b2311cfc8f38cffe3e1f903d2b3581479cf11",
+    "Model A Lumped (ERA5, 1950-2023)/run_seed42/unseen_metrics.csv": "4a582a15c01740dfc1d16be0e62ab5aff5ea3546aaf6a494da89f5f6d41821d8"
+  },
+  "coverage": {
+    "Daymet_MetAttr_Test2005_2009": {
+      "training_donor": {
+        "rows": 1326,
+        "scored": 1317
+      },
+      "unseen_test": {
+        "rows": 100,
+        "scored": 100
+      }
+    },
+    "Daymet_MetOnly_Test2005_2009": {
+      "training_donor": {
+        "rows": 1326,
+        "scored": 1317
+      },
+      "unseen_test": {
+        "rows": 100,
+        "scored": 100
+      }
+    },
+    "ERA5_MetAttr_Test2005_2009": {
+      "training_donor": {
+        "rows": 1326,
+        "scored": 1317
+      },
+      "unseen_test": {
+        "rows": 100,
+        "scored": 100
+      }
+    },
+    "ERA5_MetAttr_Test2015_2023": {
+      "training_donor": {
+        "rows": 1326,
+        "scored": 1310
+      },
+      "unseen_test": {
+        "rows": 100,
+        "scored": 99
+      }
+    }
+  },
+  "csv_sha256": "2cea3151a0e12446b93e28b292b1dec73e3417e34786d71a268f897a9cf8a823",
+  "seen_unseen_counts": {
+    "Seen": 1326,
+    "Unseen": 100
+  },
+  "row_order_and_all_previous_values_unchanged": true
+}

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "csv_count": 2,
+  "basins_per_source": 1426,
+  "cache_built_from_csv": true,
+  "missing_values_preserved": true,
+  "records": {
+    "Daymet": {
+      "rows": 15626108,
+      "start": "1980-01-01",
+      "end": "2009-12-31",
+      "bytes": 1881759128
+    },
+    "ERA5": {
+      "rows": 38025716,
+      "start": "1950-01-01",
+      "end": "2023-01-03",
+      "bytes": 4245500578
+    }
+  }
+}

@@ -1,0 +1,15 @@
+EXTRACTED 100 /1426
+EXTRACTED 200 /1426
+EXTRACTED 300 /1426
+EXTRACTED 400 /1426
+EXTRACTED 500 /1426
+EXTRACTED 600 /1426
+EXTRACTED 700 /1426
+EXTRACTED 800 /1426
+EXTRACTED 900 /1426
+EXTRACTED 1000 /1426
+EXTRACTED 1100 /1426
+EXTRACTED 1200 /1426
+EXTRACTED 1300 /1426
+EXTRACTED 1400 /1426
+PREPARATION COMPLETE {"rows": 7130, "basins": 1426, "experiments": 5, "columns": 158, "attribute_units": {"aridity1_mean": "-", "fracsnow1_mean": "-", "aridity2_mean": "-", "fracsnow2_mean": "-", "forest_height_2020_mean": "m", "lc2_evergreen_needleleaf_forest_fraction": "-", "lc2_evergreen_broadleaf_forest_fraction": "-", "lc2_deciduous_needleleaf_forest_fraction": "-", "lc2_deciduous_broadleaf_forest_fraction": "-", "lc2_mixed_forest_fraction": "-", "lc2_grassland_fraction": "-", "lc2_permanent_wetland_fraction": "-", "lc2_cropland_fraction": "-", "lc2_urban_and_built_up_fraction": "-", "basin_area": "km^2", "elev_mean": "m.a.s.l.", "slope_mean": "degrees", "stream_density": "km^-1", "elongation_ratio": "-", "open_water_area_total": "km^2", "reservoir_area_total": "km^2", "regolith_thickness_mean": "m", "clay_0-5cm_mean_mean": "g kg^-1", "sand_0-5cm_mean_mean": "g kg^-1", "silt_0-5cm_mean_mean": "g kg^-1", "porosity_mean": "-", "log_permeability_mean": "m^2"}, "missing_selected_attributes": [], "raw_attribute_source": "/project/6102174/data/misc-data/CAMELS-SPAT/attributes/attributes-lumped.csv", "comparison_source": "/home/pollen26/Desktop/LSTM_RR_Modelling/LSTM_Performance_Comparison/basin_lstm_performance_comparison.csv", "csv_sha256": "57837982ea1219003c59c2179eb53e4a83f6e72ae97a286a940ff02c5a59a7e2"}

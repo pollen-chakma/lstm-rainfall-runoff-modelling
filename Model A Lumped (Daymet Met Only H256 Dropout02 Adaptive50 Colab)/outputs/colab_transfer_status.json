@@ -1,0 +1,35 @@
+{
+  "phase": "google_identity_verification_pending",
+  "training_started": false,
+  "csv_sha256": "71b540506c7575d79e505a3856f41e2d3400446f2775e0fc6d9266961f909cad",
+  "csv_bytes": 2066260573,
+  "notebook_bytes": 441897,
+  "basins": 1426,
+  "rows": 15626108,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "colab_notebook": "https://colab.research.google.com/drive/19Jqsy9WX1JV3PxwsmIE8hrmFfttuQgD-",
+  "benchmark": {
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "train_seconds_per_batch": 0.04315695762634277,
+    "validation_seconds_per_batch": 0.02035694122314453,
+    "compute_seconds_per_epoch": 127.6,
+    "peak_allocated_GB": 0.615
+  },
+  "destination": "MyDrive/LSTM_RR_Modelling/Model A Lumped (Daymet Met Only H256 Dropout02 Adaptive50 Colab)",
+  "pending": [
+    "user completes Google identity verification",
+    "complete Drive mount",
+    "verify CSV checksum and persist both inputs",
+    "isolated two-input runtime checks",
+    "five-seed modeling and verification"
+  ],
+  "drive_mount_approved": true,
+  "input_transfer": "notebook uploaded to temporary runtime; CSV upload in progress"
+}

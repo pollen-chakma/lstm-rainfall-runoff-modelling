@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "all_1426_basins_retained": true,
+  "split_1326_100_preserved": true,
+  "all_predictors_finite": true,
+  "unseen_fit_weight_zero": true,
+  "one_shared_pca": true,
+  "orthonormal_components": true,
+  "weighted_score_covariance_verified": true,
+  "area_weighted_variance_identity_verified": true,
+  "first_ten_components_identical_between_files": true,
+  "single_subbasin_stds_zero": true,
+  "pca_fit_uses_no_discharge": true
+}

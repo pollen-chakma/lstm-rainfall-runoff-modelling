@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "source": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/outputs/basin_model_performance.csv",
+  "basins": 1426,
+  "columns": 54,
+  "summary_rows": 32,
+  "previous_values_and_basin_order_preserved": true,
+  "new_metrics_exactly_match_source": true,
+  "seen_unseen_labels_preserved": true,
+  "summary_sorted_by_median_descending": true,
+  "backup": "/home/pollen26/Desktop/LSTM_RR_Modelling/LSTM_Performance_Comparison/backups/before_H256_adaptive50_20261104T030139Z",
+  "comparison_sha256": "b7de3d08be396d84309ccb2b0b59d749f312ea345535bc3d9d45d140dc58ac79",
+  "summary_sha256": "dadadbe0567bbdf1328126cdd22a82feb0bf592e2919b2e6d33c0015bb507fb0"
+}

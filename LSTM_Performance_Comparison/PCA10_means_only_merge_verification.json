@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "basins": 1426,
+  "columns": 47,
+  "summary_rows": 28,
+  "previous_values_and_order_preserved": true,
+  "new_metrics_exactly_match_source": true,
+  "backup": "/home/pollen26/Desktop/LSTM_RR_Modelling/LSTM_Performance_Comparison/backups/before_PCA10_means_only_20261103T151424021928",
+  "comparison_sha256": "ffde6db334e6686aa8f6ea9e62d93fd27f0493933888c3a6b992df13887d4fcc",
+  "summary_sha256": "f06253125f0a74db9cb7f6b102b2eb756393352a3b57f8c88b28206f87c55e49"
+}

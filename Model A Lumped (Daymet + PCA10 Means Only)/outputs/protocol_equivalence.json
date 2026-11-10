@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "source": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/Daymet_PCA10_LSTM.ipynb",
+  "source_sha256": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a",
+  "training_logic_unchanged": true,
+  "preparation_logic_unchanged": true,
+  "evaluation_logic_unchanged": true,
+  "allowed_changes": [
+    "ten PCA mean inputs; no subbasin standard deviations",
+    "CSV schema positions",
+    "17 input channels and 21313 parameters",
+    "output paths and model label",
+    "self-contained verification/reporting"
+  ]
+}

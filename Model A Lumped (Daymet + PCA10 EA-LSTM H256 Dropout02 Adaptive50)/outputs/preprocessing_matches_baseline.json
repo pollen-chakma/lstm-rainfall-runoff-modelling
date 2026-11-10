@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "all_scalers_and_loss_scales_match": true,
+  "reference": "H256 mean/std LSTM baseline"
+}

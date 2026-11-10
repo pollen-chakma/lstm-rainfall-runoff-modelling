@@ -1,0 +1,14 @@
+{
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet)/experiment_config.json": "47f53dadeee397ea365287cf0e7e9b803871d29fe9092f249099a86fd19e3243",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet)/run_seed42/best.pt": "39f410ad20c939ade0a8fd1b742d341671677558a4032199122ea692f6649ed1",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet)/run_seed42/preprocessing.npz": "e1b526733bc5c1b6e2bca0e06cdd0659e25381680bdf8f7d0fcc555604a8e781",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet)/run_seed42/summary.json": "07b2068deae756bae0f1a2ce7c084888428bcdc17c71b9a3cca98f6650b8955b",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet)/training_basins.txt": "61c63ae18c7d0ed46a2683c7a4974dae1c0e6d971fea642b8cdca09982fc3ce4",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet)/unseen_test_basins.txt": "e9395ce289a69ac108aac7357c50fdc80cc15fce30bf692fd373b02085af3866",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/experiment_config.json": "0706fbf87099f6bb7fe0152e39b50bae88a0e70618aa5bca78696ef9e37632a0",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/run_seed42/best.pt": "a78152069e0052539aeee87710f64e935ee8cda95afd08275e49c7cf88d6d492",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/run_seed42/preprocessing.npz": "4f9fbb1442ea23c404190b270a1b8c9481b894cc291b1f3a778883d0a25fc661",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/run_seed42/summary.json": "dc029349c6ebe2781ac7d806a073354e9e21f62c8d40bb438ee744200c7e4d46",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/training_basins.txt": "61c63ae18c7d0ed46a2683c7a4974dae1c0e6d971fea642b8cdca09982fc3ce4",
+  "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/unseen_test_basins.txt": "e9395ce289a69ac108aac7357c50fdc80cc15fce30bf692fd373b02085af3866"
+}

@@ -1,0 +1,14 @@
+{
+  "evaluate_full_record.py": "7930106f97437673b9663bfd5ba72cf44506e71b9bde3e9b5f61c488c667be47",
+  "experiment_config.json": "650eca550c07a0a9193f1ee6adbb658957e2ab3fce0e4d7da84c421370edeaa4",
+  "fast_dates.py": "a9a787dfe9ccbfd91f45ef9d7a56cff47f5710a9e49b3445d59b2f6f701345f9",
+  "pilot_prepare_daymet.py": "feab490a67bb29d797364f80585ae030388ee7fabac210e78a17cbc057678b52",
+  "pilot_train_model_a.py": "e85968e36157c0d1be00d18d393e33f187837ffc52292fa9a377579545ee66e8",
+  "prepare_full_record.py": "db0e69f20206b62d3ca20a437c66615329e4907bd9fbec6c908edaaf65c8bf99",
+  "run_full_record.py": "d3d1d3cd7c24f159b2f8679e407552eef29f9e805ac630db31bfbac0664fc548",
+  "split_manifest.csv": "c040a014f00b0ec84a142bc929a0c5727dd515fa12b7d639c22e57c360387641",
+  "train_unseen.py": "5d91504b5db694f36bdf2e5b6a4e311b5e5d5d15acb386176e6915453915624d",
+  "training_basins.txt": "61c63ae18c7d0ed46a2683c7a4974dae1c0e6d971fea642b8cdca09982fc3ce4",
+  "unseen_test_basins.txt": "e9395ce289a69ac108aac7357c50fdc80cc15fce30bf692fd373b02085af3866",
+  "verify_protocol.py": "9e88b96ce6010a25d85134abbbb0978e747730e40fa1b3d5a1566850dddbd47a"
+}

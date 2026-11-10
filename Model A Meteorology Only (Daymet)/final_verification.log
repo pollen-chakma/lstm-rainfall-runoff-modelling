@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "seven_executed_code_cells_without_errors": true,
+  "no_external_project_imports": true,
+  "checkpoint_inputs": 7,
+  "attributes": 0,
+  "parameters": 18753,
+  "training_epochs": 20,
+  "best_epoch": 15,
+  "checkpoint_reuse_verified": true,
+  "all_1426_prediction_files_identical_after_rerun": true,
+  "both_checkpoints_unchanged_after_rerun": true,
+  "coverage": {
+    "unseen100": {
+      "reserved": 100,
+      "scored": 100,
+      "unscored_ids": []
+    },
+    "donor_temporal": {
+      "reserved": 1326,
+      "scored": 1317,
+      "unscored_ids": [
+        "CAN_04EA001",
+        "CAN_05OF011",
+        "CAN_05RA001",
+        "CAN_06JB001",
+        "CAN_07FA003",
+        "CAN_09AG001",
+        "CAN_09BB001",
+        "CAN_09FB002",
+        "CAN_10MA002"
+      ]
+    }
+  },
+  "paired_comparison": {
+    "unseen": {
+      "paired": 100,
+      "attribute_higher_NSE": 74,
+      "median_paired_NSE_gain": 0.06809626420031445
+    },
+    "temporal": {
+      "paired": 1317,
+      "attribute_higher_NSE": 1062,
+      "median_paired_NSE_gain": 0.10458733846337309
+    }
+  },
+  "csv_roundtrip": {
+    "passed": true,
+    "basins": 1426,
+    "rows": 15626108,
+    "all_meteorology_values_exact_float32": true,
+    "all_discharge_values_exact_float32": true,
+    "all_dates_exact": true,
+    "attributes_in_csv": 0,
+    "seconds": 46
+  },
+  "protocol_parity": {
+    "passed": true,
+    "normalization_exact": [
+      "xmean",
+      "xstd",
+      "ymean",
+      "ystd",
+      "loss_scales"
+    ],
+    "all_1326_window_counts_exact": true,
+    "catchment_order_exact": true
+  }
+}

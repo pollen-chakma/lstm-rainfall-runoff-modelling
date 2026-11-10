@@ -1,0 +1,14 @@
+def progress(**info):
+    import html
+    info.update(updated_utc=time.strftime('%Y-%m-%d %H:%M:%S UTC',time.gmtime()))
+    atomic(OUT/'status.json',info)
+    rows=globals().get('history',[])
+    text='<html><head><meta charset="utf-8"></head><body style="font:16px sans-serif;margin:26px"><h1>Daymet + PCA10 mean/std · H256 / dropout 0.2 / adaptive 50</h1><p>Refresh this page for updates. Test performance is calculated only after checkpoint selection.</p><pre>'+html.escape(json.dumps(info,indent=2))+'</pre><h2>Completed epochs</h2><table border="1" cellpadding="7"><tr><th>Epoch</th><th>Training loss</th><th>Validation loss</th><th>LR used</th><th>Next LR</th><th>Seconds</th></tr>'
+    for r in rows:text+='<tr>'+''.join('<td>'+str(r.get(k,''))+'</td>' for k in ['epoch','training_loss','validation_loss','learning_rate_used','learning_rate_next','epoch_seconds'])+'</tr>'
+    text+='</table></body></html>'
+    (OUTPUT_BASE/'progress.html').write_text(text)
+
+def checkpoint(path,model,opt,epoch,best,history):
+    state=dict(model=model.state_dict(),optimizer=opt.state_dict(),epoch=epoch,best_validation=best,best_epoch=best_epoch,history=history,lr_bad_epochs=lr_bad_epochs,early_bad_epochs=early_bad_epochs,training_complete=training_complete,stop_reason=stop_reason,experiment_hash=DIGEST,python_rng=random.getstate(),numpy_rng=np.random.get_state(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all())
+    tmp=path.with_suffix('.tmp');torch.save(state,tmp);tmp.replace(path)
+

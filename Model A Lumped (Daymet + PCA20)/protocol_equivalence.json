@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "code_cells_checked": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    12
+  ],
+  "only_changes": "PCA feature count, CSV offsets, input dimension, resulting parameter count and experiment labels",
+  "hidden_units": 64,
+  "epochs": 20,
+  "seed": 42
+}
