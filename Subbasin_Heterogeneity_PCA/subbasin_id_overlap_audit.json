@@ -1,0 +1,6 @@
+{
+  "shared_raw_merit_ids": 440,
+  "training_unique_raw_merit_ids": 28267,
+  "unseen_unique_raw_merit_ids": 2198,
+  "interpretation": "Shared IDs indicate possible physical overlap, not proof of identical clipped polygons. Use basin_id plus subbasin_id as the record key."
+}

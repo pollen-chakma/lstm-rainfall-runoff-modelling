@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "basins": 1426,
+  "rows": 15626108,
+  "all_meteorology_values_exact_float32": true,
+  "all_discharge_values_exact_float32": true,
+  "all_dates_exact": true,
+  "attributes_in_csv": 0,
+  "seconds": 46
+}

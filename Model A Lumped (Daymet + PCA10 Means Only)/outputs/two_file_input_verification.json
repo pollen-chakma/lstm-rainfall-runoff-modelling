@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "only_required_inputs": [
+    "Daymet_PCA10_Means_Only_LSTM.ipynb",
+    "daymet_pca10_means_only_discharge_1980_2009.csv"
+  ],
+  "isolated_loading_preprocessing_model_definitions_verified": true,
+  "all_scaler_arrays_identical": true,
+  "full_training_completed_once_in_main_folder": true,
+  "full_training_not_repeated_for_input_check": true
+}

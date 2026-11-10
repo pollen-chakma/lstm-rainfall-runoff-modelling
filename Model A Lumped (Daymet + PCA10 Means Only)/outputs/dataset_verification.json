@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "rows": 15626108,
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "columns": 25,
+  "static_inputs": [
+    "PC01_mean",
+    "PC02_mean",
+    "PC03_mean",
+    "PC04_mean",
+    "PC05_mean",
+    "PC06_mean",
+    "PC07_mean",
+    "PC08_mean",
+    "PC09_mean",
+    "PC10_mean"
+  ],
+  "dynamic_inputs": [
+    "prcp",
+    "tmax",
+    "tmin",
+    "srad",
+    "vp",
+    "dayl",
+    "pet"
+  ],
+  "target": "q_obs_mm_day",
+  "source": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/daymet_pca10_discharge_1980_2009.csv",
+  "all_projected_values_preserved": true,
+  "projection_sha256": "90996f08423f301fb97f455bd408fa498e844664467dcde6d1f9307723e5ed8d",
+  "seconds": 321.45
+}

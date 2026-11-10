@@ -1,0 +1,57 @@
+START verify_protocol.py
+FINISHED verify_protocol.py
+START train_unseen.py
+FINISHED train_unseen.py
+START evaluate_full_record.py
+FINISHED evaluate_full_record.py
+{
+  "phase": "complete",
+  "experiment": "Model A Lumped (ERA5, 1950-2023)",
+  "training_period": "1950-2009",
+  "validation_period": "2010-2014",
+  "test_period": "2015 through latest available early-2023 data",
+  "epochs": 20,
+  "best_epoch": 20,
+  "coverage": {
+    "training_donors": 1326,
+    "unseen_ids": 100,
+    "donors_with_validation": 1320,
+    "donors_with_test": 1310,
+    "unseen_with_test": 99,
+    "first_complete_forcing": "1950-01-01",
+    "last_complete_forcing": "2023-01-02",
+    "first_observation": "1950-01-01",
+    "last_observation": "2023-01-02"
+  },
+  "unseen": {
+    "requested_basins": 100,
+    "scored_basins": 99,
+    "finite_NSE_basins": 99,
+    "finite_KGE_basins": 99,
+    "prediction_files": 100,
+    "test_start": "2015-01-01",
+    "requested_end_exclusive": "2023-01-04",
+    "latest_scored_date": "2023-01-02",
+    "median_NSE": 0.5321503927756013,
+    "median_KGE": 0.514862213219804,
+    "negative_NSE_basins": 5,
+    "policy": "Frozen validation-selected model and training-donor preprocessing; all valid test windows, no test subsampling; absent observations excluded; catchment membership unchanged."
+  },
+  "temporal": {
+    "requested_basins": 1326,
+    "scored_basins": 1310,
+    "finite_NSE_basins": 1310,
+    "finite_KGE_basins": 1310,
+    "prediction_files": 1326,
+    "test_start": "2015-01-01",
+    "requested_end_exclusive": "2023-01-04",
+    "latest_scored_date": "2023-01-02",
+    "median_NSE": 0.5552505128222154,
+    "median_KGE": 0.5462624033370084,
+    "negative_NSE_basins": 83,
+    "policy": "Frozen validation-selected model and training-donor preprocessing; all valid test windows, no test subsampling; absent observations excluded; catchment membership unchanged.",
+    "best_epoch": 20,
+    "checkpoint_sha256": "f08689bd29665b9847d95e98f09b5bd7f811433d730dae82b927f322b37a1e3c"
+  },
+  "prior_experiments_preserved": "SHA-256 PASS"
+}

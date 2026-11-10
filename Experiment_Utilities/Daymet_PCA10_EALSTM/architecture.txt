@@ -1,0 +1,94 @@
+class MeteorologyLSTM(nn.Module):
+    """EA-LSTM equations evaluated using cuDNN with permanent structural weight masks.
+
+    PyTorch gate order is i,f,g,o. Static descriptors enter i only; meteorology
+    enters f,g,o only; recurrent h enters f,g,o only. Both PyTorch bias vectors
+    are retained, and their sum is the effective bias in each EA equation.
+    """
+    def __init__(self,hidden=256):
+        super().__init__()
+        self.lstm=nn.LSTM(27,hidden,batch_first=True)
+        self.output_dropout=nn.Dropout(0.2)
+        self.head=nn.Linear(hidden,1)
+        ih=torch.ones_like(self.lstm.weight_ih_l0)
+        hh=torch.ones_like(self.lstm.weight_hh_l0)
+        ih[:hidden,:7]=0       # input gate cannot see meteorology
+        ih[hidden:,7:]=0       # forget/candidate/output cannot directly see statics
+        hh[:hidden,:]=0        # input gate cannot see recurrent hidden states
+        self.register_buffer('input_weight_mask',ih)
+        self.register_buffer('recurrent_weight_mask',hh)
+        with torch.no_grad():
+            self.lstm.weight_ih_l0.mul_(self.input_weight_mask)
+            self.lstm.weight_hh_l0.mul_(self.recurrent_weight_mask)
+        self.lstm.weight_ih_l0.register_hook(self._mask_input_gradient)
+        self.lstm.weight_hh_l0.register_hook(self._mask_recurrent_gradient)
+    def _mask_input_gradient(self,gradient):return gradient*self.input_weight_mask
+    def _mask_recurrent_gradient(self,gradient):return gradient*self.recurrent_weight_mask
+    def assert_structural_zeros(self):
+        assert torch.count_nonzero(self.lstm.weight_ih_l0[self.input_weight_mask==0]).item()==0
+        assert torch.count_nonzero(self.lstm.weight_hh_l0[self.recurrent_weight_mask==0]).item()==0
+    def effective_parameter_count(self):
+        return int(self.input_weight_mask.sum().item()+self.recurrent_weight_mask.sum().item()+sum(p.numel() for n,p in self.named_parameters() if n not in ['lstm.weight_ih_l0','lstm.weight_hh_l0']))
+    def forward(self,x):
+        assert x.shape[-1]==27
+        z,_=self.lstm(x)
+        return self.head(self.output_dropout(z[:,-1])).squeeze(-1)
+
+def reference_ea_forward(model,x):
+    """Independent direct EA recurrence, with no nn.LSTM call."""
+    hsize=model.lstm.hidden_size
+    w=model.lstm.weight_ih_l0*model.input_weight_mask
+    u=model.lstm.weight_hh_l0*model.recurrent_weight_mask
+    b=model.lstm.bias_ih_l0+model.lstm.bias_hh_l0
+    statics=x[:,0,7:]
+    gate_i=torch.sigmoid(statics@w[:hsize,7:].T+b[:hsize])
+    h=x.new_zeros((x.shape[0],hsize));c=torch.zeros_like(h)
+    for t in range(x.shape[1]):
+        fgo=x[:,t,:7]@w[hsize:,:7].T+h@u[hsize:,:].T+b[hsize:]
+        f,g,o=fgo.chunk(3,dim=-1)
+        c=torch.sigmoid(f)*c+gate_i*torch.tanh(g)
+        h=torch.sigmoid(o)*torch.tanh(c)
+    return model.head(h).squeeze(-1)
+
+def verify_ea_architecture():
+    state=(random.getstate(),np.random.get_state(),torch.get_rng_state(),torch.cuda.get_rng_state_all())
+    original_tf32=torch.backends.cudnn.allow_tf32
+    original_matmul_tf32=torch.backends.cuda.matmul.allow_tf32
+    try:
+        torch.manual_seed(123)
+        a=MeteorologyLSTM(hidden=4).double().eval()
+        b=MeteorologyLSTM(hidden=4).double().eval();b.load_state_dict(a.state_dict())
+        d=torch.randn(2,9,7,dtype=torch.float64)
+        s=torch.randn(2,20,dtype=torch.float64)
+        x=torch.cat([d,s[:,None,:].expand(-1,9,-1)],-1)
+        qa=a(x);qb=reference_ea_forward(b,x)
+        assert torch.allclose(qa,qb,rtol=1e-10,atol=1e-10)
+        qa.square().sum().backward();qb.square().sum().backward()
+        for (_,pa),(_,pb) in zip(a.named_parameters(),b.named_parameters()):
+            assert torch.allclose(pa.grad,pb.grad,rtol=1e-9,atol=1e-10)
+        opt_test=torch.optim.Adam(a.parameters(),lr=.001);opt_test.step();a.assert_structural_zeros()
+        # Exact separation of static input gate and dynamic first-step gates.
+        w=a.lstm.weight_ih_l0;u=a.lstm.weight_hh_l0;bias=a.lstm.bias_ih_l0+a.lstm.bias_hh_l0
+        altered=x.clone();altered[:,:,:7]+=3
+        ia=x[:,0]@w[:4].T+bias[:4];ib=altered[:,0]@w[:4].T+bias[:4]
+        assert torch.equal(ia,ib) and torch.count_nonzero(u[:4]).item()==0
+        altered=x.clone();altered[:,:,7:]+=3
+        assert torch.equal(x[:,0]@w[4:].T,altered[:,0]@w[4:].T)
+        # Compare full FP32 calculations; restore the baseline TF32 policy after verification.
+        torch.backends.cudnn.allow_tf32=False
+        torch.backends.cuda.matmul.allow_tf32=False
+        # CUDA/cuDNN outputs and gradients agree with the direct equations too.
+        c=MeteorologyLSTM(hidden=4).to(DEVICE).train();c.output_dropout.eval()
+        e=MeteorologyLSTM(hidden=4).to(DEVICE).train();e.output_dropout.eval();e.load_state_dict(c.state_dict())
+        xx=x.float().to(DEVICE);q1=c(xx);q2=reference_ea_forward(e,xx)
+        assert torch.allclose(q1,q2,rtol=2e-5,atol=2e-6)
+        q1.square().sum().backward();q2.square().sum().backward()
+        for (name,pa),(_,pb) in zip(c.named_parameters(),e.named_parameters()):
+            error=(pa.grad-pb.grad).abs().max().item()
+            print("GPU GRAD CHECK",name,"max_abs_error",error,"reference_max",pb.grad.abs().max().item(),flush=True)
+            assert torch.allclose(pa.grad,pb.grad,rtol=2e-4,atol=2e-6),name
+        return dict(status='passed',cpu_forward_and_gradient_equivalence=True,cuda_forward_and_gradient_equivalence=True,static_dynamic_gate_separation=True,masked_weights_remain_zero_after_adam=True)
+    finally:
+        torch.backends.cudnn.allow_tf32=original_tf32
+        torch.backends.cuda.matmul.allow_tf32=original_matmul_tf32
+        random.setstate(state[0]);np.random.set_state(state[1]);torch.set_rng_state(state[2]);torch.cuda.set_rng_state_all(state[3])

@@ -1,0 +1,13 @@
+attribute,source,unit,training_min,training_max,reason
+tdmin_std_month_01,RDRS,C,-35.365516662597656,9.949698448181152,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_02,RDRS,C,-34.606483459472656,11.444262504577637,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_03,RDRS,C,-33.663291931152344,13.404473304748535,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_04,RDRS,C,-26.51444435119629,17.07618522644043,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_05,RDRS,C,-18.696422576904297,21.03822135925293,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_06,RDRS,C,-12.711496353149414,23.786758422851562,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_07,RDRS,C,-9.395474433898926,24.036579132080078,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_08,RDRS,C,-11.818901062011719,24.030147552490234,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_09,RDRS,C,-18.560361862182617,21.91009521484375,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_10,RDRS,C,-27.09076499938965,19.045455932617188,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_11,RDRS,C,-34.078826904296875,15.017297744750977,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.
+tdmin_std_month_12,RDRS,C,-34.754756927490234,11.924348831176758,Negative value in a field named as a standard deviation; verify definition and source implementation. Do not take absolute values.

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "source_notebook": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/Daymet_PCA10_LSTM.ipynb",
+  "source_csv": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/daymet_pca10_discharge_1980_2009.csv",
+  "csv_sha256": "becf34755e5efdd98c992e1ef33173b69a719146dcd21cc708389daed7db5aa2",
+  "dataset_is_independent_regular_copy": true,
+  "rows": 15626108,
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "preprocessing_and_sampling_code_unchanged": true,
+  "evaluation_core_unchanged": true,
+  "split_hash": "779bde7ce5db72c8158f26f161865c4987eb4ce6a0ac7469383256b41cc2d844",
+  "preserved_baseline_sha256": {
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/Daymet_PCA10_LSTM.ipynb": "9d6eb918653b884dd27863d095a45a099e60df8e89a49550fbac4e5acdf35c2a",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/daymet_pca10_discharge_1980_2009.csv": "becf34755e5efdd98c992e1ef33173b69a719146dcd21cc708389daed7db5aa2",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/basin_model_performance.csv": "3811f5296e7b7aa363476bac0f583d21e8e8a235c412319b2e23c3fb52ebe8ec",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/results_seed42/best.pt": "541ec5748d9d2e7a7e5b1117cc54dc1a18074ebeb16bc4536fe08a84919bf30f",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/results_seed42/history.json": "4913391d1288544f93863f1fb05b0775c22da155842bc455321ad0c23c4b9b17"
+  }
+}

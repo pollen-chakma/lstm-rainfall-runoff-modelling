@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "reference_hashes": {
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/Daymet_PCA10_H256_Dropout02_Adaptive50.ipynb": "7d1c0f3ec1346734ee1ae4130cb9044594568d3ff4a9f8192b0e2bc957fc57a2",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/daymet_pca10_discharge_1980_2009.csv": "becf34755e5efdd98c992e1ef33173b69a719146dcd21cc708389daed7db5aa2",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/outputs/basin_model_performance.csv": "6dd880e649848f5660f89bf32b0087b3bbeac2e32f9221367b7a4c0e5b0a7fd5",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/outputs/results_seed42/preprocessing.npz": "1ce52cf6af2daf6e17fce6524de0f24293b932f7239fa47958f9806228da50ba",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/outputs/results_seed42/best.pt": "d120ca84525f5575d01370f680a1d355bf580036c6d7575b417fca934a94da23",
+    "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 H256 Dropout02 Adaptive50)/outputs/results_seed42/history.json": "055bd34c0666c281abc6140dff837d652c800b885cb63be41a0d3f7e92b15410"
+  },
+  "csv_sha256": "71b540506c7575d79e505a3856f41e2d3400446f2775e0fc6d9266961f909cad",
+  "rows": 15626108,
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "shared_protocol_checked": true,
+  "allowed_changes": [
+    "remove20 static channels",
+    "new input schema",
+    "seed loop and operational time-budget pause",
+    "outputs and verification/reporting"
+  ],
+  "evaluation_ast_identical": true
+}

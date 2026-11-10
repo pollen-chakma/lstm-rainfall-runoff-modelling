@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "model": "Daymet + PCA10 means only",
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "epochs": 20,
+  "seed": 42,
+  "best_epoch": 18
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "epochs": 20,
+  "all_daily_metrics_recomputed": true,
+  "same_IDs_years_and_scored_day_counts_as_PCA10": true,
+  "code_cells_executed": 7,
+  "basin_status_counts": {
+    "scored": 1417,
+    "no_test_observations": 9
+  }
+}

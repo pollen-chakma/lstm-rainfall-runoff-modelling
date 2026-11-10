@@ -1,0 +1,16 @@
+{
+  "phase": "complete",
+  "status": "complete",
+  "model": "EA-LSTM Daymet + PCA10 mean/std H256 dropout0.2 adaptive50",
+  "seed": 42,
+  "epochs": 50,
+  "best_epoch": 46,
+  "stop_reason": "max_epochs",
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "parameters": 292097,
+  "effective_parameters": 209409,
+  "structural_zero_parameters": 82688,
+  "updated_utc": "2026-11-04 07:11:10 UTC"
+}

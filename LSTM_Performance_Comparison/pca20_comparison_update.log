@@ -1,0 +1,15 @@
+{"status": "passed", "rows": 1426, "columns": 40, "seen": 1326, "unseen": 100, "old_values_and_order_preserved": true, "all_PCA20_values_match_source": true, "backup": "/home/pollen26/Desktop/LSTM_RR_Modelling/LSTM_Performance_Comparison/backups/basin_comparison_before_PCA20_20261102T210930075044.csv", "sha256": "54ba960da34606b0d90a8f6a065fafd1d6b378f0cceaea0523f7ecde73888c81"}
+Seen Daymet meteorology only [('NSE', -0.3299, 0.4772, 140, 1317), ('KGE', -0.1816, 0.4054, 200, 1317)]
+Seen Daymet + original attributes [('NSE', 0.1838, 0.6029, 104, 1317), ('KGE', 0.3371, 0.5672, 122, 1317)]
+Seen Daymet + PCA10 mean/std [('NSE', 0.3574, 0.6648, 84, 1317), ('KGE', 0.3688, 0.6406, 111, 1317)]
+Seen Daymet + PCA20 mean/std [('NSE', 0.4952, 0.6795, 61, 1317), ('KGE', 0.4786, 0.6455, 82, 1317)]
+Seen ERA5 + original attributes [('NSE', 0.2956, 0.5281, 86, 1317), ('KGE', 0.3848, 0.4949, 116, 1317)]
+Seen ERA5 extended + attributes [('NSE', 0.1497, 0.5553, 83, 1310), ('KGE', 0.3539, 0.5463, 113, 1310)]
+Unseen Daymet meteorology only [('NSE', 0.4389, 0.4851, 7, 100), ('KGE', 0.3, 0.364, 10, 100)]
+Unseen Daymet + original attributes [('NSE', 0.483, 0.5728, 9, 100), ('KGE', 0.4333, 0.5209, 7, 100)]
+Unseen Daymet + PCA10 mean/std [('NSE', 0.4545, 0.5839, 8, 100), ('KGE', 0.4061, 0.5516, 14, 100)]
+Unseen Daymet + PCA20 mean/std [('NSE', 0.4301, 0.5948, 10, 100), ('KGE', 0.4338, 0.5297, 11, 100)]
+Unseen ERA5 + original attributes [('NSE', 0.3862, 0.4648, 6, 100), ('KGE', 0.3708, 0.4445, 6, 100)]
+Unseen ERA5 extended + attributes [('NSE', 0.4856, 0.5322, 5, 99), ('KGE', 0.4606, 0.5149, 7, 99)]
+PAIRED [{"group": "Seen", "metric": "NSE", "n": 1317, "improved": 776, "worsened": 541, "tied": 0, "median_paired_change": 0.013392260767022268, "mean_paired_change": 0.1378105443961598}, {"group": "Seen", "metric": "KGE", "n": 1317, "improved": 725, "worsened": 592, "tied": 0, "median_paired_change": 0.012084974488650535, "mean_paired_change": 0.10979044945739676}, {"group": "Unseen", "metric": "NSE", "n": 100, "improved": 45, "worsened": 55, "tied": 0, "median_paired_change": -0.007920884089192781, "mean_paired_change": -0.024470555932074742}, {"group": "Unseen", "metric": "KGE", "n": 100, "improved": 53, "worsened": 47, "tied": 0, "median_paired_change": 0.0130265527860422, "mean_paired_change": 0.027672337469417094}]
+COMPLETE /home/pollen26/Desktop/LSTM_RR_Modelling/LSTM_Performance_Comparison/PCA20_updated_boxplots

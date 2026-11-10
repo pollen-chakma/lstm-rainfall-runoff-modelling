@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Experiment_Utilities/Daymet_PCA10_Means_Only/prepare_experiment.py", line 35, in <module>
+    reader=replace_once(reader,a,b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Experiment_Utilities/Daymet_PCA10_Means_Only/prepare_experiment.py", line 22, in replace_once
+    assert s.count(a)==1,(a,s.count(a));return s.replace(a,b)
+           ^^^^^^^^^^^^^
+AssertionError: ('[11:34]', 2)
+CSV EXPORTED BASINS 200
+CSV EXPORTED BASINS 400
+CSV EXPORTED BASINS 600
+CSV EXPORTED BASINS 800
+CSV EXPORTED BASINS 1000
+CSV EXPORTED BASINS 1200
+CSV EXPORTED BASINS 1400
+CSV VERIFIED ROWS 2000000
+CSV VERIFIED ROWS 4000000
+CSV VERIFIED ROWS 6000000
+CSV VERIFIED ROWS 8000000
+CSV VERIFIED ROWS 10000000
+CSV VERIFIED ROWS 12000000
+CSV VERIFIED ROWS 14000000
+PREPARATION COMPLETE /home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10 Means Only)

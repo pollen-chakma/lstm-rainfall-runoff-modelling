@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "catchments_compared": 1426,
+  "training_code": "byte-identical to Daymet",
+  "dates_discharge_static": "identical in all prepared catchments",
+  "split_labels": "identical",
+  "training_hyperparameters": "identical",
+  "daymet_original_result_hashes": "unchanged",
+  "era5_fitted_basins": 1326,
+  "excluded_holdout_basins": 100
+}

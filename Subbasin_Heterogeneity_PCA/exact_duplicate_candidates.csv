@@ -1,0 +1,17 @@
+attribute,duplicate_of,unit
+tdmin_std_month_01,tdmin_mean_month_01,C
+tdmin_std_month_02,tdmin_mean_month_02,C
+tdmin_std_month_03,tdmin_mean_month_03,C
+tdmin_std_month_04,tdmin_mean_month_04,C
+tdmin_std_month_05,tdmin_mean_month_05,C
+tdmin_std_month_06,tdmin_mean_month_06,C
+tdmin_std_month_07,tdmin_mean_month_07,C
+tdmin_std_month_08,tdmin_mean_month_08,C
+tdmin_std_month_09,tdmin_mean_month_09,C
+tdmin_std_month_10,tdmin_mean_month_10,C
+tdmin_std_month_11,tdmin_mean_month_11,C
+tdmin_std_month_12,tdmin_mean_month_12,C
+reservoir_area_mean,reservoir_area_min,km^2
+reservoir_area_max,reservoir_area_min,km^2
+reservoir_volume_mean,reservoir_volume_min,million~m^3
+reservoir_volume_max,reservoir_volume_min,million~m^3

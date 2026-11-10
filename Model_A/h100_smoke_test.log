@@ -1,0 +1,2 @@
+DEVICE cuda:0 NVIDIA H100 80GB HBM3 MIG 1g.10gb memory_GiB 9.75
+SMOKE PASS cuda:0 loss 0.3169291019439697 windows {'train': 63931, 'validation': 18270, 'test': 18260}

@@ -1,0 +1,70 @@
+EVALUATED temporal 25 / 1326
+EVALUATED temporal 50 / 1326
+EVALUATED temporal 75 / 1326
+EVALUATED temporal 100 / 1326
+EVALUATED temporal 125 / 1326
+EVALUATED temporal 150 / 1326
+EVALUATED temporal 175 / 1326
+EVALUATED temporal 200 / 1326
+EVALUATED temporal 225 / 1326
+EVALUATED temporal 250 / 1326
+EVALUATED temporal 275 / 1326
+EVALUATED temporal 300 / 1326
+EVALUATED temporal 325 / 1326
+EVALUATED temporal 350 / 1326
+EVALUATED temporal 375 / 1326
+EVALUATED temporal 400 / 1326
+EVALUATED temporal 425 / 1326
+EVALUATED temporal 450 / 1326
+EVALUATED temporal 475 / 1326
+EVALUATED temporal 500 / 1326
+EVALUATED temporal 525 / 1326
+EVALUATED temporal 550 / 1326
+EVALUATED temporal 575 / 1326
+EVALUATED temporal 600 / 1326
+EVALUATED temporal 625 / 1326
+EVALUATED temporal 650 / 1326
+EVALUATED temporal 675 / 1326
+EVALUATED temporal 700 / 1326
+EVALUATED temporal 725 / 1326
+EVALUATED temporal 750 / 1326
+EVALUATED temporal 775 / 1326
+EVALUATED temporal 800 / 1326
+EVALUATED temporal 825 / 1326
+EVALUATED temporal 850 / 1326
+EVALUATED temporal 875 / 1326
+EVALUATED temporal 900 / 1326
+EVALUATED temporal 925 / 1326
+EVALUATED temporal 950 / 1326
+EVALUATED temporal 975 / 1326
+EVALUATED temporal 1000 / 1326
+EVALUATED temporal 1025 / 1326
+EVALUATED temporal 1050 / 1326
+EVALUATED temporal 1075 / 1326
+EVALUATED temporal 1100 / 1326
+EVALUATED temporal 1125 / 1326
+EVALUATED temporal 1150 / 1326
+EVALUATED temporal 1175 / 1326
+EVALUATED temporal 1200 / 1326
+EVALUATED temporal 1225 / 1326
+EVALUATED temporal 1250 / 1326
+EVALUATED temporal 1275 / 1326
+EVALUATED temporal 1300 / 1326
+EVALUATED temporal 1325 / 1326
+EVALUATED temporal 1326 / 1326
+{
+  "requested_basins": 1326,
+  "scored_basins": 1310,
+  "finite_NSE_basins": 1310,
+  "finite_KGE_basins": 1310,
+  "prediction_files": 1326,
+  "test_start": "2015-01-01",
+  "requested_end_exclusive": "2023-01-04",
+  "latest_scored_date": "2023-01-02",
+  "median_NSE": 0.5552505128222154,
+  "median_KGE": 0.5462624033370084,
+  "negative_NSE_basins": 83,
+  "policy": "Frozen validation-selected model and training-donor preprocessing; all valid test windows, no test subsampling; absent observations excluded; catchment membership unchanged.",
+  "best_epoch": 20,
+  "checkpoint_sha256": "f08689bd29665b9847d95e98f09b5bd7f811433d730dae82b927f322b37a1e3c"
+}

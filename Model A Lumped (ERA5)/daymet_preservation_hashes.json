@@ -1,0 +1,9 @@
+{
+  "run_seed42/best.pt": "39f410ad20c939ade0a8fd1b742d341671677558a4032199122ea692f6649ed1",
+  "run_seed42/last.pt": "89215e23c0f1f4c24df1804d1f6add6ef600dc3628b37139f149483b82c60280",
+  "run_seed42/preprocessing.npz": "e1b526733bc5c1b6e2bca0e06cdd0659e25381680bdf8f7d0fcc555604a8e781",
+  "run_seed42/summary.json": "07b2068deae756bae0f1a2ce7c084888428bcdc17c71b9a3cca98f6650b8955b",
+  "run_seed42/temporal_test_2005_2009/summary.json": "f3907fe28e5b1f21961f1d38b77247870aacdb36ccc1f39408a0897b54e03739",
+  "training_basins.txt": "61c63ae18c7d0ed46a2683c7a4974dae1c0e6d971fea642b8cdca09982fc3ce4",
+  "unseen_test_basins.txt": "e9395ce289a69ac108aac7357c50fdc80cc15fce30bf692fd373b02085af3866"
+}

@@ -1,0 +1,12 @@
+{
+  "input_csv": "basin_diagnostic_dataset.csv",
+  "input_sha256": "57837982ea1219003c59c2179eb53e4a83f6e72ae97a286a940ff02c5a59a7e2",
+  "rows": 7130,
+  "basins": 1426,
+  "seed": 42,
+  "numpy": "2.4.2",
+  "pandas": "3.0.5",
+  "scipy": "1.17.1",
+  "matplotlib": "3.11.1",
+  "method": "post-hoc basin-level analysis; strata analyzed separately; no causal attribution"
+}

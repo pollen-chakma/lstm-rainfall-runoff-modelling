@@ -1,0 +1,14 @@
+{
+  "requested_basins": 100,
+  "scored_basins": 99,
+  "finite_NSE_basins": 99,
+  "finite_KGE_basins": 99,
+  "prediction_files": 100,
+  "test_start": "2015-01-01",
+  "requested_end_exclusive": "2023-01-04",
+  "latest_scored_date": "2023-01-02",
+  "median_NSE": 0.5321503927756013,
+  "median_KGE": 0.514862213219804,
+  "negative_NSE_basins": 5,
+  "policy": "Frozen validation-selected model and training-donor preprocessing; all valid test windows, no test subsampling; absent observations excluded; catchment membership unchanged."
+}

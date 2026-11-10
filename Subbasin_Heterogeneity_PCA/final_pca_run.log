@@ -1,0 +1,27 @@
+TRANSFORMED (32802, 316)
+PCA COMPLETE {
+  "status": "complete",
+  "method": "shared physical-domain-balanced, basin-balanced area-weighted PCA",
+  "initial_candidates": 317,
+  "final_attributes": 312,
+  "retained_domains": {
+    "Land cover": 72,
+    "Topography": 12,
+    "Soil": 206,
+    "Open water": 14,
+    "Geology": 8
+  },
+  "fit_basins": 1326,
+  "held_out_basins": 100,
+  "training_subbasin_records": 30604,
+  "unseen_subbasin_records": 2198,
+  "output_basins": 1426,
+  "components": 20,
+  "pca10_cumulative_explained_variance": 0.6946920381874833,
+  "pca20_cumulative_explained_variance": 0.8441226997480777,
+  "single_subbasin_basins": 304,
+  "correlation_threshold": 0.98,
+  "correlation_policy": "Within min/mean/max family at fixed property/depth/source; standard deviations and different depths preserved.",
+  "seconds": 12,
+  "numpy_version": "2.4.2"
+}

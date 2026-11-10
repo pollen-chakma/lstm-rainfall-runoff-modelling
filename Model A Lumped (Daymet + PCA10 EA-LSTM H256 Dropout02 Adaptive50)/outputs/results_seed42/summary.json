@@ -1,0 +1,24 @@
+{
+  "model": "EA-LSTM Daymet + PCA10 mean/std H256 dropout0.2 adaptive50",
+  "best_epoch": 46,
+  "test_start": "2005-01-01",
+  "test_end": "2009-12-31",
+  "groups": [
+    {
+      "seen_unseen": "Seen",
+      "total_basins": 1326,
+      "scored_basins": 1317,
+      "median_NSE": 0.7161580787459387,
+      "median_KGE": 0.7126725809798109,
+      "median_bias_percent": 2.5882220775373512
+    },
+    {
+      "seen_unseen": "Unseen",
+      "total_basins": 100,
+      "scored_basins": 100,
+      "median_NSE": 0.6305357682567573,
+      "median_KGE": 0.5822196549603842,
+      "median_bias_percent": 0.7068439316277616
+    }
+  ]
+}

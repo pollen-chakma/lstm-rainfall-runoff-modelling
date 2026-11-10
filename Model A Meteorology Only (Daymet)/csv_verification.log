@@ -1,0 +1,8 @@
+VERIFIED 200
+VERIFIED 400
+VERIFIED 600
+VERIFIED 800
+VERIFIED 1000
+VERIFIED 1200
+VERIFIED 1400
+{'passed': True, 'basins': 1426, 'rows': 15626108, 'all_meteorology_values_exact_float32': True, 'all_discharge_values_exact_float32': True, 'all_dates_exact': True, 'attributes_in_csv': 0, 'seconds': 46}

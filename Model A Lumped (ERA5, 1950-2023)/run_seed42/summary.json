@@ -1,0 +1,7 @@
+{
+  "best_epoch": 20,
+  "unseen_basins": 100,
+  "unseen_scored_basins": 99,
+  "median_NSE": 0.5321503927756013,
+  "median_KGE": 0.514862213219804
+}

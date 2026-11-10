@@ -1,0 +1,138 @@
+{
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA H100 80GB HBM3 MIG 1g.10gb",
+  "torch_version": "2.14.1",
+  "data": {
+    "forcing": "daymet",
+    "features": [
+      "prcp",
+      "tmax",
+      "tmin",
+      "srad",
+      "vp",
+      "dayl",
+      "pet"
+    ],
+    "static": [
+      "basin_area",
+      "elev_mean",
+      "slope_mean",
+      "stream_density",
+      "elongation_ratio"
+    ],
+    "start": "1980-01-01",
+    "validation_start": "2000-01-01",
+    "test_start": "2005-01-01",
+    "end_exclusive": "2010-01-01",
+    "lookback": 365,
+    "basins": [
+      {
+        "basin_id": "CAN_01AD003",
+        "group": "macro-scale",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 1343.736223
+      },
+      {
+        "basin_id": "CAN_01AF007",
+        "group": "meso-scale",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 323.8344727
+      },
+      {
+        "basin_id": "CAN_01AF009",
+        "group": "meso-scale",
+        "windows": [
+          2923,
+          1827,
+          1826
+        ],
+        "area_km2": 183.6754339
+      },
+      {
+        "basin_id": "CAN_01AJ003",
+        "group": "macro-scale",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 1213.320279
+      },
+      {
+        "basin_id": "CAN_01BJ012",
+        "group": "headwater",
+        "windows": [
+          5480,
+          1827,
+          1826
+        ],
+        "area_km2": 44.3326833
+      },
+      {
+        "basin_id": "USA_01013500",
+        "group": "macro-scale",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 2249.524543
+      },
+      {
+        "basin_id": "USA_01022500",
+        "group": "meso-scale",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 585.8776165
+      },
+      {
+        "basin_id": "USA_01031500",
+        "group": "meso-scale",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 761.5953056
+      },
+      {
+        "basin_id": "USA_01073000",
+        "group": "headwater",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 30.77778569
+      },
+      {
+        "basin_id": "USA_01121000",
+        "group": "headwater",
+        "windows": [
+          6941,
+          1827,
+          1826
+        ],
+        "area_km2": 67.16219413
+      }
+    ],
+    "quality_policy": "Exclude partial-day and negative discharge; retain estimated/ice-affected values for exploratory pilot. No test scores used for selection."
+  },
+  "seed": 42,
+  "epochs": 20,
+  "steps_per_epoch": 200,
+  "hidden": 64,
+  "batch": 32,
+  "task": "same-day rainfall-runoff simulation; includes target-day weather"
+}

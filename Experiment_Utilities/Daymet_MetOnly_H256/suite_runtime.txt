@@ -1,0 +1,152 @@
+import html, traceback
+TRAIN_CODE=TRAIN_PAYLOAD
+EVALUATION_CODE=EVALUATION_PAYLOAD
+REFERENCE_ROWS=json.loads(zlib.decompress(base64.b64decode(REFERENCE_PAYLOAD)))
+REFERENCE_INDEX={r['basin_id']:r for r in REFERENCE_ROWS}
+assert set(REFERENCE_INDEX)=={r['id'] for r in records}
+METRICS=['NSE','KGE','RMSE','MAE','bias_percent','mean_bias_mm_day','low_RMSE','low_MAE','low_bias_mm_day','low_bias_percent','high_RMSE','high_MAE','high_bias_mm_day','high_bias_percent']
+class SessionBudgetPause(Exception):pass
+def file_hash(path):
+    h=hashlib.sha256()
+    with path.open('rb') as f:
+        for b in iter(lambda:f.read(16*1024*1024),b''):h.update(b)
+    return h.hexdigest()
+def number(r,k):
+    try:return float(r[k])
+    except (ValueError,TypeError,KeyError):return np.nan
+def distribution(rows,seed,model):
+    result=[]
+    for group in ['Seen','Unseen']:
+        rs=[r for r in rows if r['seen_unseen']==group]
+        for k in METRICS:
+            a=np.array([number(r,k) for r in rs]);a=a[np.isfinite(a)]
+            result.append(dict(seed=seed,model=model,group=group,metric=k,total_basins=len(rs),n=len(a),mean=float(a.mean()) if len(a) else np.nan,median=float(np.median(a)) if len(a) else np.nan,q1=float(np.quantile(a,.25)) if len(a) else np.nan,q3=float(np.quantile(a,.75)) if len(a) else np.nan,std=float(a.std(ddof=1)) if len(a)>1 else np.nan,minimum=float(a.min()) if len(a) else np.nan,maximum=float(a.max()) if len(a) else np.nan,negative=int((a<0).sum()) if k in ['NSE','KGE'] else ''))
+    return result
+def flow_errors(y,q):
+    good=np.isfinite(y)&np.isfinite(q);y=np.asarray(y[good],dtype='float64');q=np.asarray(q[good],dtype='float64');out={}
+    out['mean_bias_mm_day']=float((q-y).mean()) if len(y) else np.nan
+    out['negative_predictions']=int(np.sum(q<0));out['negative_prediction_percent']=float(np.mean(q<0)*100) if len(q) else np.nan
+    for label,quant in [('low',.1),('high',.9)]:
+        threshold=float(np.quantile(y,quant)) if len(y) else np.nan
+        keep=y<=threshold if label=='low' else y>=threshold
+        a,c=y[keep],q[keep];e=c-a
+        out.update({label+'_threshold_mm_day':threshold,label+'_n':len(a),label+'_RMSE':float(np.sqrt(np.mean(e*e))) if len(a) else np.nan,label+'_MAE':float(np.mean(np.abs(e))) if len(a) else np.nan,label+'_bias_mm_day':float(e.mean()) if len(a) else np.nan,label+'_bias_percent':float(100*e.sum()/a.sum()) if len(a) and a.sum()!=0 else np.nan})
+    return out
+def verify_run():
+    lookup={r['id']:r for r in records}
+    for row in all_metrics:
+        tag='donor_temporal' if row['seen_unseen']=='Seen' else 'unseen100'
+        path=OUT/tag/(row['basin_id']+'_predictions.csv');daily=list(csv.DictReader(path.open()))
+        dates=[x['date'] for x in daily];date_hash=hashlib.sha256('\n'.join(dates).encode()).hexdigest()
+        assert date_hash==REFERENCE_INDEX[row['basin_id']]['test_dates_sha256']
+        assert len(dates)==len(set(dates)) and all('2005-01-01'<=d<='2009-12-31' for d in dates)
+        y=np.array([float(x['observed_mm_day']) for x in daily],dtype='float32');q=np.array([float(x['predicted_mm_day']) for x in daily],dtype='float64')
+        ds=Windows([lookup[row['basin_id']]],p,'test');expected_y=lookup[row['basin_id']]['y'][ds.indices[0]]
+        assert np.array_equal(y,expected_y,equal_nan=True) and np.isfinite(q).all()
+        good=np.isfinite(y);a,c=y[good],q[good];e=c-a
+        values=dict(NSE=np.nan,KGE=np.nan,bias_percent=np.nan,RMSE=float(np.sqrt(np.mean(e*e))) if len(a) else np.nan,MAE=float(np.mean(np.abs(e))) if len(a) else np.nan)
+        if len(a)>=2 and a.std()>0:
+            values['NSE']=float(1-np.sum(e*e)/np.sum((a-a.mean())**2))
+            corr=np.corrcoef(a,c)[0,1] if c.std()>0 else np.nan
+            values['KGE']=float(1-np.sqrt((corr-1)**2+(c.std()/a.std()-1)**2+(c.mean()/a.mean()-1)**2)) if a.mean()!=0 else np.nan
+            values['bias_percent']=float(100*(c.sum()-a.sum())/a.sum()) if a.sum()!=0 else np.nan
+        assert len(a)==row['n']==int(REFERENCE_INDEX[row['basin_id']]['n'])
+        for k,v in values.items():assert np.allclose(v,row[k],rtol=2e-5,atol=2e-5,equal_nan=True),(row['basin_id'],k)
+        row.update(flow_errors(y,q));row['test_dates_sha256']=date_hash;row['seed']=seed
+        for k in ['low_threshold_mm_day','high_threshold_mm_day','low_n','high_n']:
+            assert np.allclose(float(row[k]),float(REFERENCE_INDEX[row['basin_id']][k]),rtol=1e-8,atol=1e-8,equal_nan=True),(row['basin_id'],k)
+        for d in daily:d['basin_id']=row['basin_id']
+        save_csv(path,daily,['basin_id','date','observed_mm_day','predicted_mm_day'])
+    hist=json.loads((OUT/'history.json').read_text());sel=json.loads((OUT/'selection.json').read_text())
+    assert sel['best_epoch']==min(hist,key=lambda x:x['validation_loss'])['epoch']
+    assert [x['epoch'] for x in hist]==list(range(1,len(hist)+1))
+    best=float('inf');bad=0;lr_bad=0;rate=.001
+    for h in hist:
+        assert h['learning_rate_used']==rate
+        if h['validation_loss']<best:best=h['validation_loss'];bad=0;lr_bad=0
+        else:bad+=1;lr_bad+=1
+        if lr_bad>=3:rate=max(.00001,rate*.5);lr_bad=0
+        assert h['learning_rate_next']==rate and h['early_bad_epochs']==bad and h['lr_bad_epochs']==lr_bad
+    assert (len(hist)==50 and sel['stop_reason']=='max_epochs') or (bad==10 and sel['stop_reason']=='early_stopping')
+    save_csv(OUTPUT_BASE/'basin_model_performance.csv',all_metrics)
+    save_csv(OUTPUT_BASE/'model_performance_summary.csv',distribution(all_metrics,seed,'Daymet meteorology only H256'))
+    sel['test_evaluation_started']=True;sel['test_evaluation_complete']=True;atomic(OUT/'selection.json',sel)
+    atomic(OUTPUT_BASE/'results_verification.json',dict(status='passed',basins=1426,metrics_independently_recomputed=True,dates_and_observations_verified=True,flow_thresholds_match_reference=True,scheduler_verified=True,static_predictors_absent=True))
+    atomic(OUTPUT_BASE/'completion.json',dict(status='complete',seed=seed,epochs=len(hist),best_epoch=sel['best_epoch'],stop_reason=sel['stop_reason'],experiment_hash=DIGEST,performance_sha256=file_hash(OUTPUT_BASE/'basin_model_performance.csv'),best_checkpoint_sha256=file_hash(OUT/'best.pt'),parameters=271617))
+def table(rows):
+    if not rows:return '<p>No completed runs.</p>'
+    keys=list(rows[0])
+    def fmt(v):return f'{v:.4f}' if isinstance(v,(float,np.floating)) and np.isfinite(v) else str(v)
+    return '<table><tr>'+''.join('<th>'+html.escape(k)+'</th>' for k in keys)+'</tr>'+''.join('<tr>'+''.join('<td>'+html.escape(fmt(r[k]))+'</td>' for k in keys)+'</tr>' for r in rows)+'</table>'
+def summarize_suite(phase,detail=''):
+    completed=[];summaries=[];paired=[];comparison=[];selections=[]
+    for s in SEEDS:
+        folder=SUITE/f'seed_{s}'
+        if not (folder/'completion.json').exists():continue
+        done=json.loads((folder/'completion.json').read_text());completed.append(s);selections.append(done)
+        rows=list(csv.DictReader((folder/'basin_model_performance.csv').open()))
+        summaries+=distribution(rows,s,'Daymet meteorology only H256')
+        if s!=42:continue
+        for group in ['Seen','Unseen']:
+            for k in ['NSE','KGE','RMSE','MAE','bias_percent','low_RMSE','low_MAE','high_RMSE','high_MAE']:
+                a=np.array([(number(REFERENCE_INDEX[r['basin_id']],k),number(r,k)) for r in rows if r['seen_unseen']==group]);a=a[np.isfinite(a).all(1)];d=a[:,1]-a[:,0]
+                if not len(d):continue
+                higher=k in ['NSE','KGE'];bias=k=='bias_percent'
+                paired.append(dict(seed=s,group=group,metric=k,n=len(d),reference_median=float(np.median(a[:,0])),met_only_median=float(np.median(a[:,1])),median_paired_change=float(np.median(d)),mean_paired_change=float(d.mean()),improved='' if bias else int(((d>0) if higher else (d<0)).sum()),worsened='' if bias else int(((d<0) if higher else (d>0)).sum()),direction='signed bias; closer to zero' if bias else ('higher' if higher else 'lower')))
+        for r in rows:
+            z=dict(seed=s,basin_id=r['basin_id'],seen_unseen=r['seen_unseen'])
+            for k in METRICS:z['reference_'+k]=number(REFERENCE_INDEX[r['basin_id']],k);z['met_only_'+k]=number(r,k);z['change_'+k]=z['met_only_'+k]-z['reference_'+k]
+            comparison.append(z)
+    if summaries:save_csv(SUITE/'per_seed_summary.csv',summaries)
+    if paired:save_csv(SUITE/'matched_seed42_comparison.csv',paired);save_csv(SUITE/'matched_seed42_basin_comparison.csv',comparison)
+    variation=[]
+    for group in ['Seen','Unseen']:
+        for k in METRICS:
+            rs=[r for r in summaries if r['group']==group and r['metric']==k]
+            if not rs:continue
+            a=np.array([r['median'] for r in rs]);a=a[np.isfinite(a)]
+            variation.append(dict(group=group,metric=k,n_seeds=len(rs),mean_of_seed_medians=float(a.mean()) if len(a) else np.nan,std_of_seed_medians=float(a.std(ddof=1)) if len(a)>1 else np.nan,min_seed_median=float(a.min()) if len(a) else np.nan,max_seed_median=float(a.max()) if len(a) else np.nan,mean_negative_count=float(np.mean([r['negative'] for r in rs])) if k in ['NSE','KGE'] else ''))
+    if variation:save_csv(SUITE/'across_seed_variation.csv',variation)
+    status=dict(phase=phase,detail=detail,completed_seeds=completed,pending_seeds=[s for s in SEEDS if s not in completed],reference_seeds_available=[42],reference_seeds_missing=[43,44,45,46],ensemble_computed=False,updated_utc=time.strftime('%Y-%m-%d %H:%M:%S UTC',time.gmtime()))
+    atomic(SUITE/'suite_status.json',status);atomic(SUITE/'selected_epochs.json',selections)
+    body='<html><head><meta charset="utf-8"><style>body{font:15px sans-serif;margin:24px;color:#183e44}table{border-collapse:collapse}td,th{border:1px solid #cadbdc;padding:7px}th{background:#e8f3f3}</style></head><body><h1>Setup A · Daymet meteorology-only H256</h1><pre>'+html.escape(json.dumps(status,indent=2))+'</pre><h2>Individual seed results</h2>'+table([r for r in summaries if r['metric'] in ['NSE','KGE','RMSE','bias_percent']])+'<h2>Matching seed42 attribute comparison</h2><p>Met-only minus reference. No seed43–46 attribute comparator was available at construction. No unmatched-seed causal claims.</p>'+table(paired)+'<h2>Variation across seed medians (not ensemble performance)</h2>'+table(variation)+'<p>Same H256 hidden architecture and training protocol; input-weight counts differ. Low/high flow are observed-test Q10/Q90 with ties, reporting only. Full test metrics independently recalculated from exported daily predictions. Only notebook and CSV are required inputs.</p></body></html>'
+    (SUITE/'model_report.html').write_text(body)
+    return status
+def check_protected_files():
+    checked=[];absent=[]
+    for name,expected in REFERENCE_HASHES.items():
+        path=Path(name)
+        if path.exists():assert file_hash(path)==expected,'Reference changed: '+name;checked.append(name)
+        else:absent.append(name)
+    atomic(SUITE/'reference_preservation.json',dict(status='passed',checked=checked,absent_in_two_input_copy=absent))
+
+try:
+    summarize_suite('running')
+    for seed in SEEDS:
+        CFG['seed']=seed;OUTPUT_BASE=SUITE/f'seed_{seed}';OUTPUT_BASE.mkdir(exist_ok=True)
+        OUT=OUTPUT_BASE/f'results_seed{seed}';OUT.mkdir(exist_ok=True)
+        DIGEST=hashlib.sha256(json.dumps(dict(config=CFG,csv_sha256=CSV_HASH),sort_keys=True).encode()).hexdigest()
+        if (OUTPUT_BASE/'completion.json').exists():
+            done=json.loads((OUTPUT_BASE/'completion.json').read_text())
+            assert done['experiment_hash']==DIGEST
+            assert file_hash(OUTPUT_BASE/'basin_model_performance.csv')==done['performance_sha256']
+            assert file_hash(OUT/'best.pt')==done['best_checkpoint_sha256']
+            continue
+        if time.monotonic()-SUITE_STARTED>MAX_SESSION_SECONDS:raise SessionBudgetPause('Session budget reached before next seed')
+        random.seed(seed);np.random.seed(seed);torch.manual_seed(seed);torch.cuda.manual_seed_all(seed)
+        sampler.seed=seed;sampler.epoch=0
+        np.savez(OUT/'preprocessing.npz',**p)
+        atomic(OUT/'fit_metadata.json',dict(fitted_ids=[r['id'] for r in donors],excluded_ids=[r['id'] for r in held],fit_end_exclusive='2000-01-01',static_features=[],experiment_hash=DIGEST))
+        save_csv(OUT/'window_counts.csv',[dict(basin_id=r['id'],train_windows=int(n),validation_windows=int(v)) for r,n,v in zip(donors,train.lengths,val.lengths)])
+        atomic(SUITE/'suite_status.json',dict(phase='running',active_seed=seed,detail='See seed folder status.json for live epoch',updated_utc=time.strftime('%Y-%m-%d %H:%M:%S UTC',time.gmtime())))
+        exec(compile(TRAIN_CODE,'<reference_training_protocol>','exec'),globals())
+        exec(compile(EVALUATION_CODE,'<reference_evaluation_protocol>','exec'),globals())
+        verify_run();summarize_suite('running',f'Seed {seed} verified')
+        print('MILESTONE verified seed',seed,'selected epoch',json.loads((OUT/'selection.json').read_text())['best_epoch'],flush=True)
+        del model,opt;torch.cuda.empty_cache()
+    check_protected_files();status=summarize_suite('complete');display(HTML('<h2>Five-seed experiment complete</h2>'+table([r for r in json.loads((SUITE/'selected_epochs.json').read_text())])))
+except SessionBudgetPause as exc:
+    check_protected_files();status=summarize_suite('paused_for_session_budget',str(exc));print('PAUSED safely; start a new GPU allocation and rerun this notebook. Checkpoints will resume.',flush=True)
+except Exception:
+    summarize_suite('failed',traceback.format_exc());raise
+print(json.dumps(status),flush=True)

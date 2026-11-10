@@ -1,0 +1,8 @@
+{
+  "phase": "complete",
+  "run_dir": "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (ERA5)/run_seed42",
+  "best_epoch": 20,
+  "unseen_basins": 100,
+  "median_NSE": 0.46477508425752734,
+  "median_KGE": 0.44445957199406705
+}

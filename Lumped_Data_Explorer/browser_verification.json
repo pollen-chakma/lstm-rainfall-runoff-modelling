@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "browser_checks": [
+    "source selection",
+    "parameter selection",
+    "1/2/3 vertical graph layouts",
+    "date inputs",
+    "start-date slider updates dates and summaries",
+    "hover actual daily values",
+    "all 1426 basins: 2852 traces and summary rows for two sources",
+    "numeric mean sorting",
+    "summary row filtering: 200 unseen source/basin rows",
+    "two-basin synchronized 2-graph view"
+  ],
+  "dashboard_url": "https://ondemand.sharcnet.ca/node/c172.nibi.sharcnet/47568/proxy/8765/"
+}

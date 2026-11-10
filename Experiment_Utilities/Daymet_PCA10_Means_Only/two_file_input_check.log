@@ -1,0 +1,29 @@
+CELL START 1
+GPU: NVIDIA H100 80GB HBM3 MIG 1g.10gb
+CSV: /home/pollen26/Desktop/LSTM_RR_Modelling/Experiment_Utilities/Daymet_PCA10_Means_Only/two_file_input_check/daymet_pca10_means_only_discharge_1980_2009.csv
+Only model inputs: ['prcp', 'tmax', 'tmin', 'srad', 'vp', 'dayl', 'pet']
+Static inputs: ['PC01_mean', 'PC02_mean', 'PC03_mean', 'PC04_mean', 'PC05_mean', 'PC06_mean', 'PC07_mean', 'PC08_mean', 'PC09_mean', 'PC10_mean']
+CELL FINISHED 1
+CELL START 3
+CSV catchments loaded: 200
+CSV catchments loaded: 400
+CSV catchments loaded: 600
+CSV catchments loaded: 800
+CSV catchments loaded: 1000
+CSV catchments loaded: 1200
+CSV catchments loaded: 1400
+CSV is the sole data source. Exact original split verified.
+CELL FINISHED 3
+CELL START 5
+Training windows: 8129370 fixed validation windows: 165015 validation donors: 1290
+Static scaler fitted once per donor basin; 17 LSTM input channels.
+CELL FINISHED 5
+CELL START 7
+CELL FINISHED 7
+NOTEBOOK EXECUTION COMPLETE
+Exception ignored in: <function KernelClient.__del__ at 0x151a61403880>
+Traceback (most recent call last):
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2026a/lib/python3.11/site-packages/jupyter_client/client.py", line 120, in __del__
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2026a/lib/python3.11/site-packages/traitlets/traitlets.py", line 687, in __get__
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2026a/lib/python3.11/site-packages/traitlets/traitlets.py", line 666, in get
+TypeError: 'NoneType' object is not callable

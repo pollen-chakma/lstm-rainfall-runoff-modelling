@@ -1,0 +1,32 @@
+# Virtual environments & caches
+.venv/
+venv*/
+__pycache__/
+.ipynb_checkpoints/
+.mplconfig/
+.DS_Store
+*.pyc
+*.lock
+
+# Prepared per-basin numpy caches & dashboard cache
+prepared/
+Lumped_Data_Explorer/cache/
+**/donor_temporal/
+**/unseen100/
+**/temporal_test_2005_2009/
+
+# Per-basin daily prediction CSVs and model checkpoints
+*_predictions.csv
+*.pt
+*.pth
+*.ckpt
+
+# Large multi-GB merged forcing/discharge CSVs and >100MB binary matrices
+daymet_*_discharge_*.csv
+**/daymet_*_discharge_*.csv
+daymet_lumped_daily.csv
+**/daymet_lumped_daily.csv
+era5_lumped_daily.csv
+**/era5_lumped_daily.csv
+*ensemble_daily_predictions.csv
+**/subbasin_attribute_matrix.npz

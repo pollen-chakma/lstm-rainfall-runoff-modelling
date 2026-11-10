@@ -1,0 +1,16 @@
+EXPORTED 100 /1426 1095800 rows
+EXPORTED 200 /1426 2191600 rows
+EXPORTED 300 /1426 3287400 rows
+EXPORTED 400 /1426 4383200 rows
+EXPORTED 500 /1426 5479000 rows
+EXPORTED 600 /1426 6574800 rows
+EXPORTED 700 /1426 7670600 rows
+EXPORTED 800 /1426 8766400 rows
+EXPORTED 900 /1426 9862200 rows
+EXPORTED 1000 /1426 10958000 rows
+EXPORTED 1100 /1426 12053800 rows
+EXPORTED 1200 /1426 13149600 rows
+EXPORTED 1300 /1426 14245400 rows
+EXPORTED 1400 /1426 15341200 rows
+EXPORTED 1426 /1426 15626108 rows
+CSV COMPLETE {"csv_name": "daymet_forcing_discharge_1980_2009.csv", "rows": 15626108, "basins": 1426, "training_basins": 1326, "unseen_basins": 100, "features": ["prcp", "tmax", "tmin", "srad", "vp", "dayl", "pet"], "target": "q_obs_mm_day", "attributes_in_csv": [], "attribute_features_used": [], "discharge_note": "Same preprocessed mm/day target and quality exclusions as the Daymet attribute baseline. Area was used only in the existing target unit conversion, never as a model input.", "elapsed_seconds": 73, "bytes": 1881759128}

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "input_files": [
+    "Five_Seed_Comparison_Analysis.ipynb",
+    "multiseed_basin_analysis_dataset.csv"
+  ],
+  "tables_identical": [
+    "per_seed_group_performance.csv",
+    "repeatability_summary.csv",
+    "paired_seed_comparison.csv",
+    "basin_improvement_consistency.csv",
+    "ensemble_performance_summary.csv",
+    "hydrological_subgroup_comparison.csv",
+    "consistency_distribution.csv"
+  ],
+  "figures_pixel_identical": [
+    "NSE_five_seed_repeatability.png",
+    "NSE_basin_consistency.png",
+    "KGE_five_seed_repeatability.png",
+    "KGE_basin_consistency.png"
+  ],
+  "numerical_tables_unchanged_by_layout": true,
+  "analysis_notebook_sha256": "b067c3fb54528656a6a8b997eb9c5e5bd7e3793ff2ee98f06cc402c6e4fe7c69"
+}

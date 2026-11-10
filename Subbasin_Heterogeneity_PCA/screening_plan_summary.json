@@ -1,0 +1,13 @@
+{
+  "provisional_not_final": true,
+  "initial_physical_pca_candidates": 317,
+  "recommended_actions": {
+    "defer_from_primary_physical_pca": 771,
+    "encode_or_defer_categorical": 4,
+    "exclude_constant_training": 5,
+    "candidate_retain": 317,
+    "candidate_remove_exact_duplicate": 4
+  },
+  "pca_fitted": false,
+  "automatic_correlation_removal": false
+}

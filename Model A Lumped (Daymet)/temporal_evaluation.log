@@ -1,0 +1,41 @@
+EVALUATED 50 / 1326
+EVALUATED 100 / 1326
+EVALUATED 150 / 1326
+EVALUATED 200 / 1326
+EVALUATED 250 / 1326
+EVALUATED 300 / 1326
+EVALUATED 350 / 1326
+EVALUATED 400 / 1326
+EVALUATED 450 / 1326
+EVALUATED 500 / 1326
+EVALUATED 550 / 1326
+EVALUATED 600 / 1326
+EVALUATED 650 / 1326
+EVALUATED 700 / 1326
+EVALUATED 750 / 1326
+EVALUATED 800 / 1326
+EVALUATED 850 / 1326
+EVALUATED 900 / 1326
+EVALUATED 950 / 1326
+EVALUATED 1000 / 1326
+EVALUATED 1050 / 1326
+EVALUATED 1100 / 1326
+EVALUATED 1150 / 1326
+EVALUATED 1200 / 1326
+EVALUATED 1250 / 1326
+EVALUATED 1300 / 1326
+EVALUATED 1326 / 1326
+{
+  "phase": "complete",
+  "requested_basins": 1326,
+  "scored_basins": 1317,
+  "prediction_files": 1326,
+  "best_epoch": 19,
+  "test_start": "2005-01-01",
+  "test_end": "2009-12-31",
+  "median_NSE": 0.6029214681106941,
+  "median_KGE": 0.5671651386941885,
+  "negative_NSE_basins": 104,
+  "checkpoint_sha256": "39f410ad20c939ade0a8fd1b742d341671677558a4032199122ea692f6649ed1",
+  "policy": "Frozen epoch-19 checkpoint and saved training-only preprocessing. Full valid forcing windows, no test subsampling. No retraining or checkpoint selection. Antecedent meteorology may precede 2005; all scored target dates are in 2005-2009."
+}

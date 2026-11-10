@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "basins": 1426,
+  "seen": 1326,
+  "unseen": 100,
+  "metrics_recomputed": [
+    "NSE",
+    "KGE",
+    "RMSE",
+    "MAE",
+    "bias_percent"
+  ],
+  "epochs": 20,
+  "basin_status_counts": {
+    "scored": 1417,
+    "no_test_observations": 9
+  }
+}

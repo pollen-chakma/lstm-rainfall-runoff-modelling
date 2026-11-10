@@ -1,0 +1,8 @@
+{
+  "phase": "complete",
+  "daymet_preservation": "PASS",
+  "notebooks": [
+    "Model_A_Lumped_ERA5.ipynb",
+    "Model_A_Lumped_ERA5_Temporal_Test.ipynb"
+  ]
+}

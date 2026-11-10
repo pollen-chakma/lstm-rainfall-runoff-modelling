@@ -1,0 +1,20 @@
+EXPORTED 1000000
+EXPORTED 2000000
+EXPORTED 3000000
+EXPORTED 4000000
+EXPORTED 5000000
+EXPORTED 6000000
+EXPORTED 7000000
+EXPORTED 8000000
+EXPORTED 9000000
+EXPORTED 10000000
+EXPORTED 11000000
+EXPORTED 12000000
+EXPORTED 13000000
+EXPORTED 14000000
+EXPORTED 15000000
+Traceback (most recent call last):
+  File "/home/pollen26/Desktop/LSTM_RR_Modelling/Model A Lumped (Daymet + PCA10)/prepare_experiment.py", line 145, in <module>
+    assert set(counts)==set(pr) and set(counts.values())=={10957} and sum(counts.values())==15626108
+                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

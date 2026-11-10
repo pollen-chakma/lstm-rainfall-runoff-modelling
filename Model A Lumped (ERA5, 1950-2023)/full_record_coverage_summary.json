@@ -1,0 +1,11 @@
+{
+  "training_donors": 1326,
+  "unseen_ids": 100,
+  "donors_with_validation": 1320,
+  "donors_with_test": 1310,
+  "unseen_with_test": 99,
+  "first_complete_forcing": "1950-01-01",
+  "last_complete_forcing": "2023-01-02",
+  "first_observation": "1950-01-01",
+  "last_observation": "2023-01-02"
+}

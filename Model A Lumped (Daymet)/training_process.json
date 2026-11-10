@@ -1,0 +1,7 @@
+{
+  "pid": 1010002,
+  "host": "g30.nibi.sharcnet",
+  "device": "cuda:0",
+  "training_basins": 1326,
+  "unseen_basins": 100
+}

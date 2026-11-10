@@ -1,0 +1,22 @@
+{
+  "csv_name": "daymet_forcing_discharge_1980_2009.csv",
+  "rows": 15626108,
+  "basins": 1426,
+  "training_basins": 1326,
+  "unseen_basins": 100,
+  "features": [
+    "prcp",
+    "tmax",
+    "tmin",
+    "srad",
+    "vp",
+    "dayl",
+    "pet"
+  ],
+  "target": "q_obs_mm_day",
+  "attributes_in_csv": [],
+  "attribute_features_used": [],
+  "discharge_note": "Same preprocessed mm/day target and quality exclusions as the Daymet attribute baseline. Area was used only in the existing target unit conversion, never as a model input.",
+  "elapsed_seconds": 73,
+  "bytes": 1881759128
+}

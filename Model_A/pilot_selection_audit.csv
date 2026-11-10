@@ -1,0 +1,14 @@
+basin_id,status,detail
+CAN_01AD003,selected,"[6941, 1827, 1826]"
+CAN_01AF007,selected,"[6941, 1827, 1826]"
+CAN_01AF009,selected,"[2923, 1827, 1826]"
+CAN_01AJ003,selected,"[6941, 1827, 1826]"
+CAN_01AK006,excluded,could not convert string to float: ''
+CAN_01AL004,excluded,could not convert string to float: ''
+CAN_01BJ012,selected,"[5480, 1827, 1826]"
+USA_01013500,selected,"[6941, 1827, 1826]"
+USA_01022500,selected,"[6941, 1827, 1826]"
+USA_01031500,selected,"[6941, 1827, 1826]"
+USA_01073000,selected,"[6941, 1827, 1826]"
+USA_01118300,excluded,could not convert string to float: ''
+USA_01121000,selected,"[6941, 1827, 1826]"

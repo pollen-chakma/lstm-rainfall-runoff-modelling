@@ -1,0 +1,19 @@
+Original outputs and CSV checksum verified
+REPRO CELL 0
+REPRO CELL 1
+REPRO CELL 2
+REPRO CELL 3
+REPRO CELL 4
+REPRO CELL 5
+REPRO CELL 6
+REPRO CELL 7
+REPRO CELL 8
+REPRO CELL 9
+REPRO CELL 10
+REPRO CELL 11
+REPRO CELL 12
+REPRO CELL 13
+REPRO CELL 14
+REPRO CELL 15
+REPRO CELL 16
+{"status": "passed", "input_files": ["Poor_Basin_Performance_Analysis.ipynb", "basin_diagnostic_dataset.csv"], "csv_sha256": "57837982ea1219003c59c2179eb53e4a83f6e72ae97a286a940ff02c5a59a7e2", "code_cells": 8, "matching_output_tables_and_reports": ["all_basin_diagnostics.csv", "binary_class_risk_comparisons.csv", "class_rates_adequate_coverage.csv", "classification_thresholds.csv", "continuous_score_associations.csv", "coverage_sensitivity.csv", "data_dictionary_and_coverage.csv", "failure_rates_by_class.csv", "failure_summary_by_experiment_seen_unseen.csv", "feature_group_contrasts.csv", "negative_KGE_error_components.csv", "negative_basin_catalog.csv", "persistent_failures_2005_2009.csv", "physical_range_quality_flags.csv", "FINDINGS.md", "analysis_completion.json"], "numerical_tolerance": {"rtol": 1e-10, "atol": 1e-12}, "starting_directory_contained_only_the_two_files": true}

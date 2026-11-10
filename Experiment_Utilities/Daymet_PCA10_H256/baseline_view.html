@@ -1,0 +1,217 @@
+<html><body><h2>Cell 2</h2><pre id="c2">from pathlib import Path
+import csv,json,time,random,hashlib,base64,zlib,math,os
+import numpy as np
+import torch
+from torch import nn
+from torch.utils.data import Dataset,DataLoader,Sampler
+from IPython.display import display,HTML
+CSV_PATH=Path.cwd()/&#x27;daymet_pca10_discharge_1980_2009.csv&#x27;
+RUN_NAME=&#x27;results_seed42&#x27;
+OUT=CSV_PATH.parent/RUN_NAME
+FEATURES=[&#x27;prcp&#x27;,&#x27;tmax&#x27;,&#x27;tmin&#x27;,&#x27;srad&#x27;,&#x27;vp&#x27;,&#x27;dayl&#x27;,&#x27;pet&#x27;]
+STATIC_FEATURES=[&#x27;PC01_mean&#x27;, &#x27;PC01_std&#x27;, &#x27;PC02_mean&#x27;, &#x27;PC02_std&#x27;, &#x27;PC03_mean&#x27;, &#x27;PC03_std&#x27;, &#x27;PC04_mean&#x27;, &#x27;PC04_std&#x27;, &#x27;PC05_mean&#x27;, &#x27;PC05_std&#x27;, &#x27;PC06_mean&#x27;, &#x27;PC06_std&#x27;, &#x27;PC07_mean&#x27;, &#x27;PC07_std&#x27;, &#x27;PC08_mean&#x27;, &#x27;PC08_std&#x27;, &#x27;PC09_mean&#x27;, &#x27;PC09_std&#x27;, &#x27;PC10_mean&#x27;, &#x27;PC10_std&#x27;]
+CFG=dict(seed=42,epochs=20,batch=128,windows_per_basin=256,validation_cap=128,lookback=365,hidden=64,learning_rate=.001,gradient_clip=1.,train_start=&#x27;1980-01-01&#x27;,validation_start=&#x27;2000-01-01&#x27;,test_start=&#x27;2005-01-01&#x27;,end_exclusive=&#x27;2010-01-01&#x27;,features=FEATURES,static_features=STATIC_FEATURES)
+assert CSV_PATH.is_file(), &#x27;Put the CSV beside this notebook, or edit CSV_PATH.&#x27;
+assert torch.cuda.is_available(), &#x27;Select a GPU Jupyter session/kernel.&#x27;
+torch.set_num_threads(2)
+random.seed(42);np.random.seed(42);torch.manual_seed(42);torch.cuda.manual_seed_all(42)
+torch.backends.cudnn.benchmark=False
+DEVICE=torch.device(&#x27;cuda:0&#x27;)
+print(&#x27;GPU:&#x27;,torch.cuda.get_device_name(0));print(&#x27;CSV:&#x27;,CSV_PATH);print(&#x27;Only model inputs:&#x27;,FEATURES);print(&#x27;Static inputs:&#x27;,STATIC_FEATURES)
+</pre><h2>Cell 3</h2><pre id="c3">EXPECTED_SPLIT_HASH=&quot;779bde7ce5db72c8158f26f161865c4987eb4ce6a0ac7469383256b41cc2d844&quot;
+def atomic(path,obj):
+    tmp=path.with_suffix(path.suffix+&#x27;.tmp&#x27;);tmp.write_text(json.dumps(obj,indent=2));tmp.replace(path)
+def save_csv(path,rows,headers=None):
+    headers=headers or list(rows[0])
+    with open(path,&#x27;w&#x27;,newline=&#x27;&#x27;) as f:
+        w=csv.DictWriter(f,fieldnames=headers);w.writeheader();w.writerows(rows)
+</pre><h2>Cell 4</h2><pre id="c4">from itertools import groupby
+records=[];preview=[];expected_dates=np.arange(np.datetime64(&#x27;1980-01-01&#x27;),np.datetime64(&#x27;2010-01-01&#x27;))
+started=time.time()
+with open(CSV_PATH,newline=&#x27;&#x27;) as f:
+    reader=csv.reader(f);header=next(reader)
+    expected=[&#x27;basin_id&#x27;,&#x27;split&#x27;,&#x27;date&#x27;,*FEATURES,&#x27;q_obs_mm_day&#x27;,*STATIC_FEATURES,&#x27;seen_unseen&#x27;,&#x27;n_subbasins&#x27;,&#x27;single_subbasin_flag&#x27;,&#x27;time_split&#x27;]
+    assert header==expected,header
+    for basin,group in groupby(reader,key=lambda row:row[0]):
+        chunk=list(group);splits={r[1] for r in chunk};assert len(splits)==1
+        split=next(iter(splits));dates=np.array([r[2] for r in chunk],dtype=&#x27;datetime64[D]&#x27;);assert np.array_equal(dates,expected_dates),basin
+        data=np.array([r[3:11] for r in chunk],dtype=&#x27;float32&#x27;);assert data.shape==(len(dates),8)
+        static=np.array(chunk[0][11:31],dtype=&#x27;float64&#x27;);assert np.isfinite(static).all()
+        assert all(r[11:34]==chunk[0][11:34] for r in chunk),&#x27;Static feature or basin metadata changes within basin&#x27;
+        seen=&#x27;Seen&#x27; if split==&#x27;training_donor&#x27; else &#x27;Unseen&#x27;;assert chunk[0][31]==seen
+        expected_period=np.where(dates&lt;np.datetime64(&#x27;2000-01-01&#x27;),&#x27;train&#x27;,np.where(dates&lt;np.datetime64(&#x27;2005-01-01&#x27;),&#x27;validation&#x27;,&#x27;test&#x27;))
+        assert np.array_equal(np.array([r[34] for r in chunk]),expected_period)
+        assert np.all(data[np.isfinite(data[:,-1]),-1]&gt;=0)
+        records.append(dict(id=basin,split=split,dates=dates,x=data[:,:7].copy(),y=data[:,7].copy(),static=static,n_subbasins=int(chunk[0][32]),single_subbasin_flag=int(chunk[0][33])))
+        if not preview:preview=chunk[:5]
+        if len(records)%200==0:print(&#x27;CSV catchments loaded:&#x27;,len(records),flush=True)
+ids=[r[&#x27;id&#x27;] for r in records];assert len(ids)==len(set(ids))==1426
+split_text=&#x27;&#x27;.join(r[&#x27;id&#x27;]+&#x27;|&#x27;+r[&#x27;split&#x27;]+chr(10) for r in sorted(records,key=lambda r:r[&#x27;id&#x27;]))
+assert hashlib.sha256(split_text.encode()).hexdigest()==EXPECTED_SPLIT_HASH,&#x27;Catchment split differs from original baseline.&#x27;
+donors=[r for r in records if r[&#x27;split&#x27;]==&#x27;training_donor&#x27;];held=[r for r in records if r[&#x27;split&#x27;]==&#x27;unseen_test&#x27;]
+assert len(donors)==1326 and len(held)==100 and not {r[&#x27;id&#x27;] for r in donors}&amp;{r[&#x27;id&#x27;] for r in held}
+hash_csv=hashlib.sha256()
+with open(CSV_PATH,&#x27;rb&#x27;) as f:
+    for part in iter(lambda:f.read(8*1024*1024),b&#x27;&#x27;):hash_csv.update(part)
+CSV_HASH=hash_csv.hexdigest();OUT.mkdir(exist_ok=True)
+DIGEST=hashlib.sha256(json.dumps(dict(config=CFG,csv_sha256=CSV_HASH),sort_keys=True).encode()).hexdigest()
+atomic(OUT/&#x27;data_audit.json&#x27;,dict(csv=str(CSV_PATH),rows=sum(len(r[&#x27;dates&#x27;]) for r in records),basins=1426,donors=1326,unseen=100,csv_sha256=CSV_HASH,dynamic_inputs=FEATURES,static_inputs=STATIC_FEATURES,metadata_excluded=[&#x27;basin_id&#x27;,&#x27;split&#x27;,&#x27;seen_unseen&#x27;,&#x27;n_subbasins&#x27;,&#x27;single_subbasin_flag&#x27;,&#x27;time_split&#x27;],loader_seconds=round(time.time()-started)))
+display(HTML(&#x27;&lt;table border=&quot;1&quot;&gt;&#x27;+&#x27;&#x27;.join(&#x27;&lt;tr&gt;&#x27;+&#x27;&#x27;.join(&#x27;&lt;td&gt;&#x27;+str(x)+&#x27;&lt;/td&gt;&#x27; for x in row)+&#x27;&lt;/tr&gt;&#x27; for row in [header]+preview)+&#x27;&lt;/table&gt;&#x27;))
+print(&#x27;CSV is the sole data source. Exact original split verified.&#x27;)
+</pre><h2>Cell 6</h2><pre id="c6">def fit_preprocessing(rs):
+    assert len(rs)==1326 and all(r[&#x27;split&#x27;]==&#x27;training_donor&#x27; for r in rs)
+    sx=np.zeros(7);sx2=np.zeros(7);nx=0;sy=0.;sy2=0.;ny=0;sigmas=[]
+    for r in rs:
+        train=r[&#x27;dates&#x27;]&lt;np.datetime64(CFG[&#x27;validation_start&#x27;])
+        x=r[&#x27;x&#x27;][train&amp;np.isfinite(r[&#x27;x&#x27;]).all(1)].astype(&#x27;float64&#x27;);y=r[&#x27;y&#x27;][train&amp;np.isfinite(r[&#x27;y&#x27;])].astype(&#x27;float64&#x27;)
+        assert len(x)&gt;0 and len(y)&gt;0,r[&#x27;id&#x27;]
+        sx+=x.sum(0);sx2+=(x*x).sum(0);nx+=len(x);sy+=y.sum();sy2+=(y*y).sum();ny+=len(y);sigmas.append(float(y.std()))
+    p=dict(xmean=sx/nx,xstd=np.maximum(np.sqrt(np.maximum(sx2/nx-(sx/nx)**2,0)),1e-6),ymean=sy/ny,ystd=max(np.sqrt(max(sy2/ny-(sy/ny)**2,0)),1e-6))
+    p[&#x27;loss_scales&#x27;]=np.maximum(np.array(sigmas)/p[&#x27;ystd&#x27;],.1);return p
+class Windows(Dataset):
+    def __init__(self,rs,p,split,cap=None):
+        self.rs,self.p,self.split=rs,p,split;self.x=[];self.indices=[]
+        for r in rs:
+            x=((r[&#x27;x&#x27;]-p[&#x27;xmean&#x27;])/p[&#x27;xstd&#x27;]).astype(&#x27;float32&#x27;);self.x.append(x)
+            d=r[&#x27;dates&#x27;];L=CFG[&#x27;lookback&#x27;];t=np.arange(L-1,len(d));bad=np.r_[0,np.cumsum(~np.isfinite(x).all(1))];keep=(bad[t+1]-bad[t+1-L])==0
+            if split==&#x27;train&#x27;:keep &amp;= d[t]&lt;np.datetime64(CFG[&#x27;validation_start&#x27;])
+            elif split==&#x27;validation&#x27;:keep &amp;= (d[t]&gt;=np.datetime64(CFG[&#x27;validation_start&#x27;]))&amp;(d[t]&lt;np.datetime64(CFG[&#x27;test_start&#x27;]))
+            elif split==&#x27;test&#x27;:keep &amp;= d[t]&gt;=np.datetime64(CFG[&#x27;test_start&#x27;])
+            else:raise ValueError(split)
+            if split!=&#x27;test&#x27;:keep &amp;= np.isfinite(r[&#x27;y&#x27;][t])
+            ix=t[keep]
+            if cap and len(ix)&gt;cap:ix=ix[np.linspace(0,len(ix)-1,cap).astype(int)]
+            self.indices.append(ix.astype(&#x27;int32&#x27;))
+        self.lengths=np.array([len(a) for a in self.indices]);self.ends=np.cumsum(self.lengths);self.starts=np.r_[0,self.ends[:-1]]
+        if split==&#x27;train&#x27;:assert (self.lengths&gt;0).all()
+    def __len__(self):return int(self.ends[-1])
+    def __getitem__(self,i):
+        bi=int(np.searchsorted(self.ends,i,side=&#x27;right&#x27;));t=int(self.indices[bi][i-self.starts[bi]]);L=CFG[&#x27;lookback&#x27;]
+        y=(self.rs[bi][&#x27;y&#x27;][t]-self.p[&#x27;ymean&#x27;])/self.p[&#x27;ystd&#x27;] if self.split!=&#x27;test&#x27; else 0.
+        dynamic=self.x[bi][t+1-L:t+1];static=np.broadcast_to(self.rs[bi][&#x27;static_scaled&#x27;],(L,len(STATIC_FEATURES)))
+        inputs=np.concatenate([dynamic,static],axis=1)
+        return torch.from_numpy(inputs),torch.tensor(y,dtype=torch.float32),bi,t
+class EqualBasinSampler(Sampler):
+    def __init__(self,ds,per_basin=256,seed=42):self.ds,self.per_basin,self.seed,self.epoch=ds,per_basin,seed,0
+    def __len__(self):return len(self.ds.rs)*self.per_basin
+    def __iter__(self):
+        rng=np.random.default_rng(self.seed+self.epoch);bs=np.repeat(np.arange(len(self.ds.rs)),self.per_basin);rng.shuffle(bs)
+        ix=self.ds.starts[bs]+rng.integers(self.ds.lengths[bs]);return iter(ix.tolist())
+p=fit_preprocessing(donors)
+static_train=np.stack([r[&#x27;static&#x27;] for r in donors]);p[&#x27;static_mean&#x27;]=static_train.mean(0);p[&#x27;static_std&#x27;]=np.maximum(static_train.std(0),1e-6)
+assert np.isfinite(p[&#x27;static_mean&#x27;]).all() and np.isfinite(p[&#x27;static_std&#x27;]).all()
+for r in records:r[&#x27;static_scaled&#x27;]=((r[&#x27;static&#x27;]-p[&#x27;static_mean&#x27;])/p[&#x27;static_std&#x27;]).astype(&#x27;float32&#x27;)
+
+train=Windows(donors,p,&#x27;train&#x27;);val=Windows(donors,p,&#x27;validation&#x27;,cap=128)
+sampler=EqualBasinSampler(train);loader=DataLoader(train,batch_size=128,sampler=sampler,num_workers=0,pin_memory=True)
+val_loader=DataLoader(val,batch_size=256,num_workers=0,pin_memory=True)
+assert len(sampler)==1326*256
+# Changing test discharge cannot change test-window dates or model-input tensors.
+r=held[0];altered=dict(r,y=np.full_like(r[&#x27;y&#x27;],np.nan));ta=Windows([r],p,&#x27;test&#x27;);tb=Windows([altered],p,&#x27;test&#x27;)
+assert np.array_equal(ta.indices[0],tb.indices[0]);assert torch.equal(ta[0][0],tb[0][0]);assert ta[0][1].item()==0.
+np.savez(OUT/&#x27;preprocessing.npz&#x27;,**p)
+atomic(OUT/&#x27;fit_metadata.json&#x27;,dict(fitted_ids=[r[&#x27;id&#x27;] for r in donors],excluded_ids=[r[&#x27;id&#x27;] for r in held],fit_end_exclusive=&#x27;2000-01-01&#x27;,static_features=STATIC_FEATURES,experiment_hash=DIGEST))
+save_csv(OUT/&#x27;window_counts.csv&#x27;,[dict(basin_id=r[&#x27;id&#x27;],train_windows=int(n),validation_windows=int(v)) for r,n,v in zip(donors,train.lengths,val.lengths)])
+print(&#x27;Training windows:&#x27;,len(train),&#x27;fixed validation windows:&#x27;,len(val),&#x27;validation donors:&#x27;,int((val.lengths&gt;0).sum()))
+
+assert train[0][0].shape==(365,27)
+assert not {r[&#x27;id&#x27;] for r in held}&amp;{r[&#x27;id&#x27;] for r in train.rs}
+print(&#x27;Static scaler fitted once per donor basin; 27 LSTM input channels.&#x27;)
+</pre><h2>Cell 8</h2><pre id="c8">class MeteorologyLSTM(nn.Module):
+    def __init__(self):
+        super().__init__();self.lstm=nn.LSTM(27,64,batch_first=True);self.head=nn.Linear(64,1)
+    def forward(self,x):
+        assert x.shape[-1]==27
+        z,_=self.lstm(x);return self.head(z[:,-1]).squeeze(-1)
+def checkpoint(path,model,opt,epoch,best,history):
+    state=dict(model=model.state_dict(),optimizer=opt.state_dict(),epoch=epoch,best_validation=best,history=history,experiment_hash=DIGEST,python_rng=random.getstate(),numpy_rng=np.random.get_state(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all())
+    tmp=path.with_suffix(&#x27;.tmp&#x27;);torch.save(state,tmp);tmp.replace(path)
+def validate(model):
+    model.eval();sums=np.zeros(1326);nums=np.zeros(1326)
+    with torch.no_grad():
+        for x,y,bi,t in val_loader:
+            q=model(x.to(DEVICE,non_blocking=True)).cpu().numpy();b=bi.numpy();err=(q-y.numpy())**2/p[&#x27;loss_scales&#x27;][b]**2
+            sums+=np.bincount(b,weights=err,minlength=1326);nums+=np.bincount(b,minlength=1326)
+    return float(np.mean(sums[nums&gt;0]/nums[nums&gt;0])),int((nums&gt;0).sum())
+model=MeteorologyLSTM().to(DEVICE);opt=torch.optim.Adam(model.parameters(),lr=.001)
+assert model.lstm.input_size==27 and sum(v.numel() for v in model.parameters())==23873
+x,y,bi,t=next(iter(loader));q=model(x[:4].to(DEVICE));scale=torch.tensor(p[&#x27;loss_scales&#x27;][bi[:4].numpy()],dtype=torch.float32,device=DEVICE)
+loss=(((q-y[:4].to(DEVICE))/scale)**2).mean();loss.backward();assert torch.isfinite(loss);opt.zero_grad();torch.cuda.synchronize()
+first=0;best=float(&#x27;inf&#x27;);history=[]
+if (OUT/&#x27;last.pt&#x27;).exists():
+    ck=torch.load(OUT/&#x27;last.pt&#x27;,map_location=&quot;cpu&quot;,weights_only=False);assert ck[&#x27;experiment_hash&#x27;]==DIGEST,&#x27;Config/CSV changed; use another RUN_NAME.&#x27;
+    model.load_state_dict(ck[&#x27;model&#x27;]);opt.load_state_dict(ck[&#x27;optimizer&#x27;]);first=ck[&#x27;epoch&#x27;];best=ck[&#x27;best_validation&#x27;];history=ck[&#x27;history&#x27;]
+    random.setstate(ck[&#x27;python_rng&#x27;]);np.random.set_state(ck[&#x27;numpy_rng&#x27;]);torch.set_rng_state(ck[&#x27;torch_rng&#x27;].cpu());torch.cuda.set_rng_state_all(ck[&#x27;cuda_rng&#x27;])
+started=time.time()
+for epoch in range(first,20):
+    model.train();sampler.epoch=epoch;total=0.;count=0
+    for step,(x,y,bi,t) in enumerate(loader,1):
+        opt.zero_grad(set_to_none=True);q=model(x.to(DEVICE,non_blocking=True));target=y.to(DEVICE,non_blocking=True)
+        scale=torch.tensor(p[&#x27;loss_scales&#x27;][bi.numpy()],dtype=torch.float32,device=DEVICE);loss=(((q-target)/scale)**2).mean();assert torch.isfinite(loss)
+        loss.backward();nn.utils.clip_grad_norm_(model.parameters(),1.);opt.step();total+=float(loss.detach())*len(y);count+=len(y)
+        if step%400==0:atomic(OUT/&#x27;status.json&#x27;,dict(phase=&#x27;training&#x27;,epoch=epoch+1,batch=step,batches=len(loader)));print(&#x27;PROGRESS&#x27;,epoch+1,step,flush=True)
+    v,nval=validate(model);history.append(dict(epoch=epoch+1,training_loss=total/count,validation_loss=v,validation_donors=nval,elapsed_seconds=round(time.time()-started)))
+    improved=v&lt;best;best=min(best,v);checkpoint(OUT/&#x27;last.pt&#x27;,model,opt,epoch+1,best,history)
+    if improved:checkpoint(OUT/&#x27;best.pt&#x27;,model,opt,epoch+1,best,history)
+    atomic(OUT/&#x27;history.json&#x27;,history);print(&#x27;EPOCH&#x27;,history[-1],flush=True)
+ck=torch.load(OUT/&#x27;best.pt&#x27;,map_location=&quot;cpu&quot;,weights_only=False);model.load_state_dict(ck[&#x27;model&#x27;]);model.eval();print(&#x27;Best epoch:&#x27;,ck[&#x27;epoch&#x27;])
+atomic(OUT/&#x27;run_config.json&#x27;,dict(config=CFG,csv_sha256=CSV_HASH,model_inputs=FEATURES,static_features=STATIC_FEATURES,parameters=sum(v.numel() for v in model.parameters()),torch_version=torch.__version__,numpy_version=np.__version__,gpu=torch.cuda.get_device_name(0)))
+</pre><h2>Cell 10</h2><pre id="c10">def scores(y,q):
+    good=np.isfinite(y)&amp;np.isfinite(q); y,q=y[good],q[good]
+    if len(y)&lt;2 or y.std()==0: return dict(n=len(y),NSE=np.nan,KGE=np.nan,bias_percent=np.nan)
+    nse=1-np.sum((q-y)**2)/np.sum((y-y.mean())**2)
+    corr=np.corrcoef(y,q)[0,1] if q.std()&gt;0 else np.nan
+    kge=1-np.sqrt((corr-1)**2+(q.std()/y.std()-1)**2+(q.mean()/y.mean()-1)**2) if y.mean()!=0 else np.nan
+    return dict(n=len(y),NSE=float(nse),KGE=float(kge),bias_percent=float(100*(q.sum()-y.sum())/y.sum()) if y.sum()!=0 else np.nan)
+
+def evaluate(rs,tag):
+    folder=OUT/tag;folder.mkdir(exist_ok=True);metrics=[]
+    for i,r in enumerate(rs):
+        ds=Windows([r],p,&#x27;test&#x27;);ts=[];pred=[]
+        with torch.no_grad():
+            for x,y,bi,t in DataLoader(ds,batch_size=256,num_workers=0,pin_memory=True):
+                q=model(x.to(DEVICE,non_blocking=True)).cpu().numpy()*p[&#x27;ystd&#x27;]+p[&#x27;ymean&#x27;];ts.extend(t.numpy().tolist());pred.extend(q.tolist())
+        ts=np.array(ts,dtype=int);q=np.array(pred);obs=r[&#x27;y&#x27;][ts]
+        assert np.isfinite(q).all() and np.all(r[&#x27;dates&#x27;][ts]&gt;=np.datetime64(&#x27;2005-01-01&#x27;)) and np.all(r[&#x27;dates&#x27;][ts]&lt;np.datetime64(&#x27;2010-01-01&#x27;))
+        save_csv(folder/(r[&#x27;id&#x27;]+&#x27;_predictions.csv&#x27;),[dict(date=str(r[&#x27;dates&#x27;][t]),observed_mm_day=float(o),predicted_mm_day=float(v)) for t,o,v in zip(ts,obs,q)],[&#x27;date&#x27;,&#x27;observed_mm_day&#x27;,&#x27;predicted_mm_day&#x27;])
+        good=np.isfinite(obs)&amp;np.isfinite(q);error=q[good]-obs[good]
+        extra=dict(RMSE=float(np.sqrt(np.mean(error**2))) if len(error) else np.nan,MAE=float(np.mean(np.abs(error))) if len(error) else np.nan)
+        metrics.append(dict(basin_id=r[&#x27;id&#x27;],**scores(obs,q),**extra))
+        if (i+1)%100==0 or i+1==len(rs):print(&#x27;TEST&#x27;,tag,i+1,&#x27;/&#x27;,len(rs),flush=True);atomic(OUT/&#x27;status.json&#x27;,dict(phase=&#x27;testing&#x27;,test=tag,completed=i+1,total=len(rs)))
+    save_csv(folder/&#x27;metrics.csv&#x27;,metrics);return metrics
+unseen_metrics=evaluate(held,&#x27;unseen100&#x27;);temporal_metrics=evaluate(donors,&#x27;donor_temporal&#x27;)
+all_metrics=[]
+for tag,rows in [(&#x27;Seen&#x27;,temporal_metrics),(&#x27;Unseen&#x27;,unseen_metrics)]:
+    for r in rows:
+        r=dict(r,seen_unseen=tag,catchment_split=&#x27;training_donor&#x27; if tag==&#x27;Seen&#x27; else &#x27;unseen_test&#x27;,test_start=&#x27;2005-01-01&#x27;,test_end=&#x27;2009-12-31&#x27;,model=&#x27;Daymet + PCA10&#x27;)
+        r[&#x27;status&#x27;]=&#x27;scored&#x27; if r[&#x27;n&#x27;]&gt;=2 and np.isfinite(r[&#x27;NSE&#x27;]) else (&#x27;no_test_observations&#x27; if r[&#x27;n&#x27;]==0 else &#x27;insufficient_or_constant_observations&#x27;)
+        all_metrics.append(r)
+all_metrics.sort(key=lambda r:r[&#x27;basin_id&#x27;])
+assert len(all_metrics)==len({r[&#x27;basin_id&#x27;] for r in all_metrics})==1426
+assert sum(r[&#x27;seen_unseen&#x27;]==&#x27;Seen&#x27; for r in all_metrics)==1326
+assert sum(r[&#x27;seen_unseen&#x27;]==&#x27;Unseen&#x27; for r in all_metrics)==100
+save_csv(CSV_PATH.parent/&#x27;basin_model_performance.csv&#x27;,all_metrics,[&#x27;basin_id&#x27;,&#x27;seen_unseen&#x27;,&#x27;catchment_split&#x27;,&#x27;model&#x27;,&#x27;test_start&#x27;,&#x27;test_end&#x27;,&#x27;n&#x27;,&#x27;NSE&#x27;,&#x27;KGE&#x27;,&#x27;RMSE&#x27;,&#x27;MAE&#x27;,&#x27;bias_percent&#x27;,&#x27;status&#x27;])
+summary_rows=[]
+for tag in (&#x27;Seen&#x27;,&#x27;Unseen&#x27;):
+    rows=[r for r in all_metrics if r[&#x27;seen_unseen&#x27;]==tag];scored=[r for r in rows if np.isfinite(r[&#x27;NSE&#x27;])]
+    summary_rows.append(dict(seen_unseen=tag,total_basins=len(rows),scored_basins=len(scored),median_NSE=float(np.median([r[&#x27;NSE&#x27;] for r in scored])),median_KGE=float(np.nanmedian([r[&#x27;KGE&#x27;] for r in scored])),median_bias_percent=float(np.nanmedian([r[&#x27;bias_percent&#x27;] for r in scored]))))
+save_csv(CSV_PATH.parent/&#x27;model_performance_summary.csv&#x27;,summary_rows)
+atomic(OUT/&#x27;summary.json&#x27;,dict(model=&#x27;Daymet + PCA10&#x27;,best_epoch=ck[&#x27;epoch&#x27;],test_start=&#x27;2005-01-01&#x27;,test_end=&#x27;2009-12-31&#x27;,groups=summary_rows))
+atomic(OUT/&#x27;status.json&#x27;,dict(phase=&#x27;complete&#x27;,basins=1426,seen=1326,unseen=100))
+print(&#x27;Both test groups complete. Basin-level metrics exported beside this notebook.&#x27;)
+</pre><h2>Cell 12</h2><pre id="c12">from pathlib import Path
+import csv,json,html
+from IPython.display import display,HTML
+B=Path.cwd(); OUT=B/&#x27;results_seed42&#x27;
+summary_rows=list(csv.DictReader((B/&#x27;model_performance_summary.csv&#x27;).open()))
+performance=list(csv.DictReader((B/&#x27;basin_model_performance.csv&#x27;).open()))
+def table(rows):
+ keys=list(rows[0]); return &#x27;&lt;table&gt;&lt;tr&gt;&#x27;+&#x27;&#x27;.join(&#x27;&lt;th&gt;&#x27;+html.escape(k)+&#x27;&lt;/th&gt;&#x27; for k in keys)+&#x27;&lt;/tr&gt;&#x27;+&#x27;&#x27;.join(&#x27;&lt;tr&gt;&#x27;+&#x27;&#x27;.join(&#x27;&lt;td&gt;&#x27;+html.escape(str(r[k]))+&#x27;&lt;/td&gt;&#x27; for k in keys)+&#x27;&lt;/tr&gt;&#x27; for r in rows)+&#x27;&lt;/table&gt;&#x27;
+display(HTML(&#x27;&lt;h3&gt;Test performance: 2005–2009&lt;/h3&gt;&#x27;+table(summary_rows)))
+display(HTML(&#x27;&lt;h3&gt;First 20 basin results&lt;/h3&gt;&#x27;+table(performance[:20])))
+history=json.loads((OUT/&#x27;history.json&#x27;).read_text())
+assert len(history)==20 and len(performance)==1426
+best=json.loads((OUT/&#x27;summary.json&#x27;).read_text())[&#x27;best_epoch&#x27;]
+(B/&#x27;completion.json&#x27;).write_text(json.dumps(dict(status=&#x27;complete&#x27;,epochs=len(history),best_epoch=best,basins=1426,seen=1326,unseen=100),indent=2))
+print(&#x27;Completed all 20 epochs and both test groups. All 1426 basin rows exported; See basin_model_performance.csv.&#x27;)
+</pre></body></html>

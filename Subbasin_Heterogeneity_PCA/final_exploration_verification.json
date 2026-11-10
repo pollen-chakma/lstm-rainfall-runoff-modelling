@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "attributes": 1101,
+  "basins": 1426,
+  "basin_subbasin_records": 32802,
+  "unique_composite_keys": true,
+  "area_weights_normalized": true,
+  "donor_weights_equal": true,
+  "unseen_fit_weights_zero": true,
+  "categorical_and_masked_numeric_values_distinguished": true,
+  "notebook_cells_compile": true,
+  "pca_fitted": false,
+  "all_subbasin_counts_match_source_metadata": true,
+  "source_statistic_anomalies_flagged": 12
+}

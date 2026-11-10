@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "only_required_inputs": [
+    "Daymet_PCA10_H256_Dropout02_Adaptive50.ipynb",
+    "daymet_pca10_discharge_1980_2009.csv"
+  ],
+  "isolated_read_preprocessing_model_definitions_executed": true,
+  "protocol_metadata_recreated_from_notebook": true,
+  "all_preprocessing_arrays_identical": true,
+  "main_training_and_tests_complete": true,
+  "full_training_not_repeated_for_input_check": true,
+  "training_config_and_model_code_unchanged_by_portability_metadata_patch": true
+}

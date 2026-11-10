@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "training_epochs": 20,
+  "unseen_IDs": 100,
+  "donor_IDs": 1326,
+  "unseen_scored": 99,
+  "donors_scored": 1310,
+  "prior_models_preserved": true,
+  "all_scripts_and_notebook_cells_compile": true
+}

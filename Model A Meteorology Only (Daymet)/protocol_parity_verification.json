@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "normalization_exact": [
+    "xmean",
+    "xstd",
+    "ymean",
+    "ystd",
+    "loss_scales"
+  ],
+  "all_1326_window_counts_exact": true,
+  "catchment_order_exact": true
+}

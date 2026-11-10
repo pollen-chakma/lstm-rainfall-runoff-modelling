@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "input_rows": 7130,
+  "basins": 1426,
+  "experiments": 5,
+  "negative_catalog_rows": 863,
+  "persistent_3of4": 134,
+  "missing_NSE": 53,
+  "missing_KGE": 53,
+  "csv_sha256": "57837982ea1219003c59c2179eb53e4a83f6e72ae97a286a940ff02c5a59a7e2",
+  "only_input": "basin_diagnostic_dataset.csv"
+}

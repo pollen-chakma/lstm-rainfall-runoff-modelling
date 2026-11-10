@@ -1,0 +1,26 @@
+experiment,seen_unseen,dominant_KGE_component,basins
+Daymet_MetAttr,Seen,correlation/timing,1
+Daymet_MetAttr,Seen,mean-volume bias,64
+Daymet_MetAttr,Seen,variability/amplitude,57
+Daymet_MetAttr,Unseen,mean-volume bias,6
+Daymet_MetAttr,Unseen,variability/amplitude,1
+Daymet_MetOnly,Seen,mean-volume bias,131
+Daymet_MetOnly,Seen,variability/amplitude,69
+Daymet_MetOnly,Unseen,mean-volume bias,7
+Daymet_MetOnly,Unseen,variability/amplitude,3
+Daymet_PCA10,Seen,correlation/timing,3
+Daymet_PCA10,Seen,mean-volume bias,76
+Daymet_PCA10,Seen,variability/amplitude,32
+Daymet_PCA10,Unseen,mean-volume bias,12
+Daymet_PCA10,Unseen,variability/amplitude,2
+ERA5_Extended,Seen,correlation/timing,2
+ERA5_Extended,Seen,mean-volume bias,65
+ERA5_Extended,Seen,variability/amplitude,46
+ERA5_Extended,Unseen,correlation/timing,1
+ERA5_Extended,Unseen,mean-volume bias,2
+ERA5_Extended,Unseen,variability/amplitude,4
+ERA5_MetAttr,Seen,correlation/timing,4
+ERA5_MetAttr,Seen,mean-volume bias,52
+ERA5_MetAttr,Seen,variability/amplitude,60
+ERA5_MetAttr,Unseen,mean-volume bias,3
+ERA5_MetAttr,Unseen,variability/amplitude,3

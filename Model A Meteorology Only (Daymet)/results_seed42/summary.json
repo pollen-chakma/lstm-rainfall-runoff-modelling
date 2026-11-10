@@ -1,0 +1,38 @@
+{
+  "phase": "complete",
+  "best_epoch": 15,
+  "epochs": 20,
+  "training_catchments": 1326,
+  "unseen_catchments": 100,
+  "features": [
+    "prcp",
+    "tmax",
+    "tmin",
+    "srad",
+    "vp",
+    "dayl",
+    "pet"
+  ],
+  "attribute_inputs": [],
+  "csv_sha256": "efa18a7a3a9d7e2bf477189d6927f4d29315a039e2c225ba23fa17e512f3c888",
+  "results": [
+    {
+      "test": "unseen",
+      "reserved_catchments": 100,
+      "scored_catchments": 100,
+      "meteorology_only_median_NSE": 0.4850758311378283,
+      "meteorology_only_median_KGE": 0.3640139994771888,
+      "attribute_model_median_NSE": 0.5727823461565513,
+      "attribute_model_median_KGE": 0.5209324124429464
+    },
+    {
+      "test": "temporal",
+      "reserved_catchments": 1326,
+      "scored_catchments": 1317,
+      "meteorology_only_median_NSE": 0.47719032407510453,
+      "meteorology_only_median_KGE": 0.4054382595842253,
+      "attribute_model_median_NSE": 0.6029214681106941,
+      "attribute_model_median_KGE": 0.5671651386941885
+    }
+  ]
+}

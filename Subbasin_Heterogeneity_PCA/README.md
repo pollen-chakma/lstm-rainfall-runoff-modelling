@@ -1,0 +1,1 @@
+Start with EXPLORATION_REPORT.md or 01_Subbasin_Attribute_Exploration.ipynb. PCA and LSTM training have not yet been performed in this folder. All screening suggestions are proposals rather than changes to original source attributes.

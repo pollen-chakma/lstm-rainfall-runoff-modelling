@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "attribute_rows": 1101,
+  "basin_rows": 1426,
+  "subbasin_rows": 32802,
+  "notebook_code_cells_compile": true,
+  "unseen_fit_weight_zero": true,
+  "pca_fitted": false,
+  "prior_models_modified": false
+}

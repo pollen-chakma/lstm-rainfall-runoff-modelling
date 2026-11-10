@@ -1,0 +1,9 @@
+START verify_protocol.py
+FINISHED verify_protocol.py
+START train_unseen.py
+FINISHED train_unseen.py
+START summarize_unseen.py
+FINISHED summarize_unseen.py
+START evaluate_temporal.py
+FINISHED evaluate_temporal.py
+ALL ERA5 STAGES COMPLETE [{"forcing": "Daymet", "test": "unseen100", "scored_basins": 100, "median_NSE": 0.5727823461565513, "median_KGE": 0.5209324124429464}, {"forcing": "Daymet", "test": "trained_catchments_temporal", "scored_basins": 1317, "median_NSE": 0.6029214681106941, "median_KGE": 0.5671651386941885}, {"forcing": "ERA5", "test": "unseen100", "scored_basins": 100, "median_NSE": 0.46477508425752734, "median_KGE": 0.44445957199406705}, {"forcing": "ERA5", "test": "trained_catchments_temporal", "scored_basins": 1317, "median_NSE": 0.5281264385086266, "median_KGE": 0.4949444572134095}]
